@@ -1,0 +1,34 @@
+/*
+Theme Name: Vogelauge-wp-theme
+Theme URI: bymarc.de
+Author: Marc Eberhard
+Author URI: bymarc.de
+Description: Vogelauge-wp-theme
+Version: 2.1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bymarc.de
+*/
+
+html,body {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+.header-img {
+    position: absolute;
+    min-width: 100%;
+    height: 100vh;
+    object-fit:cover;
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+}
+
+.nav {
+    position: absolute;
+}
