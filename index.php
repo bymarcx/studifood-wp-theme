@@ -1,51 +1,37 @@
+<?php
+/**
+ * The template for displaying the content.
+ *
+ * (C) BYMARC
+ *
+ */
+?>
+
 <?php get_header(); ?>
 
-<div class="header">
-    <img class="header-img" src="<?php echo get_home_url(); ?>/wp-content/themes/vogelauge-wp-theme/header-bg.jpg" />
-    <div class="nav">
-        VOGELAUGE
+    <!-- HTML content starts! -->
 
-    </div>
-
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-
-        <a class="navbar-brand" href="#">VOGELAUGE</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-
-            </ul>
-        </div>
-    </nav>
-
-
-</div>
 
 
     <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
 
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <h1><a href="#main" class="page-scroll"><?php the_title(); ?></a></h1>
-            <div class="entry">
-                <?php the_content(); ?>
+                    <h1> LETS GET STARTED! </h1>
+
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <h2><a href="#main" class=" "><?php the_title(); ?></a></h2>
+                        <div class="entry">
+                            <?php the_content(); ?>
+                        </div>
+                    <?php endwhile; endif; ?>
+
+                </div>
             </div>
-        <?php endwhile; endif; ?>
-
-
-        <br><br><br><br><br><br><br><br>
-
+        </div>
     </section>
 
-
+    <!-- HTML content ends! -->
 
 <?php get_footer(); ?>
