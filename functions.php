@@ -14,14 +14,14 @@ add_action('after_setup_theme', 'bymarc_setup');
 // init my scripts
 function loadmyscript() {
     // Load style
-    wp_enqueue_style('theme_style', get_stylesheet_uri(), '', '', 'all');
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/style/bootstrap.min.css');
+    wp_enqueue_style('theme_style', get_template_directory_uri() . '/dist/css/bundle.css', '', '1.0.0', 'all');
+    //wp_enqueue_style('bootstrap', get_template_directory_uri() . '/style/bootstrap.min.css');
 
     // Load script
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.js', '', '', true);
     wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js', array('jquery'), '', true);
-    wp_enqueue_script('bymarc', get_template_directory_uri() . '/js/bymarc.js', '', '', true);
+   // wp_enqueue_script('bymarc', get_template_directory_uri() . '/js/bymarc.js', '', '', true);
     wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true);
 
 }
