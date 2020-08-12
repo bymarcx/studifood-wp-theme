@@ -24,7 +24,7 @@
     ###############################################
                                                 -->
 
-    <title>BYMARC</title>
+    <title>custom</title>
 
     <!-- META -->
     <meta charset="utf-8">
@@ -34,8 +34,6 @@
     <!-- CSS -->
     <?php wp_head(); ?>
 
-    <!-- COOKIEBOT -->
-    <!-- not included yet -->
 
 </head>
 <body>
