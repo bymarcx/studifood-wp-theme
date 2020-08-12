@@ -7,6 +7,9 @@ import del from 'del';
 import webpack from 'webpack-stream';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
+import zip from "gulp-zip";
+import info from "./package.json";
+import replace from "gulp-replace";
 
 
 const PRODUCTION = yargs.argv.prod;
@@ -57,7 +60,29 @@ export const watchForChanges = () => {
     watch(['src/**/*','!src/{images,js,scss}','!src/{images,js,scss}/**/*'], copySrcFiles);
 }
 
+export const compress = () => {
+    return src([
+        "**/*",
+        "!node_modules{,/**}",
+        "!bundled{,/**}",
+        "!src{,/**}",
+        "!.babelrc",
+        "!.gitignore",
+        "!gulpfile.babel.js",
+        "!package.json",
+        "!package-lock.json",
+    ])
+        .pipe(
+            gulpif(
+                file => file.relative.split(".").pop() !== "zip",
+                replace("_customtheme", info.name)
+            )
+        )
+        .pipe(zip(`${info.name}.zip`))
+        .pipe(dest('bundled'));
+};
+
 export const dev = series(cleanDist, parallel(CompressStyles, copySrcFiles, BundleScripts), watchForChanges)
-export const build = series(cleanDist, parallel(CompressStyles, copySrcFiles, BundleScripts))
+export const build = series(cleanDist, parallel(CompressStyles, copySrcFiles, BundleScripts), compress)
 export default dev;
 

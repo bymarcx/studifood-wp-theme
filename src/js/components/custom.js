@@ -5,6 +5,8 @@
  *
  */
 
+//First get jquery, then popper, then bootstrap
+
 import 'jquery';
 import 'popper.js'
 import 'bootstrap';
