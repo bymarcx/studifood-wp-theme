@@ -5,6 +5,8 @@ import cleanCss from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import del from 'del';
 import webpack from 'webpack-stream';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 
 
 const PRODUCTION = yargs.argv.prod;
@@ -12,6 +14,7 @@ const PRODUCTION = yargs.argv.prod;
 export const CompressStyles = () => {
     return src('src/scss/bundle.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
         .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
         .pipe(dest('dist/css'));
 }
