@@ -10,12 +10,14 @@ import autoprefixer from 'autoprefixer';
 import zip from "gulp-zip";
 import info from "./package.json";
 import replace from "gulp-replace";
+import named from 'vinyl-named';
+
 
 
 const PRODUCTION = yargs.argv.prod;
 
 export const CompressStyles = () => {
-    return src('src/scss/bundle.scss')
+    return src(['src/scss/bundle.scss', 'src/scss/admin.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
         .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
@@ -23,7 +25,8 @@ export const CompressStyles = () => {
 }
 
 export const BundleScripts = () => {
-    return src('src/js/bundle.js')
+    return src(['src/js/bundle.js','src/js/admin.js'])
+        .pipe(named())
         .pipe(webpack({
             module: {
                 rules: [
@@ -32,7 +35,7 @@ export const BundleScripts = () => {
                         use: {
                             loader: 'babel-loader',
                             options: {
-                                presets: []
+                                presets: ['@babel/preset-env']
                             }
                         }
                     }
@@ -41,7 +44,7 @@ export const BundleScripts = () => {
             mode: PRODUCTION ? 'production' : 'development',
             devtool: !PRODUCTION ? 'inline-source-map' : false,
             output: {
-                filename: 'bundle.js'
+                filename: '[name].js'
             },
         }))
         .pipe(dest('dist/js'));
