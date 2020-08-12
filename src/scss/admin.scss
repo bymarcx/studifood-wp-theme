@@ -1,0 +1,17 @@
+/*! ADMIN STYLES */
+
+.login  {
+  color: #669900 !important;
+
+  .submit #wp-submit {
+    background: #669900;
+    border-color: #669900;
+  }
+
+  h1 a {
+    background: url('../img/logo_m.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+
+}
