@@ -12,8 +12,6 @@ import info from "./package.json";
 import replace from "gulp-replace";
 import named from 'vinyl-named';
 
-
-
 const PRODUCTION = yargs.argv.prod;
 
 export const CompressStyles = () => {

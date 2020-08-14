@@ -21,6 +21,11 @@
                     <h1> LETS GET STARTED! </h1>
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <?php the_post_thumbnail( '_customtheme-single-post', array( 'class' => 'single-post-image' ) ); ?>
+                        <?php endif; ?>
+
                         <h2><a href="#main" class=" "><?php the_title(); ?></a></h2>
                         <div class="entry">
                             <?php the_content(); ?>
@@ -35,3 +40,4 @@
     <!-- HTML content ends! -->
 
 <?php get_footer(); ?>
+
