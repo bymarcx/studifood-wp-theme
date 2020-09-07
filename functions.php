@@ -81,3 +81,17 @@ function _customtheme_login_footer() {
 }
 add_action( 'login_footer', '_customtheme_login_footer' );
 /** ------------------- */
+
+
+/** Add own block styles */
+function _customtheme_gutenberg_scripts() {
+    wp_enqueue_script(
+        '_customtheme-editor',
+        get_stylesheet_directory_uri() . '/dist/js/admin.js',
+        array( 'wp-blocks', 'wp-dom' ),
+        filemtime( get_stylesheet_directory() . '/dist/js/admin.js' ),
+        true
+    );
+}
+add_action( 'enqueue_block_editor_assets', '_customtheme_gutenberg_scripts' );
+/** ------------------- */
