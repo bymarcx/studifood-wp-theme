@@ -6,8 +6,7 @@
  *
  */
 ?>
-<!DOCTYPE html>
-<html lang="de-DE" class="no-js">
+<html <?php language_attributes(); ?>>
 <head>
 
     <!--
@@ -24,16 +23,16 @@
     ###############################################
                                                 -->
 
-    <title>custom</title>
-
     <!-- META -->
-    <meta charset="utf-8">
-    <meta name="description" content=" ">
-    <meta name="viewport" content=" initial-scale=1.0, user-scalable=yes">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
     <?php wp_head(); ?>
-
 
 </head>
 <body>
+
+<div id="logo">
+    <?php the_custom_logo(); ?>
+</div>
+
