@@ -16,11 +16,8 @@
             <div class="row justify-content-center">
                 <div class="col-12">
 
-                    <h1> CUSTOM PAGE TEMPLATE </h1>
-                    <h2>Be Different!</h2>
-
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <h2><a href="#main" class=" "><?php the_title(); ?></a></h2>
+                        <h1><a href="#main" class=" "><?php the_title(); ?></a></h1>
                         <div class="entry">
                             <?php the_content(); ?>
                         </div>
