@@ -7,3 +7,4 @@
 .idea/custom-wp-theme.iml
 node_modules
 dist
+bundled
