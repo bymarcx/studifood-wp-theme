@@ -1,6 +1,10 @@
 <?php
+/**
+ * Customize Login page
+ *
+ *
+ */
 
-/** Customize Login page */
 function _customtheme_login_header_url( $login_header_url ) {
     return '/';;
 }
@@ -11,5 +15,3 @@ function _customtheme_login_footer() {
 }
 add_action( 'login_footer', '_customtheme_login_footer' );
 
-
-/** ------------------- */

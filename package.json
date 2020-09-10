@@ -1,7 +1,7 @@
 {
   "name": "_custom_wp_theme",
   "version": "1.0.0",
-  "description": "custom-wp-theme :: 20",
+  "description": "_customtheme :: 20",
   "main": "index.js",
   "scripts": {
     "start": "gulp",

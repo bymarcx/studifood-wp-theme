@@ -11,8 +11,6 @@
 
     <!-- HTML content starts! -->
 
-
-
     <section>
         <div class="container">
             <div class="row justify-content-center">
@@ -38,5 +36,6 @@
 
     <!-- HTML content ends! -->
 
+<?php get_sidebar ?>
 <?php get_footer(); ?>
 

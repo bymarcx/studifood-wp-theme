@@ -30,6 +30,7 @@ if (!function_exists('_customtheme_setup')):
                 'width'       => 250,
                 'flex-width'  => true,
                 'flex-height' => true,
+                // 'header-text' => array( 'site-title', 'site-description' ),
             )
         );
 
@@ -73,16 +74,16 @@ function _customtheme_add_menuclass($ulclass) {
 }
 add_filter('wp_nav_menu', '_customtheme_add_menuclass');
 
-/** Init Widgets */
+/** Init sidebar and widgets */
 function _customtheme_widgets_init() {
     register_sidebar(array(
-        'name' => __('Sidebar', 'BYMARC'),
+        'name' => __('Sidebar', '_customtheme'),
         'id' => 'sidebar_area',
-        'description' => __('Sidebar der Seite', 'BYMARC'),
+        'description' => __('Sidebar der Seite', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
-        'before_title' => '',
-        'after_title' => '',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
     ));
 }
 //add_action('widgets_init', '_customtheme_widgets_init');
@@ -98,6 +99,10 @@ function _customtheme_gutenberg_scripts() {
     );
 }
 add_action( 'enqueue_block_editor_assets', '_customtheme_gutenberg_scripts' );
+
+/** register sidebar / widget area */
+
+
 
 /** Add custom login page */
 require get_template_directory() . '/inc/include-login-styles.php';
