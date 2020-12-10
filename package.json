@@ -1,7 +1,7 @@
 {
   "name": "_custom_wp_theme",
   "version": "1.0.0",
-  "description": "_customtheme :: 20",
+  "description": "StudiFood :: 20",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bymarcx/custom-wp-theme.git"
+    "url": "git+https://github.com/bymarcx/studifood-wp-theme.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bymarcx/custom-wp-theme/issues"
+    "url": "https://github.com/bymarcx/studifood-wp-theme/issues"
   },
-  "homepage": "https://github.com/bymarcx/custom-wp-theme#readme",
+  "homepage": "https://github.com/bymarcx/studifood-wp-theme#readme",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
