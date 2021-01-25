@@ -17,6 +17,9 @@ if (!function_exists('_customtheme_setup')):
         /** Add support for post images */
         add_theme_support('post-thumbnails');
 
+        /** Add support for YOAST-SEO Breadcrumb nav */
+        add_theme_support( 'yoast-seo-breadcrumbs' );
+
         /** add images sizes  */
         set_post_thumbnail_size(250, 9999, false);
         add_image_size('_customtheme-single-post', 800, 9999);
@@ -77,16 +80,37 @@ add_filter('wp_nav_menu', '_customtheme_add_menuclass');
 /** Init sidebar and widgets */
 function _customtheme_widgets_init() {
     register_sidebar(array(
-        'name' => __('Sidebar', '_customtheme'),
-        'id' => 'sidebar_area',
-        'description' => __('Sidebar der Seite', '_customtheme'),
+        'name' => __('FooterLeft', '_customtheme'),
+        'id' => 'footerleft-sidebar-area',
+        'description' => __('Footer Left', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ));
+
+    register_sidebar(array(
+        'name' => __('FooterRight', '_customtheme'),
+        'id' => 'footerright-sidebar-area',
+        'description' => __('Footer Right', '_customtheme'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Startseite', '_customtheme'),
+        'id' => 'home',
+        'description' => __('Starseite', '_customtheme'),
+        'before_widget' => '<section class="section %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+
 }
-//add_action('widgets_init', '_customtheme_widgets_init');
+add_action('widgets_init', '_customtheme_widgets_init');
 
 /** Add support for own block styles */
 function _customtheme_gutenberg_scripts() {
@@ -102,6 +126,14 @@ add_action( 'enqueue_block_editor_assets', '_customtheme_gutenberg_scripts' );
 
 /** register sidebar / widget area */
 
+require get_template_directory() . '/inc/widgets/AboutUs.php';
+require get_template_directory() . '/inc/widgets/FeaturedRecipes.php';
+
+function register_widgets(){
+    register_widget('AboutUsWidget');
+    register_widget('FeaturedRecipesWidget');
+}
+add_action('widgets_init', 'register_widgets');
 
 
 /** Add custom login page */

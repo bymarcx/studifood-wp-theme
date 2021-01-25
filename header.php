@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the header.
  *
@@ -7,16 +8,17 @@
  */
 ?>
 <html <?php language_attributes(); ?>>
+
 <head>
 
     <!--
     ###############################################
     #                                             #
-    #  (C) 2020 MARC EBERHARD                     #
+    #  (C) 2021 MARC EBERHARD                     #
     #  ALL RIGHTS RESERVED!                       #
     #                                             #
-    #  Page: https://www.bymarc.de                #
-    #  Theme: custom-wp-theme :: 20               #
+    #  Page: https://www.studifood.com            #
+    #  Theme: custom-wp-theme :: 21               #
     #  Version: 1.0.0                             #
     #  E-Mail: contact@bymarc.de                  #
     #                                             #
@@ -24,15 +26,11 @@
                                                 -->
 
     <!-- META -->
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php wp_head(); ?>
 
 </head>
+
 <body>
-
-<div id="logo">
-    <?php the_custom_logo(); ?>
-</div>
-

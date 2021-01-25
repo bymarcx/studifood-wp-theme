@@ -1,2 +1,23 @@
 // INCLUDE YOUR STYLES HERE!
 
+@import 'start';
+@import 'style';
+@import 'stage';
+@import 'footer';
+@import 'aboutus';
+@import 'favrecipes';
+@import 'slick';
+
+.all-recipe-card {
+    background: white;
+    color: black;
+    margin-top: 50px ;
+    margin-bottom: 50px;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the content.
  *
@@ -9,33 +10,42 @@
 
 <?php get_header(); ?>
 
-    <!-- HTML content starts! -->
+<!-- HTML content starts! -->
 
-    <section>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
+<!-- LOOP? index-->
 
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php get_template_part('template-parts/stage/stage') ?>
 
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail( '_customtheme-single-post', array( 'class' => 'single-post-image' ) ); ?>
-                        <?php endif; ?>
+<?php get_template_part('template-parts/content/filter') ?>
 
-                        <h1><a href="#main" class=" "><?php the_title(); ?></a></h1>
+<?php $the_query = new WP_Query(array(
+    'post_type' => 'recipes',
+    'posts_per_page' => '2',
+    'orderby' => 'rand',
+));
+?>
+<section>
+    <?php
 
-                        <div class="content">
-                            <?php the_content(); ?>
-                        </div>
-                    <?php endwhile; endif; ?>
+    while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- HTML content ends! -->
+        <!-- <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('_customtheme-single-post', array('class' => 'single-post-image')); ?>
+                            <?php endif; ?>
+
+        <h1><?php the_title(); ?></h1> -->
+
+
+        <?php get_template_part('template-parts/content/recipe-loop') ?>
+
+
+    <?php endwhile;
+    ?>
+
+</section>
+
+<!-- HTML content ends! -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
-
