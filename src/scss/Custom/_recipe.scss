@@ -1,0 +1,87 @@
+section.recipes {
+    .container-fluid {
+        padding: 0;
+    }
+
+
+}
+
+.wprm-recipe-container {
+    .wprm-recipe-notes {
+        margin: 50px 0;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        margin: 10px 0 20px 0;
+
+        &:after, &:before {
+            width: -webkit-fill-available;
+            height: 2px;
+            background: #C4431C;
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            top: 20px;
+        }
+
+        &:after {
+            margin-left: 30px;
+        }
+
+        &:before {
+            margin-right: 30px;
+        }
+
+    }
+
+    h3 {
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        margin: 30px 0 20px 0;
+
+        &:after {
+            width: -webkit-fill-available;
+            height: 2px;
+            background: #C4431C;
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            top: 20px;
+            margin-left: 30px;
+            margin-right: 50px;
+        }
+    }
+
+    .wprm-recipe-ingredient {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    ul.wprm-recipe-instructions {
+        padding: 0;
+
+        &:before {
+            content: ""
+        }
+
+    }
+
+    .wprm-recipe-instruction {
+        display: flex;
+
+        li {
+            list-style-type: decimal;
+        }
+        
+    }
+
+}

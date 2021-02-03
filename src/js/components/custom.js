@@ -24,7 +24,7 @@ $(document).ready(function () {
         dots: true,
         infinite: true,
         speed: 1500,
-        fade: false,
+        fade: true,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 5000,

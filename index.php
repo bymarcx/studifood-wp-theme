@@ -18,6 +18,8 @@
 
 <?php get_template_part('template-parts/content/filter') ?>
 
+<h2>Alle Rezepte werden angezeigt</h2>
+
 <?php $the_query = new WP_Query(array(
     'post_type' => 'recipes',
     'posts_per_page' => '2',
