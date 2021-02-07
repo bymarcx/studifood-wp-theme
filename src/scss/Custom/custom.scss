@@ -8,6 +8,11 @@
 @import 'favrecipes';
 @import 'slick';
 @import 'recipe';
+@import 'allrecipes';
+@import 'nav';
+@import 'comments';
+@import '../../node_modules/aos/dist/aos.css'; 
+
 
 .all-recipe-card {
     background: white;
@@ -22,4 +27,5 @@
         object-position: center;
     }
 }
+
 

@@ -1,8 +1,173 @@
 section.recipes {
+    /* the slides */
+    .slick-slide {
+        margin: 0 27px;
+    }
+    /* the parent */
+    .slick-list {
+        margin: 0 -27px;
+    }
+
     .container-fluid {
         padding: 0;
     }
 
+    .sf-slider-wrapper {
+        height: 500px;
+        margin-top: 100px;
+    }
+
+    .sf-slider-element img {
+        width: auto;
+        height: 500px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        width: 70px;
+        height: 40px;
+        background: url(../img/PfeilBlack.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 12;
+        opacity: 0.9;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:before {
+            content: "";
+        }
+    }
+
+    .slick-prev {
+        transform: rotate(180deg);
+    }
+
+    p.has-text-align-center {
+        width: 50%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .content {
+        margin: 100px 0;
+    }
+
+    .wprm-recipe-details-label {
+        margin-right: 20px;
+        font-size: 21px;
+    }
+
+    .wprm-recipe-print {
+        color: white !important;
+        border-radius: 0;
+        border: 3px solid black;
+        padding: 10px 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2.3px;
+        background-color: black;
+
+        path {
+            fill: white;
+        }
+
+        &:hover {
+            background: transparent;
+        }
+    }
+
+    .wprm-recipe-servings-text-buttons-container {
+        margin-bottom: 20px;
+
+        .wprm-recipe-servings {
+            background: none;
+            border: 0px !important;
+            color: white;
+            font-size: 30px !important;
+            position: relative;
+            bottom: 5px;
+            line-height: 1;
+        }
+        .wprm-recipe-servings-decrement {
+            width: 25px;
+            height: 25px;
+            background-color: unset !important;
+            border: 0px;
+            background: url(../img/Circle.svg);
+            background-size: cover;
+            background-position: center;
+            vertical-align: middle;
+            line-height: 1.4;
+            margin-right: 10px;
+        }
+        .wprm-recipe-servings-increment {
+            background-color: unset !important;
+            vertical-align: middle;
+            border: 0px;
+            width: 25px;
+            height: 25px;
+            background: url(../img/Circle.svg);
+            background-size: cover;
+            background-position: center;
+            line-height: 1.4;
+            left: 30px;
+            right: 30px;
+            margin-left: 10px;
+        }
+    }
+
+    .wprm-timer-link, .timer-ico {
+        &:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: url(../img/TimerWhite.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 7px;
+        }
+    }
+
+    .aufwand-ico {
+        &:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: url(../img/KochmuetzeWhite.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 7px;
+        }
+    }
+
+    .mahlzeit-ico {
+        &:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: url(../img/TopfWhite.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 7px;
+        }
+    }
 
 }
 
@@ -17,17 +182,19 @@ section.recipes {
         position: relative;
         display: flex;
         white-space: nowrap;
-        margin: 10px 0 20px 0;
+        margin: 70px 0 50px 0;
+        font-size: 55px;
 
-        &:after, &:before {
+        &:after,
+        &:before {
             width: -webkit-fill-available;
-            height: 2px;
-            background: #C4431C;
+            height: 4px;
+            background: #c4431c;
             content: "";
             position: relative;
             display: inline-block;
             vertical-align: middle;
-            top: 20px;
+            top: 35px;
         }
 
         &:after {
@@ -37,19 +204,19 @@ section.recipes {
         &:before {
             margin-right: 30px;
         }
-
     }
 
     h3 {
         position: relative;
         display: flex;
         white-space: nowrap;
-        margin: 30px 0 20px 0;
+        margin: 30px 0 40px 0;
+        font-size: 30px;
 
         &:after {
             width: -webkit-fill-available;
             height: 2px;
-            background: #C4431C;
+            background: #c4431c;
             content: "";
             position: relative;
             display: inline-block;
@@ -60,28 +227,155 @@ section.recipes {
         }
     }
 
-    .wprm-recipe-ingredient {
+    ul.wprm-recipe-ingredients,
+    ul.wprm-recipe-equipment {
+        padding: 30px;
+        background: black;
+        margin-right: 100px;
+        list-style: none;
+    }
+
+    li.wprm-recipe-ingredient,
+    li.wprm-recipe-equipment-item {
         display: flex;
         width: 100%;
         justify-content: space-between;
+        padding: 7px 0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        font-size: 18px;
+    }
+
+    ul.wprm-recipe-equipment {
+        @include media-breakpoint-up(lg) {
+            margin-top: 98px;
+        }
+    }
+
+    @for $i from 1 through 20 {
+        ul.wprm-recipe-instructions li:nth-child(#{$i}) {
+            &:before {
+                content: "#{$i}.";
+                top: -40px;
+                left: 0px;
+                font-size: 70px;
+                position: relative;
+                display: inline;
+                font-family: "Segoe Print", "Segoe Print1", "Courier New", Courier, Georgia, Times, "Times New Roman",
+                    serif;
+            }
+        }
     }
 
     ul.wprm-recipe-instructions {
         padding: 0;
 
         &:before {
-            content: ""
+            content: "";
         }
-
     }
 
     .wprm-recipe-instruction {
         display: flex;
+        padding: 30px 0;
 
-        li {
-            list-style-type: decimal;
+        list-style-type: decimal;
+        font-size: 21px;
+
+        .wprm-recipe-instruction-text {
+            width: 60%;
+            padding-right: 50px;
+            padding-left: 30px;
+            line-height: 1.8;
+            font-weight: 100;
         }
-        
-    }
 
+        .wprm-recipe-instruction-media {
+            width: 40%;
+            height: 0;
+            overflow: hidden;
+            padding-top: 25%;
+            background: white;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.recipe-facts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 165px;
+}
+
+.recipe-fact {
+    padding-right: 10px;
+    padding-bottom: 30px;
+
+    .recipe-fact-circle {
+        min-height: 70px;
+        width: auto;
+        padding: 10px;
+        font-size: 18px;
+        color: white;
+        background: $secondary;
+        //border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        hyphens: auto;
+        text-align: center;
+
+        p {
+            font-size: 18px;
+            margin-bottom: 0;
+
+        }
+    }
+    .recipe-fact-notes {
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+
+section.morerecipes {
+    margin-bottom: 100px;
+    
+    h2 {
+        text-align: center;
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        margin: 70px 0 50px 0;
+        font-size: 55px;
+
+        &:after,
+        &:before {
+            width: -webkit-fill-available;
+            height: 4px;
+            background: #c4431c;
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            top: 35px;
+        }
+
+        &:after {
+            margin-left: 30px;
+        }
+
+        &:before {
+            margin-right: 30px;
+        }
+    }
 }

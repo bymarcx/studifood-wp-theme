@@ -34,3 +34,18 @@
 </head>
 
 <body>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container' => 'nav-buttons',
+                    ));
+                    ?>
+                </div>
+            </div>
+        </div>
+    </nav>

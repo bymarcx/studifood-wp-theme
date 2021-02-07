@@ -100,6 +100,16 @@ function _customtheme_widgets_init() {
     ));
 
     register_sidebar(array(
+        'name' => __('FooterBottom', '_customtheme'),
+        'id' => 'footerbottom-sidebar-area',
+        'description' => __('Footer Bottom :: Images', '_customtheme'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
         'name' => __('Startseite', '_customtheme'),
         'id' => 'home',
         'description' => __('Starseite', '_customtheme'),
@@ -141,3 +151,35 @@ require get_template_directory() . '/inc/include-login-styles.php';
 
 /** Include Customizer */
 require get_template_directory() . '/inc/customizer.php';
+
+
+/** Register a slider block. **/
+add_filter( 'render_block', 'GutenGallery' , 10, 2 );
+
+  function GutenGallery( $block_content, $block )
+  {
+    if ( 'core/gallery' !== $block['blockName'] || ! isset( $block['attrs']['ids'] ) )
+    {
+      return $block_content;
+    }
+
+    $li = '';
+
+    foreach( (array) $block['attrs']['ids'] as $id ) {
+        $li .= sprintf( '<div class="sf-slider-element">%s</div>', wp_get_attachment_image( $id, 'large' ) );
+    }
+	  
+    return sprintf( '<div class="sf-slider-wrapper">%s</div>', $li );
+
+  }
+
+/** Remove Website field from comment-form **/
+add_filter('comment_form_default_fields', 'unset_url_field');
+function unset_url_field($fields){
+    if(isset($fields['url']))
+       unset($fields['url']);
+       return $fields;
+}
+
+// *** FLUSH REWRITE RULES FOR CHANGING CPT SLUG ***//
+// flush_rewrite_rules();

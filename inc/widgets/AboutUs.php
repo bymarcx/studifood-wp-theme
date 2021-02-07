@@ -28,13 +28,13 @@ class AboutUsWidget extends WP_Widget
 
         echo("<div class=\"col-12 col-md-6\">");
 
-        echo("<h2>" . $title . "</h2>");
+        echo("<h2 data-aos=\"fade-right\">" . $title . "</h2>");
 
-        echo("<p>" . $text . "</p>");
+        echo("<p data-aos=\"fade-up\">" . $text . "</p>");
 
         echo("</div><div class=\"col-12 col-md-6\">");
 
-        echo("<img src= " . esc_url ($instance['image_uri'] ) . " />");
+        echo("<img data-aos=\"fade-left\" data-aos-easing=\"ease-in-sine\" data-aos-duration=\"800\" src= " . esc_url ($instance['image_uri'] ) . " />");
 
         echo("</div>");
 

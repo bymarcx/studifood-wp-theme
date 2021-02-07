@@ -16,76 +16,103 @@ section.widget_featuredrecipeswidget {
                 
                 url("../img/favrecip_bg.png");
             background-size: cover;
-            padding: 30px 0px 30px 25%;
+            background-position: left;
+            padding: 50px 0px 50px 25%;
+
+            @include media-breakpoint-down(md) {
+                background: linear-gradient(to bottom,
+                rgba(black, 0.9) 20%,  rgba(black, 0.7) 70%, rgba(black, 0.5) 100%),
+                
+                url("../img/favrecip_bg.png");
+                padding: 50px 20px;
+            }
         }
 
 
         p {
             margin-top: 20px;
+            font-size: 18px;
             width: 400px;
             position: relative;
             left: 50%;
             transform: translate(-50%);
+
+            @include media-breakpoint-down(md) {
+                font-size: 16px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                width: unset;
+            }
+
+
         }
         
     }
 
-    .col-md-3 {
-        margin-top: 25px;
+    .col-xxl-3 {
+        margin-top: 15px;
     }
 
-    .all-recipes {
+}
+
+.all-recipes {
         
-        .all-recipes-inner {
-            background: black;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 10px;
-        }
+    .all-recipes-inner {
+        background: black;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+}
+
+.recipe-card {
+    position: relative;
+    height: 350px;
+    transition: all .4s ease-in-out;
+
+
+    img {
+        //position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover .img_overlay {
+        background: linear-gradient(
+           rgba($primary, 0.7) 00% ,
+           rgba($primary, 1)60% );
+           transition: all .4s ease-in-out;
 
     }
 
-    .recipe-card {
-        position: relative;
-        height: 250px;
-
-        img {
-            //position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .img_overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left:15;
-            right:15;
-            background: linear-gradient(
-                rgba(black, 0.3) 10%, 
-               rgba($primary, 0.7) 70% ,
-               rgba($primary, 1)100% );
-
-        }
-
-        p {
-            position: absolute;
-            z-index: 999;
-            bottom: 10px;
-            left: 45px;
-            width: 60%;
-            font-weight: 700;
-        }
-
-        a {
-            color: white;
-        }
-
+    .img_overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:10px;
+        right:10px;
+        background: linear-gradient(
+            rgba(black, 0.3) 10%, 
+           rgba($primary, 0.7) 70% ,
+           rgba($primary, 1)100% );
     }
 
+    p {
+        position: absolute;
+        z-index: 999;
+        bottom: 10px;
+        left: 45px;
+        width: 60%;
+        font-weight: 700;
+    }
 
+    a {
+        color: white;
+    }
 
 }

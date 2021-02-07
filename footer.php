@@ -8,25 +8,35 @@
 ?>
 
 <section id="footer">
+
+<a href="#top">
+<div class="totop">
+    <span>NACH OBEN</span>
+</div>
+</a>
+
     <div class="container container--1">
         <div class="row">
-            <div class="col-12 col--0">
+            <div class="col-12 col--0" data-aos="fade-right">
             <?php the_custom_logo(); ?>
             </div>
-            <div class="col--1 col-md-7">
+            <div class="col--1 col-md-7 col-lg-8" data-aos="fade-right">
                 <div class="inner">
                     <?php dynamic_sidebar('footerLeft'); ?>
                 </div>
             </div>
-            <div class="col--2 col-md-5">
+            <div class="col--2 col-md-5 col-lg-4" data-aos="fade-right" data-aos-delay="200">
                 <?php dynamic_sidebar('footerRight'); ?>
-                <a href="https://bymarc.media"><strong>BYMARC</strong>.media</a>
+                <div><a href="https://bymarc.media"><strong>BYMARC</strong>.media</a></div>
+            </div>
+            <div class="col--3 col-12" data-aos="fade-right">
+            <?php dynamic_sidebar('footerBottom'); ?>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12  px-5 py-2">
+            <div class="col-12  px-5 py-2" >
             <p><?php echo get_theme_mod('footer_copy_setting', ''); ?></p>
             </div>
         </div>

@@ -1,0 +1,151 @@
+.comments {
+
+    .comment-list {
+        padding: 0px;
+        list-style: none;
+        margin-bottom: 70px;
+
+        .comment {
+            padding: 40px;
+            background-color: black;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    #reply-title {
+        display: none;
+    }
+
+    .comment-notes {
+        opacity: 0.7;
+        font-size: 16px;
+    }
+
+    .reply {
+        display: flex;
+        justify-content: flex-end;
+    
+    a {
+        padding: 10px 20px;
+        height:44px;
+        background: $primary;
+        border: 2px solid $primary;
+        color: white;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+    }
+
+    .comment-author.vcard {
+        font-size: 32px;
+    }
+
+    .comment-meta {
+        margin-bottom: 20px;
+    }
+
+    .comment-form-wprm-rating label {
+        font-size: 20px;
+    }
+
+    h3.comments-title {
+        text-align: center;
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        margin: 70px 0 30px 0;
+
+        &:after,
+        &:before {
+            width: -webkit-fill-available;
+            height: 2px;
+            background: #c4431c;
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            top: 20px;
+        }
+
+        &:after {
+            margin-left: 30px;
+        }
+
+        &:before {
+            margin-right: 20px;
+            width: 50px;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        margin: 70px 0 20px 0;
+
+        &:after,
+        &:before {
+            width: -webkit-fill-available;
+            height: 2px;
+            background: #c4431c;
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            top: 40px;
+        }
+
+        &:after {
+            margin-left: 30px;
+        }
+
+        &:before {
+            margin-right: 20px;
+        }
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .comment-form-author, .comment-form-email {
+        width: 50%;
+        float:left;
+
+        input {
+            width: 100%;
+        }
+
+    }
+
+    .comment-form-author {
+        padding-right: 20px;
+    }
+
+    textarea, input {
+        background: transparent;
+        border: 2px solid $primary;
+        border-radius: 0px;
+        padding: 8px 10px;
+        color: white;
+    }
+
+    input[type=submit] {
+        color: white;
+        background-color: $primary;
+        border-radius: 0;
+        padding: 10px 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2.3px;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+
+}

@@ -22,39 +22,43 @@ class FeaturedRecipesWidget extends WP_Widget
 
         echo $before_widget;
 
-        echo("<div class=\"container\">");
+        echo("<div class=\"container\" >");
         
             echo("<div class=\"row\">");
 
-                echo("<div class=\"offset-md-1 col-md-10\">");
+                echo("<div class=\"col-12 offset-xl-1 col-xl-10\">");
 
                     echo("<div class=\"row\">");
 
-                        echo("<div class=\"col-12 headline-box\"><div class=\"headline-box-inner\">");
+                        echo("<div class=\"col-12 headline-box\" data-aos=\"fade-right\" ><div class=\"headline-box-inner\">");
 
                             echo("<h2>" . $title . "</h2>");
                             echo("<p>" . $text . "</p>");
 
                         echo("</div></div>");
 
-                        echo("<div class=\"col-md-3\"></div>");
+                        echo("<div class=\"col-md-0 col-xxl-3\"></div>"); 
 
-                        echo("<div class=\"col-md-3 all-recipes\"><div class=\"all-recipes-inner\">");
-                            echo("<a href=\"alle-rezepte\" class=\"btn btn-secondary\">Alle Rezepte</a>");
+                        echo("<div class=\" col-md-12 col-lg-4 col-xxl-3 all-recipes\" data-aos=\"fade-up\"><div class=\"all-recipes-inner\">");
+                            echo("<a href=\"rezepte\" class=\"btn btn-secondary\">Alle Rezepte</a>");
                         echo("</div></div>");
 
 
-        // the query
+
+        
+
         $the_query = new WP_Query(array(
             'post_type' => 'recipes',
             'posts_per_page' => '2',
+            'orderby' => 'wprm_rating_average',
+            'order' => 'DESC',
+
         ));
 
         while ($the_query->have_posts()) : $the_query->the_post();
-
-        echo("<div class=\"col-md-3 recipe-card\">");
-        echo("<a href=\" ");  the_permalink(); echo(" \">");     
         
+        echo("<div class=\"col-lg-4  col-xxl-3 recipe-card\" data-aos=\"fade-up\">");
+        echo("<a href=\" ");  the_permalink(); echo(" \">");     
             // Get the recipes inside the current post.
             $recipes = WPRM_Recipe_Manager::get_recipe_ids_from_post();
 
@@ -74,7 +78,6 @@ class FeaturedRecipesWidget extends WP_Widget
         echo("</div>");
         
         endwhile;
-
 
         echo("</div>");
         echo("</div>");

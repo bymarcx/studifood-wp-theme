@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Rockwell"; src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot"); 
+    font-family: "Rockwell1"; src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot"); 
     src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot?#iefix") format("embedded-opentype"), 
     url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff2") format("woff2"), 
     url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff") format("woff"), 
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family: "Segoe Print"; 
+    font-family: "Segoe Print1"; 
     src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot"); 
     src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot?#iefix") format("embedded-opentype"), 
     url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff2") format("woff2"), 
@@ -19,16 +19,41 @@
 
 
 html, body {
-    font-family: 'Rockwell';
+    font-family: Rockwell, "Rockwell1", "Courier New", Courier, Georgia,
+                 Times, "Times New Roman", serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
+
 h2, h3, h4, h5 {
-    font-family: 'Segoe Print';
+    font-family: 'Segoe Print', "Segoe Print1", "Courier New", Courier, Georgia,
+    Times, "Times New Roman", serif;;
+}
+
+h2 {
+    font-size: 60px;
+
+    @include media-breakpoint-down(xl) {
+        font-size: 50px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        font-size: 40px;
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size:30px;
+    }
 }
 
 p {
     line-height: 1.6;
+    font-size: 20px;
+
+    @include media-breakpoint-down(md) {
+        font-size:16px;
+    }
 }
 
 .btn.btn-primary {
@@ -48,14 +73,28 @@ p {
 .btn.btn-secondary {
     border:none;
     background:none;
+    text-transform: uppercase;
+    transition: .3s all ease-in-out;
 
     &:after {
         content: "";
-        margin-top: 10px;
+        margin-top: 15px;
         display: block;
-        width: 100px;
+        width: 150px;
         height: 2px;
         background: $primary;
+        transition: .3s all ease-in-out;
+    }
+
+    &:hover:after {
+        // margin-left: 70px;
+        // transition: .2s all ease-in-out;
+    }
+
+    &:hover {
+        // margin-right: 10px;
+        // transition: .3s all ease-in-out;        
+        color: $primary;
     }
 }
 
@@ -100,12 +139,28 @@ p {
         width: 100%;
         display: flex;
 
+        @include media-breakpoint-down(md) {
+            display: block;
+        }
+
         li {
+            width: 20%;
+
+            @include media-breakpoint-down(md) {
+                display: block;
+                width: 100%;
+            }
+
             select {
                 padding: 10px 20px;
                 border: 2px solid $primary;
                 background: none;
                 color: white;
+                width: 100%;
+
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 10px;
+                }
             }
         }
 
@@ -115,10 +170,64 @@ p {
             background: $primary;
             border: 2px solid $primary;
             color: white;
+            width: 100%;
 
             &:hover {
                 background: transparent;
             }
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+
+        }
+    }
+}
+
+.wprm-rating-star,  .wprm-rating-star-selecting-filled {
+    svg * {
+        fill: white !important;
+        stroke: white !important;
+    }
+
+    &.wprm-rating-star-empty, &.wprm-rating-star-selecting-empty {
+        svg * {
+            stroke: white !important;
+            fill: none !important;
+        }
+    }
+
+
+}
+
+
+.container.head {
+    h3 {
+        text-align: center;
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        margin: 70px 0 00px 0;
+
+        &:after,
+        &:before {
+            width: -webkit-fill-available;
+            height: 2px;
+            background: #c4431c;
+            content: "";
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            top: 20px;
+        }
+
+        &:after {
+            margin-left: 30px;
+        }
+
+        &:before {
+            margin-right: 20px;
+            width: 50px;
         }
     }
 }

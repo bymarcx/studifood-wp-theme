@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="stage">
+<section class="stage small">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
@@ -16,8 +16,7 @@
 
                     <?php get_template_part('template-parts/stage/headerbar') ?>
 
-                    <div class="img-overlay"></div>
-                    <?php if (is_home()) { ?>
+                    <div class="img_overlay"></div>
                         <?php
                         $page_for_posts = get_option('page_for_posts');
                         echo get_the_post_thumbnail($page_for_posts, 'large');
@@ -36,12 +35,11 @@
 
 
                         ?>
-                    <?php } ?>
 
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <h1><?php single_post_title(); ?></h1>
+                                <h1 data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="800">Alle Rezepte</h1>
                             </div>
                         </div>
                     </div>

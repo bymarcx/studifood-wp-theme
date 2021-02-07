@@ -1,4 +1,5 @@
 #footer {
+    margin-top: 70px;
     background: linear-gradient(
         rgba(0, 0, 0, 1), 
         rgba(0, 0, 0, 0.8), 
@@ -7,6 +8,41 @@
       ), url("../img/bg.png");
     background-size: cover;
     background-position: right;
+
+
+    .totop {
+        position: absolute;
+        right: 40px;
+        margin-top: 30px;
+        width: auto;
+        text-align: center;
+
+        span {
+            color: white;
+        
+        }
+
+        &:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-left: 5px solid white;
+            border-top: 5px solid white;
+            transform: rotate(45deg) translate(-50%);
+            display: block;
+            left: 50%;
+            position: relative;
+            top: 15px;
+            translate: .3s all ease-in-out;
+        }
+
+        &:hover:before {
+            top: 10px;
+            translate: .3s top ease-in-out;
+            border-left: 5px solid $primary;
+            border-top: 5px solid $primary;
+        }
+    }
 
     .container--1 {
         padding: 50px 15px 30px;
@@ -41,6 +77,15 @@
 
         .col--1 h3:after {
             margin: 0 100px 0 30px;
+
+            @include media-breakpoint-down(md) {
+                margin: 0 50px 0 30px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin: 0 0px 0 30px;
+            }
+
         }
 
         ul {
@@ -61,7 +106,7 @@
         }
     }
 
-    .col--1 {
+    .col--3 {
         img {
             max-width: 200px;
             height: auto;
@@ -71,6 +116,19 @@
     }
 
     .col--2 {
-        // background: black;
+        a,p  {
+            font-size: 16px;
+        }
+
+        .btn {
+            margin: 20px 0 10px;
+        }
+
+        img {
+            max-height: 50px;
+            width: auto;
+            margin: 0px 20px 30px 0 ;
+        }
     }
 }
+

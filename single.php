@@ -24,7 +24,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
 
-                    <?php get_template_part( 'template-parts/stage/headerbar')?>
+                        <?php get_template_part('template-parts/stage/headerbar') ?>
 
                         <div class="image">
 
@@ -64,7 +64,7 @@
         </section>
 
 
-<?php get_template_part( 'template-parts/content/breadcrumb')?>
+        <?php get_template_part('template-parts/content/breadcrumb') ?>
 
 
         <section>
@@ -73,8 +73,10 @@
                     <div class="col-12">
 
                         <div class="content">
-                            <?php the_content(); ?>
+                            <?php the_content();
+                            ?>
                         </div>
+
 
                     </div>
                 </div>

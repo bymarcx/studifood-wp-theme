@@ -14,7 +14,7 @@
 <!-- LOOP? search-->
 
 
-<?php get_template_part( 'template-parts/stage/stage')?>
+<?php get_template_part( 'template-parts/stage/stage-archive')?>
 
 <?php get_template_part( 'template-parts/content/filter')?>
 
