@@ -6,29 +6,79 @@
  */
 
 //First get jquery, then popper, then bootstrap
-import $ from 'jquery';
+
+import $ from 'jquery'; 
 window.jQuery = $;
 window.$ = $;
-
+ 
 import 'popper.js'
 import 'bootstrap';
 
 import 'slick-carousel';
 
 import AOS from 'aos';
-// import Rellax from 'rellax';
 
+import Rellax from 'rellax';
+
+// AJAX Filter call
+jQuery(function($){
+	$('#filter').submit(function(){
+		var filter = $('#filter');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(), // form data
+			type:filter.attr('method'), // POST
+			beforeSend:function(xhr){
+				filter.find('button').text('Suchen...'); // changing the button label
+			},
+			success:function(data){
+				filter.find('button').text('Suchen'); // changing the button label back
+				$('#response').html(data); // insert data
+			}
+		});
+		return false;
+	});
+
+
+
+
+
+  $('#search').submit(function(){
+		var filter = $('#search');
+
+		$.ajax({
+      url:filter.attr('action'),
+			data:filter.serialize(), // form data
+			type:filter.attr('method'), // POST
+
+			beforeSend:function(xhr){
+				filter.find('button').text('Suchen...'); // changing the button label
+			},
+			success:function(data){
+				filter.find('button').text('Suchen'); // changing the button label back
+				$('#response').html(data); // insert data
+			}
+		});
+		return false;
+	});
+
+});
+
+
+
+// Init AnimateOnScroll
 AOS.init({
   duration: 800, // values from 0 to 3000, with step 50ms
-  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 200, // the delay on throttle used while scrolling the page (advanced)
+  debounceDelay: 0, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 0, // the delay on throttle used while scrolling the page (advanced)
   mirror: true, // whether elements should animate out while scrolling past them
 });
 
-var rellax = new Rellax('.rellax');
+//  var rellax = new Rellax('.rellax');
 
 //if website loaded show content
 $(document).ready(function(){
+
 	$(window).on("load", function() {
 		$("body").addClass("loaded");
 	});
@@ -61,8 +111,9 @@ $(document).ready(function () {
         infinite: true,
         speed: 1500,
         arrows: true,
-        autoplay: true,
+        autoplay: false,
         slidesToShow: 3,
+        variableWidth: true,
         infinite: true,
         slidesToScroll: 3,
         centerMode: true,
@@ -70,7 +121,7 @@ $(document).ready(function () {
         responsive: [{
             breakpoint: 576,
             settings: {
-                arrows: false
+                arrows: true
             }
         }]
     });
@@ -106,6 +157,9 @@ $(window).scroll(function() {
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
+  
+  myFunction();
+
   var currentScrollPos = window.pageYOffset;
 
   if (currentScrollPos <= (5)) {
@@ -126,4 +180,11 @@ window.onscroll = function () {
     prevScrollpos = currentScrollPos;
 
   }
+}
+//Scroll bar
+function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("scroll-bar").style.width = scrolled + "%";
 }

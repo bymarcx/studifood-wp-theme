@@ -1,0 +1,52 @@
+.frm_form_fields {
+    input[type="text"],
+    input[type="email"] {
+        height: 40px;
+        padding: 20px;
+        border: 2px solid $primary;
+        background: transparent;
+        color: white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: transparent !important;
+        }
+    }
+
+    label {
+        color: white !important;
+    }
+
+    textarea {
+        padding: 20px;
+        border: 2px solid $primary;
+        background: transparent;
+        color: white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: transparent !important;
+        }
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px !important;
+        height: 44px !important;
+        background: $primary !important;
+        border: 2px solid $primary !important;
+        color: white;
+        border-radius: 0 !important;
+        outline: 0 !important;
+        width: 100%;
+
+        &:hover {
+            background: transparent;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+}

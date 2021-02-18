@@ -32,9 +32,9 @@ if (post_password_required())
         <h3 class="comments-title" data-aos="fade-right">
             <?php
             printf(
-                _nx('1 Kommentar zu "%2$s"', '%1$s Kommentare zu "%2$s"', get_comments_number(), 'comments title', 'twentythirteen'),
+                _nx('1 Kommentar zu %2$s ', '%1$s Kommentare zu %2$s', get_comments_number(), 'comments title', 'twentythirteen'),
                 number_format_i18n(get_comments_number()),
-                '<span>' . get_the_title() . '</span>'
+                get_the_title()
             );
             ?>
         </h3>
@@ -44,7 +44,6 @@ if (post_password_required())
             wp_list_comments(array(
                 'style'       => 'ol',
                 'short_ping'  => true,
-                'avatar_size' => 74,
             ));
             ?>
         </ol><!-- .comment-list -->

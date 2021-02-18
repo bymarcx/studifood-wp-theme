@@ -152,6 +152,22 @@
             </div>
         </section>
 
+
+        <section class="comments">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <?php
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if (comments_open() || get_comments_number()) :
+                            comments_template();
+                        endif;
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="morerecipes">
             <div class="container">
                 <div class="row">
@@ -202,27 +218,13 @@
 
                 <div class=" col-md-12 col-lg-4 col-xxl-3 all-recipes" data-aos="fade-up">
                     <div class="all-recipes-inner">
-                        <a href="alle-rezepte" class="btn btn-secondary">Alle Rezepte</a>
+                        <a href="/rezepte" class="btn btn-secondary">Alle Rezepte</a>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <section class="comments">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <?php
-                        // If comments are open or we have at least one comment, load up the comment template.
-                        if (comments_open() || get_comments_number()) :
-                            comments_template();
-                        endif;
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 <?php endwhile;
 endif; ?>

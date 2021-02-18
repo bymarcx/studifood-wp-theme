@@ -35,6 +35,10 @@
 
 <body>
 
+    <div class="scroll-bar-outer" id="scroll-bar-outer-id">
+        <div id="scroll-bar"></div>
+    </div>
+
     <nav class="nav">
         <div class="container">
             <div class="row">

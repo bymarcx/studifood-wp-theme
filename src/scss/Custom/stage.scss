@@ -52,7 +52,7 @@ section.stage {
         }
 
         h1 {
-            width: 100%;
+            width: 80%;
             z-index: 999;
             font-weight: 600;
             font-size: 80px;
@@ -148,16 +148,32 @@ section.stage {
         }
 
         &:hover {
-            color: red;
+            color: white;
             background-size: 30px 30px;
             transition: all ease-in-out .7s;
         }
 
+        .open {
+            position: absolute;
+            opacity: 1;
+            transition: .6s all ease-in-out ;  
+            visibility: visible; 
+
+            &:hover, &:active {
+                color: white;
+            }
+
+        }
+
         .close {
             opacity: 0;
-            transition: all ease-in-out .3s;
-            display: none;
+            transition: .3s all ease-in-out;
             color: white;
+            visibility: hidden; 
+
+            &:hover, &:active {
+                color: white;
+            }
 
         }
 
@@ -166,12 +182,14 @@ section.stage {
 
             .close {
                 opacity: 1;
-                display: block;
+                visibility: visible; 
+                transition: .6s all ease-in-out ;
             }
 
             .open {
                 opacity: 0;
-                display: none;
+                transition: .6s all ease-in-out ;
+                visibility: hidden; 
             }
 
         }
@@ -179,16 +197,16 @@ section.stage {
         &:hover {
             .close {
                 opacity: 0;
-                transition: all ease-in-out .6s;
-                display: none;
+                transition: .6s all ease-in-out ;
+                display: block;
 
 
             }
 
             .open {
                 opacity: 0;
-                transition: all ease-in-out .6s;
-                display: none;
+                transition: .6s all ease-in-out ;
+                display: block;
 
 
             }
@@ -223,14 +241,25 @@ body.loaded {
 
         .btn, .slick-dots, .headerbar {
             opacity: 1;
-            transition: all 0.8s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
 
     }
 }
 
+
+
+
 section.stage.slide {
     margin-bottom: 150px;
+
+    @include media-breakpoint-down(xl) {
+        margin-bottom: 70px;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 0px;
+    }
 
     .container {
         height: 100%;
@@ -408,11 +437,12 @@ section.stage.slide {
         position: absolute;
         bottom: 50px;
         right: 50px;
-        z-index: 12;
+        z-index: 123;
         font-size: 21px;
         padding: 10px 30px;
         letter-spacing: 5.0;
         opacity: 0;
+        transition: all 0.3s ease-in-out;
 
         @include media-breakpoint-down(md) {
             font-size: 18px;

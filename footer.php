@@ -27,7 +27,7 @@
             </div>
             <div class="col--2 col-md-5 col-lg-4" data-aos="fade-right" data-aos-delay="200">
                 <?php dynamic_sidebar('footerRight'); ?>
-                <div><a href="https://bymarc.media"><strong>BYMARC</strong>.media</a></div>
+                <!-- <div><a href="https://bymarc.media"><strong>BYMARC</strong>.media</a></div> -->
             </div>
             <div class="col--3 col-12" data-aos="fade-right">
             <?php dynamic_sidebar('footerBottom'); ?>
@@ -44,6 +44,16 @@
 </section>
 
 <?php wp_footer(); ?>
+<script src="<?= get_stylesheet_directory_uri()?>/vendor/chosen.jquery.js"></script>
+<script>
+// jQuery and WebPack is just crap
+$(".filter-select").chosen(
+    {
+        allow_single_deselect: true,
+        disable_search_threshold: 10
+    }
+);
+</script>
 
 <!-- SEE YOU LATER ALLIGATOR! -->
 

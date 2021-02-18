@@ -1,7 +1,7 @@
 {
-  "name": "_custom_wp_theme",
+  "name": "studifood_wp_theme",
   "version": "1.0.0",
-  "description": "StudiFood :: 20",
+  "description": "StudiFood :: 21",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -24,6 +24,7 @@
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "del": "^5.1.0",
+    "expose-loader": "^2.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-if": "^3.0.0",
@@ -31,6 +32,7 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-zip": "^5.0.2",
+    "imports-loader": "^2.0.0",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^5.2.1",
     "yargs": "^15.4.1"
@@ -38,6 +40,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^4.6.0",
+    "chosen-js": "^1.8.7",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "rellax": "^1.12.1",

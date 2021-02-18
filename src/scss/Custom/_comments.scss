@@ -67,7 +67,8 @@
             position: relative;
             display: inline-block;
             vertical-align: middle;
-            top: 20px;
+            align-self: center;    
+
         }
 
         &:after {
@@ -77,34 +78,6 @@
         &:before {
             margin-right: 20px;
             width: 50px;
-        }
-    }
-
-    h2 {
-        text-align: center;
-        position: relative;
-        display: flex;
-        white-space: nowrap;
-        margin: 70px 0 20px 0;
-
-        &:after,
-        &:before {
-            width: -webkit-fill-available;
-            height: 2px;
-            background: #c4431c;
-            content: "";
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
-            top: 40px;
-        }
-
-        &:after {
-            margin-left: 30px;
-        }
-
-        &:before {
-            margin-right: 20px;
         }
     }
 

@@ -1,5 +1,4 @@
 .all-recipe-card {
-
     &:nth-of-type(3n) .row {
         .col--1 {
             background: #c1b19a;
@@ -9,7 +8,7 @@
     &:nth-of-type(even) .row {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
-        -webkit-flex-direction: row-reverse; 
+        -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
 
@@ -17,115 +16,86 @@
             background: #121212;
             color: white;
 
-            h4, p {
+            h4,
+            p {
                 color: white;
             }
 
             .timer-ico {
-
                 &:before {
                     content: "";
-                    width: 30px;
-                    height: 30px;
-                    margin-bottom: 5px;
-                    display: inline-block;
                     background: url(../img/TimerWhite.svg);
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
-                    vertical-align: middle;
-                    margin-right: 7px;
                 }
-        
             }
 
-            .aufwand-ico {
+            .aufwand-ico,
+            .wprm-recipe-difficulty {
                 &:before {
                     content: "";
-                    width: 30px;
-                    height: 30px;
-                    margin-bottom: 5px;
-                    display: inline-block;
                     background: url(../img/KochmuetzeWhite.svg);
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
-                    vertical-align: middle;
-                    margin-right: 7px;
                 }
             }
-        
-            .mahlzeit-ico {
+
+            .wprm-recipe-cuisine {
                 &:before {
                     content: "";
-                    width: 30px;
-                    height: 30px;
-                    margin-bottom: 5px;
-                    display: inline-block;
+                    background: url(../img/BesteckWhite.svg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            .mahlzeit-ico,
+            .wprm-recipe-course {
+                &:before {
+                    content: "";
                     background: url(../img/TopfWhite.svg);
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
-                    vertical-align: middle;
-                    margin-right: 7px;
                 }
             }
 
             .video-ico {
                 font-weight: bolder;
-        
+
                 &:before {
                     content: "";
-                    width: 30px;
-                    height: 30px;
-                    margin-bottom: 0px;
-                    display: inline-block;
                     background: url(../img/PlayWhite.svg);
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
-                    vertical-align: middle;
-                    margin-right: 15px;
                 }
-        
             }
-
         }
 
         .btn.btn-recipe {
-            position: absolute;
-            position: absolute;
-            bottom: 30px;
-            right: 20px;
-            padding:0;
             color: white;
-    
             &:after {
                 content: "";
-                width: 50px;
-                height: 20px;
-                display: inline-block;
                 background: url(../img/PfeilWhite.svg);
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
-                vertical-align: middle;
-                margin-right: 7px;
-                position: relative;
             }
-    
+
             &:hover:after {
                 right: -10px;
             }
-    
         }
-
     }
 
     .col--1 {
         padding: 40px;
 
-        .recipe-icons  {
+        .recipe-icons {
             display: flex;
             flex-wrap: wrap;
         }
@@ -133,11 +103,10 @@
         .wprm-recipe-meta-container {
             margin-right: 20px;
         }
-
     }
 
     .col--2 {
-        padding:0;
+        padding: 0;
         height: 400px;
 
         img {
@@ -158,10 +127,11 @@
     }
 
     h4 {
-        font-family: 'Rockwell';
+        font-family: "Rockwell";
         color: black;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 35px;
+        margin-bottom: 25px;
 
         @include media-breakpoint-down(lg) {
             font-size: 24px;
@@ -177,7 +147,7 @@
     }
 
     .text {
-        padding: 20px 0
+        padding: 20px 0;
     }
 
     .timer-ico {
@@ -187,7 +157,7 @@
             content: "";
             width: 30px;
             height: 30px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             display: inline-block;
             background: url(../img/Timer.svg);
             background-size: contain;
@@ -196,7 +166,6 @@
             vertical-align: middle;
             margin-right: 7px;
         }
-
     }
 
     .video-ico {
@@ -206,7 +175,6 @@
             content: "";
             width: 30px;
             height: 30px;
-            margin-bottom: 10px;
             display: inline-block;
             background: url(../img/Play.svg);
             background-size: contain;
@@ -214,11 +182,31 @@
             background-repeat: no-repeat;
             vertical-align: middle;
             margin-right: 15px;
+            margin-bottom: 7px;
         }
-
     }
 
-    .aufwand-ico {
+    .wprm-recipe-cuisine {
+        font-weight: bolder;
+
+        &:before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: url(../img/BesteckBlack.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 7px;
+        }
+    }
+
+    .aufwand-ico,
+    .wprm-recipe-difficulty {
+        font-weight: bolder;
         &:before {
             content: "";
             width: 30px;
@@ -234,7 +222,10 @@
         }
     }
 
-    .mahlzeit-ico {
+    .mahlzeit-ico,
+    .wprm-recipe-course {
+        font-weight: bolder;
+
         &:before {
             content: "";
             width: 30px;
@@ -250,14 +241,16 @@
         }
     }
 
-
     .btn.btn-recipe {
-        position: absolute;
         position: absolute;
         bottom: 30px;
         right: 20px;
-        padding:0;
+        padding: 0;
         color: black;
+        transition: 0.3s all ease-in-out;
+        letter-spacing: 2.3px;
+        font-size: 16px;
+        font-weight: 700;
 
         &:after {
             content: "";
@@ -271,12 +264,13 @@
             vertical-align: middle;
             margin-right: 7px;
             position: relative;
+            right: 0;
+            transition: 0.3s all ease-in-out;
         }
 
         &:hover:after {
             right: -10px;
+            transition: 0.3s all ease-in-out;
         }
-
     }
-
 }

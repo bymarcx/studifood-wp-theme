@@ -1,14 +1,9 @@
 #footer {
     margin-top: 70px;
-    background: linear-gradient(
-        rgba(0, 0, 0, 1), 
-        rgba(0, 0, 0, 0.8), 
-        rgba(0, 0, 0, 0.8), 
-        rgba(0, 0, 0, 0.8)
-      ), url("../img/bg.png");
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("../img/bg.png");
     background-size: cover;
     background-position: right;
-
 
     .totop {
         position: absolute;
@@ -19,7 +14,6 @@
 
         span {
             color: white;
-        
         }
 
         &:before {
@@ -33,12 +27,12 @@
             left: 50%;
             position: relative;
             top: 15px;
-            translate: .3s all ease-in-out;
+            transition: 0.3s all ease-in-out;
         }
 
         &:hover:before {
             top: 10px;
-            translate: .3s top ease-in-out;
+            transition: 0.3s all ease-in-out;
             border-left: 5px solid $primary;
             border-top: 5px solid $primary;
         }
@@ -48,29 +42,27 @@
         padding: 50px 15px 30px;
 
         h3 {
-            padding: 50px 0 15px;
+            padding: 50px 0 5px;
             display: flex;
             white-space: nowrap;
-
-            
+            position: relative;
 
             &:after {
                 width: -webkit-fill-available;
                 height: 2px;
-                background: #C4431C;
+                background: #c4431c;
                 content: "";
                 display: inline-block;
                 position: relative;
                 vertical-align: middle;
-                top: 15px;
                 margin: 0 0 0 30px;
+                align-self: center;
             }
-
         }
 
         .col--0 {
             img {
-                width: 150px;
+                width: 175px;
                 height: auto;
             }
         }
@@ -85,7 +77,6 @@
             @include media-breakpoint-down(sm) {
                 margin: 0 0px 0 30px;
             }
-
         }
 
         ul {
@@ -112,23 +103,23 @@
             height: auto;
             margin: 30px 0;
         }
-
     }
 
     .col--2 {
-        a,p  {
+        a,
+        p {
             font-size: 16px;
         }
 
         .btn {
             margin: 20px 0 10px;
+            padding: 5px 20px;
         }
 
         img {
-            max-height: 50px;
+            max-height: 35px;
             width: auto;
-            margin: 0px 20px 30px 0 ;
+            margin: 0px 20px 30px 0;
         }
     }
 }
-

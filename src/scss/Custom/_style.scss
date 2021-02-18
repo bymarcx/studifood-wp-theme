@@ -1,34 +1,77 @@
 @font-face {
-    font-family: "Rockwell1"; src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot"); 
-    src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot?#iefix") format("embedded-opentype"), 
-    url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff2") format("woff2"), 
-    url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff") format("woff"), 
-    url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.ttf") format("truetype"), 
-    url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.svg#Rockwell") format("svg"); 
+    font-family: "Rockwell1";
+    src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot");
+    src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.svg#Rockwell") format("svg");
 }
 
 @font-face {
-    font-family: "Segoe Print1"; 
-    src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot"); 
-    src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot?#iefix") format("embedded-opentype"), 
-    url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff2") format("woff2"), 
-    url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff") format("woff"), 
-    url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.ttf") format("truetype"), 
-    url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.svg#Segoe Print") format("svg"); 
+    font-family: "Segoe Print1";
+    src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot");
+    src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.svg#Segoe Print") format("svg");
 }
 
-
-html, body {
-    font-family: Rockwell, "Rockwell1", "Courier New", Courier, Georgia,
-                 Times, "Times New Roman", serif;
+body {
+    font-family: Rockwell, "Rockwell1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+
+	height: 100%;
+	width: 100%;
 }
 
 
-h2, h3, h4, h5 {
-    font-family: 'Segoe Print', "Segoe Print1", "Courier New", Courier, Georgia,
-    Times, "Times New Roman", serif;;
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Segoe Print", "Segoe Print1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
+
+    @include media-breakpoint-down(sm) {
+        white-space: normal !important;
+    }
+}
+
+p,
+label,
+a,
+button {
+    font-family: Rockwell, "Rockwell1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif !important;
+}
+
+h2 {
+    text-align: center;
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    margin: 70px 0 50px 0 !important;
+    font-size: 55px;
+
+    &:after,
+    &:before {
+        width: -webkit-fill-available;
+        height: 4px;
+        background: #c4431c;
+        content: "";
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        align-self: center;    
+    }
+
+    &:after {
+        margin-left: 30px;
+    }
+
+    &:before {
+        margin-right: 30px;
+    }
 }
 
 h2 {
@@ -43,8 +86,45 @@ h2 {
     }
 
     @include media-breakpoint-down(md) {
-        font-size:30px;
+        font-size: 30px;
     }
+}
+
+h3 {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    margin: 30px 0 40px 0 !important;
+    font-size: 30px;
+
+    @include media-breakpoint-down(xl) {
+        font-size: 30px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        font-size: 30px;
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: 20px;
+    }
+
+    &:after {
+        width: -webkit-fill-available;
+        height: 2px;
+        background: #c4431c;
+        content: "";
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 30px;
+        align-self: center;
+    }
+
+    &:before {
+        align-self: center;
+    }
+
 }
 
 p {
@@ -52,7 +132,7 @@ p {
     font-size: 20px;
 
     @include media-breakpoint-down(md) {
-        font-size:16px;
+        font-size: 16px;
     }
 }
 
@@ -67,14 +147,13 @@ p {
     &:hover {
         background: transparent;
     }
-
 }
 
 .btn.btn-secondary {
-    border:none;
-    background:none;
+    border: none;
+    background: none;
     text-transform: uppercase;
-    transition: .3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
 
     &:after {
         content: "";
@@ -83,7 +162,7 @@ p {
         width: 150px;
         height: 2px;
         background: $primary;
-        transition: .3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
     }
 
     &:hover:after {
@@ -93,37 +172,35 @@ p {
 
     &:hover {
         // margin-right: 10px;
-        // transition: .3s all ease-in-out;        
+        // transition: .3s all ease-in-out;
         color: $primary;
     }
 }
 
 .searchbar {
-
-    ul {
+    form {
         padding: 0px;
         width: 100%;
         display: flex;
 
-        li:first-of-type() {
-            padding: 0px;
-            width:100%;
+        input[type="text"] {
+            width: 100%;
         }
-
     }
 
-    input[type=text] {
+    input[type="text"] {
         width: 100%;
-        height: 40px;
+        height: 45px;
         padding: 20px;
         border: 2px solid $primary;
         background: none;
         color: white;
     }
 
-    input[type=submit] {
-        width: 40px;
-        height:44px;
+    input[type="submit"],
+    button {
+        width: 45px !important;
+        height: 45px !important;
         background: $primary url(../img/Lupe.svg);
         font-size: 0px;
         border: 2px solid $primary;
@@ -134,39 +211,107 @@ p {
 }
 
 .filterbar {
-    ul {
+    ul.filterbarul {
         padding: 0px;
         width: 100%;
         display: flex;
+        list-style: none;
 
         @include media-breakpoint-down(md) {
             display: block;
         }
 
-        li {
-            width: 20%;
+        li.filterbarli {
+            width: 100%;
+            margin-left: 10px;
 
             @include media-breakpoint-down(md) {
                 display: block;
                 width: 100%;
-            }
-
-            select {
-                padding: 10px 20px;
-                border: 2px solid $primary;
-                background: none;
-                color: white;
-                width: 100%;
-
-                @include media-breakpoint-down(md) {
-                    margin-bottom: 10px;
-                }
+                margin: 0;
             }
         }
 
-        input[type=submit] {
+        li:first-of-type {
+            margin:0;
+        }
+
+        select,
+        .chosen-container {
+            border: 2px solid $primary !important;
+            background: none !important;
+            color: white !important;
+            width: 100%;
+
+            a, ul {
+                padding: 7 20px;
+                background: none;
+                color: white;
+                border: 0px;
+                height: unset;
+            }
+            
+            @include media-breakpoint-down(md) {
+                margin-bottom: 10px;
+            }
+        }
+
+        li.search-field {
+            width: 100%;
+            color: white;
+        }
+        li.search-choice {
+            background: $primary;
+            color: white;
+            border-color: $primary;
+            border-radius: 0px;
+
+            a {
+                padding: 0;
+            }
+        }
+
+        .chosen-drop {
+            background-color: $primary;
+            border-color: $primary;
+
+            .active-result {
+                padding: 10px 2px;
+                border-bottom: 2px solid white;
+            }
+
+            .active-result,
+            .result-selected {
+                padding: 10px 2px;
+                border-bottom: 2px solid white;
+                position: relative;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: none;
+                    color: $secondary;
+                    font-weight: 700;
+                }
+            }
+
+            .result-selected {
+                color: $secondary;
+            }
+        }
+
+        .chosen-search-input {
+            color: white;
+            border: 1px solid white;
+            background: url(../img/Lupe.svg) no-repeat calc(100% - 5px) 5px;
+            background-size: contain;
+            background-size: 15px;
+        }
+
+        input[type="submit"],
+        button {
             padding: 10px 20px;
-            height:44px;
+            height: 45px;
             background: $primary;
             border: 2px solid $primary;
             color: white;
@@ -179,27 +324,25 @@ p {
             @include media-breakpoint-down(md) {
                 width: 100%;
             }
-
         }
     }
 }
 
-.wprm-rating-star,  .wprm-rating-star-selecting-filled {
+.wprm-rating-star,
+.wprm-rating-star-selecting-filled {
     svg * {
         fill: white !important;
         stroke: white !important;
     }
 
-    &.wprm-rating-star-empty, &.wprm-rating-star-selecting-empty {
+    &.wprm-rating-star-empty,
+    &.wprm-rating-star-selecting-empty {
         svg * {
             stroke: white !important;
             fill: none !important;
         }
     }
-
-
 }
-
 
 .container.head {
     h3 {
@@ -218,7 +361,6 @@ p {
             position: relative;
             display: inline-block;
             vertical-align: middle;
-            top: 20px;
         }
 
         &:after {
@@ -231,3 +373,22 @@ p {
         }
     }
 }
+
+.scroll-bar-outer {
+    height: 5px;
+    width: 100vw;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    z-index: 99999;
+
+    
+}
+
+#scroll-bar {
+        background: #C1B19A;
+        width: 0%;
+        height: 100%;
+        transition: .1s all ease-out;
+    }

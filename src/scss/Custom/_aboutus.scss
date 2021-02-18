@@ -15,7 +15,7 @@ section.widget_aboutuswidget {
             max-width: 60%;
             z-index: 999;
             flex: 0 0 60%;
-            padding-top: 50px;
+            // padding-top: 50px;
 
             @include media-breakpoint-down(lg) {
                 max-width: 70%;
@@ -55,42 +55,8 @@ section.widget_aboutuswidget {
 
     h2 {
         text-align: center;
-        margin-bottom: 40px;
+        margin: 70px 0 20px 0 !important;
 
-        @include media-breakpoint-down(sm) {
-            display: flex;
-            white-space: nowrap;
-        }
-
-        &:before, &:after {
-            content: "";
-            width: 100px;
-            height: 2px;
-            background: $secondary;
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 20px;
-
-            @include media-breakpoint-down(xl) {
-                width: 70px;
-            }
-
-            @include media-breakpoint-down(lg) {
-                width: 50px;
-            }
-
-            @include media-breakpoint-down(sm) {
-                    width: -webkit-fill-available;
-                    height: 2px;
-                    background: #c4431c;
-                    content: "";
-                    position: relative;
-                    display: inline-block;
-                    vertical-align: middle;
-                    top: 20px;
-            }
-        }
     }
 
     p {
