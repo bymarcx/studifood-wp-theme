@@ -3,7 +3,6 @@
     background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         url("../img/bg.png");
     background-size: cover;
-    background-position: right;
 
     .totop {
         position: absolute;
@@ -43,21 +42,6 @@
 
         h3 {
             padding: 50px 0 5px;
-            display: flex;
-            white-space: nowrap;
-            position: relative;
-
-            &:after {
-                width: -webkit-fill-available;
-                height: 2px;
-                background: #c4431c;
-                content: "";
-                display: inline-block;
-                position: relative;
-                vertical-align: middle;
-                margin: 0 0 0 30px;
-                align-self: center;
-            }
         }
 
         .col--0 {

@@ -36,7 +36,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12  px-5 py-2" >
+            <div class="col-12 py-2 px-2 px-sm-5" >
             <p><?php echo get_theme_mod('footer_copy_setting', ''); ?></p>
             </div>
         </div>
