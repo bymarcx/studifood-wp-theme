@@ -77,12 +77,10 @@ AOS.init({
 //  var rellax = new Rellax('.rellax');
 
 //if website loaded show content
-$(document).ready(function(){
 
-	$(window).on("load", function() {
+	window.onload = (event) => {
 		$("body").addClass("loaded");
-	});
- });
+  }
 
 
 $(document).ready(function () {

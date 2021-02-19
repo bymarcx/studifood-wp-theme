@@ -55,7 +55,9 @@ h2 {
 
     &:after,
     &:before {
-        width: -webkit-fill-available;
+        width: -moz-available;
+        width: -webkit-fill-available;  
+        width: fill-available;
         height: 4px;
         background: #c4431c;
         content: "";
@@ -110,7 +112,9 @@ h3 {
     }
 
     &:after {
-        width: -webkit-fill-available;
+        width: -moz-available;
+        width: -webkit-fill-available;  
+        width: fill-available;
         height: 2px;
         background: #c4431c;
         content: "";
@@ -354,7 +358,7 @@ p {
 
         &:after,
         &:before {
-            width: -webkit-fill-available;
+            width: fill-available;
             height: 2px;
             background: #c4431c;
             content: "";
