@@ -11,8 +11,18 @@
         width: auto;
         text-align: center;
 
+        @include media-breakpoint-down(sm) {
+            right: unset;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
         span {
             color: white;
+            
+            @include media-breakpoint-down(sm) {
+                font-size: 12px;
+            }
         }
 
         &:before {
@@ -27,6 +37,14 @@
             position: relative;
             top: 15px;
             transition: 0.3s all ease-in-out;
+
+            @include media-breakpoint-down(sm) {
+                width: 25px;
+                height: 25px;
+                border-left: 4px solid white;
+                border-top: 4px solid white;
+            }
+
         }
 
         &:hover:before {
@@ -34,6 +52,12 @@
             transition: 0.3s all ease-in-out;
             border-left: 5px solid $primary;
             border-top: 5px solid $primary;
+
+            @include media-breakpoint-down(sm) {
+                border-left: 4px solid $primary;
+                border-top: 4px solid $primary;
+            }
+
         }
     }
 
@@ -48,6 +72,15 @@
             img {
                 width: 175px;
                 height: auto;
+                margin-left: -50px;
+
+                @include media-breakpoint-down(sm) {
+                    margin-left:0;
+                    top: 50px;
+                    position: relative;
+                    left: 50%;
+                    transform: translate(-50%);
+                }
             }
         }
 

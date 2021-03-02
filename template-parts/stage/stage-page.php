@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <div class="image"> test
+                <div class="image">
 
                     <?php get_template_part('template-parts/stage/headerbar') ?>
 

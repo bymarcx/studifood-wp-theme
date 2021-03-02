@@ -5,66 +5,57 @@
  *
  */
 
-//First get jquery, then popper, then bootstrap
-
-import $ from 'jquery'; 
+import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
- 
+
 import 'popper.js'
 import 'bootstrap';
-
 import 'slick-carousel';
-
 import AOS from 'aos';
 
-import Rellax from 'rellax';
+// AJAX call for filter
+jQuery(function ($) {
 
-// AJAX Filter call
-jQuery(function($){
-	$('#filter').submit(function(){
-		var filter = $('#filter');
-		$.ajax({
-			url:filter.attr('action'),
-			data:filter.serialize(), // form data
-			type:filter.attr('method'), // POST
-			beforeSend:function(xhr){
-				filter.find('button').text('Suchen...'); // changing the button label
-			},
-			success:function(data){
-				filter.find('button').text('Suchen'); // changing the button label back
-				$('#response').html(data); // insert data
-			}
-		});
-		return false;
-	});
+  // Filter call
+  $('#filter').submit(function () {
+    var filter = $('#filter');
+    $.ajax({
+      url: filter.attr('action'),
+      data: filter.serialize(), // form data
+      type: filter.attr('method'), // POST
+      beforeSend: function (xhr) {
+        filter.find('button').text('Suchen...'); // changing the button label
+      },
+      success: function (data) {
+        filter.find('button').text('Suchen'); // changing the button label back
+        $('#response').html(data); // insert data
+      }
+    });
+    return false;
+  });
 
+  // Search call
+  $('#search').submit(function () {
+    var filter = $('#search');
 
+    $.ajax({
+      url: filter.attr('action'),
+      data: filter.serialize(), // form data
+      type: filter.attr('method'), // POST
 
-
-
-  $('#search').submit(function(){
-		var filter = $('#search');
-
-		$.ajax({
-      url:filter.attr('action'),
-			data:filter.serialize(), // form data
-			type:filter.attr('method'), // POST
-
-			beforeSend:function(xhr){
-				filter.find('button').text('Suchen...'); // changing the button label
-			},
-			success:function(data){
-				filter.find('button').text('Suchen'); // changing the button label back
-				$('#response').html(data); // insert data
-			}
-		});
-		return false;
-	});
+      beforeSend: function (xhr) {
+        filter.find('button').text('Suchen...'); // changing the button label
+      },
+      success: function (data) {
+        filter.find('button').text('Suchen'); // changing the button label back
+        $('#response').html(data); // insert data
+      }
+    });
+    return false;
+  });
 
 });
-
-
 
 // Init AnimateOnScroll
 AOS.init({
@@ -74,115 +65,115 @@ AOS.init({
   mirror: true, // whether elements should animate out while scrolling past them
 });
 
-//  var rellax = new Rellax('.rellax');
-
 //if website loaded show content
+window.onload = (event) => {
+  $("body").addClass("loaded");
+}
 
-	window.onload = (event) => {
-		$("body").addClass("loaded");
-  }
 
-
+// ***
 $(document).ready(function () {
 
-    // INIT SLIDER HEADER
-    $('.slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 1500,
-        fade: true,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        responsive: [{
-            breakpoint: 576,
-            settings: {
-                arrows: false
-            }
-        }]
-    });
+  // INIT SLIDER HEADER
+  $('.slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    fade: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [{
+      breakpoint: 576,
+      settings: {
+        arrows: false
+      }
+    }]
+  });
 
-
-    // INIT SLIDER CONTENT
-    $('.sf-slider-wrapper').slick({
-        dots: true,
-        infinite: true,
-        speed: 1500,
-        arrows: true,
-        autoplay: false,
-        slidesToShow: 3,
-        variableWidth: true,
-        infinite: true,
-        slidesToScroll: 3,
-        centerMode: true,
-        autoplaySpeed: 5000,
-        responsive: [{
-            breakpoint: 576,
-            settings: {
-                arrows: true
-            }
-        }]
-    });
-
-
+  // INIT SLIDER CONTENT
+  $('.sf-slider-wrapper').slick({
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    arrows: true,
+    autoplay: false,
+    slidesToShow: 3,
+    variableWidth: true,
+    infinite: true,
+    slidesToScroll: 3,
+    centerMode: true,
+    autoplaySpeed: 5000,
+    responsive: [{
+      breakpoint: 576,
+      settings: {
+        arrows: true
+      }
+    }]
+  });
 
 });
-
-console.log('custom')
-console.log('hallo')
 
 // NAV BUTTON TOGGLE
-$('.nav-btn').click(function() {
-	$('.nav').toggleClass('active');
-	$(this).toggleClass('active');
+$('.nav-btn').click(function () {
+  $('.nav').toggleClass('active');
+  $(this).toggleClass('active');
 });
 
-
 //Nav on scroll
-$(window).scroll(function() {
-
-    if ($(document).scrollTop() > 50) {
-        $("#headerbar").addClass("fixed");
-    }
-    else {
-        $("#headerbar").removeClass("fixed");
-    }
-
-
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 50) {
+    $("#headerbar").addClass("fixed");
+  }
+  else {
+    $("#headerbar").removeClass("fixed");
+  }
 });
 
 // MOBILE NAVBAR
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
-  
-  myFunction();
+
+  // run progressBar
+  progressBar();
 
   var currentScrollPos = window.pageYOffset;
-
   if (currentScrollPos <= (5)) {
     document.getElementById("headerbar").style.top = "0";
     $("#headerbar").removeClass("fixed");
-
   }
   else {
     document.getElementById("headerbar").style.top = "-150px";
-
     $("#headerbar").addClass("fixed");
-
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("headerbar").style.top = "0";
     } else {
       document.getElementById("headerbar").style.top = "-150px";
     }
     prevScrollpos = currentScrollPos;
-
   }
 }
-//Scroll bar
-function myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("scroll-bar").style.width = scrolled + "%";
+
+// Scroll bar function
+function progressBar() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("scroll-bar").style.width = scrolled + "%";
 }
+
+console.log('*** custom.js loaded ***')
+
+
+//jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+  $('.page-scroll').bind('click', function(event) {
+      var $anchor = $(this);
+      $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top - 150
+      }, 1500, 'easeInOutExpo');
+      event.preventDefault();
+  });
+});
+

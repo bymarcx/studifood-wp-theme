@@ -17,7 +17,7 @@ $wp_customize->add_section( 'footer_options', array(
 $wp_customize->add_setting(
     'footer_copy_setting',
     array(
-        'default' => 'StudiFood izz da!',
+        'default' => '(C) - All rights reserved!',
     )
 );
 
@@ -32,8 +32,6 @@ $wp_customize->add_control( new WP_Customize_Control(
         'type'       => 'text',
     )
 ));
-
-
 
 
 }

@@ -17,7 +17,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        <?php dynamic_sidebar('home'); ?>
+        <?php if ( is_active_sidebar( 'home' ) ): ?>
+            <?php dynamic_sidebar( 'home' ); ?>
+        <?php endif; ?>
         </div>
     </div>
 </div>

@@ -51,7 +51,7 @@
                                         <div class="col-12">
                                             <?php
 
-                                            echo ("<h1>" . $recipe->name() . "</h1>");
+                                            echo ("<h1 class=\"h1-recipe\"><span>" . $recipe->name() . "</span></h1>");
                                             ?>
                                         </div>
                                     </div>

@@ -67,6 +67,10 @@ section.widget_aboutuswidget {
         @include media-breakpoint-down(sm) {
             padding: 20px;
         }
+
+        @include media-breakpoint-down(xs) {
+            padding: 0px;
+        }
     }
 
 

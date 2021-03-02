@@ -21,6 +21,7 @@
         </div>
     </div>
 </section> -->
+
 <div class="searchbar">
     <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="search">
         <input type="text" name="keyword" id="keyword" placeholder="Suche..."></input>
@@ -128,8 +129,6 @@
 
             //echo 'result';
             //var_dump ($recipe);
-            //echo $recipe->name();
-            //echo $recipe->image();
             include(locate_template('./template-parts/content/recipe-loop.php', false, false));
             // get_template_part('template-parts/content/recipe-loop', $post_id); 
         }

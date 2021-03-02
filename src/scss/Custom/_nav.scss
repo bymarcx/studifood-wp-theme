@@ -2,7 +2,6 @@ nav.nav {
     position: fixed;
     width: 100%;
     visibility: hidden;
-    transition: all 0.3s ease;
     height: 0%;
     top: 0;
     left: 0;
@@ -10,7 +9,16 @@ nav.nav {
     z-index: 15;
     opacity: 0;
     overflow-y: scroll;
-    transition: 0.6s all ease;
+    transition: 1.5s all ease;
+    transition-delay: 0.0s;
+    background: $secondary
+        linear-gradient(
+            to top,
+            rgba(20, 20, 20, 0) 0%,
+            rgba(20, 20, 20, 0.3) 30%,
+            rgba(20, 20, 20, 0.7) 70%,
+            #141414 100%
+        );
 
     &::-webkit-scrollbar {
         display: none;
@@ -32,7 +40,7 @@ nav.nav {
             top: 50%;
             position: relative;
             opacity: 0;
-            transition: 0.5s 1s all ease;
+            transition: 0.5s all ease;
 
             @include media-breakpoint-down(lg) {
                 margin-bottom: 30px;
@@ -96,25 +104,111 @@ nav.active {
     height: 100%;
     background: $secondary
         linear-gradient(
-            to bottom,
+            to top,
             rgba(20, 20, 20, 0) 0%,
             rgba(20, 20, 20, 0.3) 30%,
             rgba(20, 20, 20, 0.7) 70%,
             #141414 100%
         );
     z-index: 9999;
-    transition: all 0.3s ease;
 
     opacity: 1;
     height: 100%;
-    transition: 0.6s all ease;
+    transition: .8s all ease;
 
-    ul {
-        li {
+    // ul {
+    //     li {
+    //         opacity: 1;
+    //         transition: 0.5s 1s all ease;
+    //         top: 10%;
+    //         position: relative;
+    //     }
+    // }
+
+    @for $i from 1 through 10 {
+        ul li:nth-child(#{$i}) {
+            transition:  calc( 0.5s * #{$i} ) all ease;
+            transition-delay: calc( 0.2s * #{$i} ) ;
             opacity: 1;
-            transition: 0.5s 1s all ease;
-            top: 10%;
+            top: 100%;
             position: relative;
+
+            @include media-breakpoint-down(md) {
+                top: 0px;
+            }
         }
     }
 }
+
+
+
+
+/********************************************************/
+/*** OVERLAY ********************************************/
+/********************************************************/
+
+.overlayclick {
+	position: fixed;
+	z-index: 9999;
+    background: $secondary
+        linear-gradient(
+            to top,
+            rgba(20, 20, 20, 0) 0%,
+            rgba(20, 20, 20, 0.3) 30%,
+            rgba(20, 20, 20, 0.7) 70%,
+            #141414 100%
+        );
+	top: 0;
+	height: 0;
+	width: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: block
+}
+
+.overlay {
+	position: fixed;
+    background: $secondary
+        linear-gradient(
+            to top,
+            rgba(20, 20, 20, 0) 0%,
+            rgba(20, 20, 20, 0.3) 30%,
+            rgba(20, 20, 20, 0.7) 70%,
+            #141414 100%
+        );
+	z-index: 9999;
+	top: 0;
+	height: 100%;
+	width: 100%;
+    left: 0;
+    opacity: 1;
+	overflow: hidden;
+}
+
+.overlaymenu {
+	position: fixed;
+    background: $secondary
+        linear-gradient(
+            to top,
+            rgba(20, 20, 20, 0) 0%,
+            rgba(20, 20, 20, 0.3) 30%,
+            rgba(20, 20, 20, 0.7) 70%,
+            #141414 100%
+        );
+	z-index: 99999;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+   	left: 0;
+	display: none;
+}
+
+.loaded .overlay {
+    animation: overlayAnimation 1.2s;
+    height: 0; 
+    opacity: 0;
+}
+
+@keyframes overlayAnimation {0% {height: 100%; opacity: 1;}  100% {height: 0; opacity: 0;}}
+

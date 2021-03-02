@@ -46,8 +46,8 @@
 
                                                 <?php
                                         
-                                        ?><h1 class="rellax" data-rellax-speed="7"><?php bloginfo('description'); ?></h1><?php
-                                        echo ("<p class=\"rellax\" data-rellax-speed=\"5\"><span>" . $recipe->name() . "</span></p>");         
+                                        ?><h1><?php bloginfo('description'); ?></h1><?php
+                                        echo ("<p ><span>" . $recipe->name() . "</span></p>");         
                                                 
 ?>
 </div>

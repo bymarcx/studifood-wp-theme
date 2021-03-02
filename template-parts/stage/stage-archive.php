@@ -39,7 +39,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <h1 data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="800">Alle Rezepte</h1>
+                                <h1>Alle Rezepte</h1>
                             </div>
                         </div>
                     </div>

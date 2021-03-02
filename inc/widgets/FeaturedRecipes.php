@@ -40,7 +40,7 @@ class FeaturedRecipesWidget extends WP_Widget
                         echo("<div class=\"col-md-0 col-xxl-3\"></div>"); 
 
                         echo("<div class=\" col-md-12 col-lg-4 col-xxl-3 all-recipes\" data-aos=\"fade-up\"><div class=\"all-recipes-inner\">");
-                            echo("<a href=\"rezepte\" class=\"btn btn-secondary\">Alle Rezepte</a>");
+                            echo("<a href=\"./rezepte\" class=\"btn btn-secondary\">Alle Rezepte</a>");
                         echo("</div></div>");
 
 
@@ -58,7 +58,7 @@ class FeaturedRecipesWidget extends WP_Widget
         while ($the_query->have_posts()) : $the_query->the_post();
         
         echo("<div class=\"col-lg-4  col-xxl-3 recipe-card\" data-aos=\"fade-up\">");
-        echo("<a href=\" ");  the_permalink(); echo(" \">");     
+        echo("<a href=\"");the_permalink(); echo("\">");     
             // Get the recipes inside the current post.
             $recipes = WPRM_Recipe_Manager::get_recipe_ids_from_post();
 

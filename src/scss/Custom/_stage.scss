@@ -67,7 +67,8 @@ section.stage {
             bottom: 180px;
             left: -20%;
             opacity: 0;
-            transition: all 0.3s ease-in-out;
+            transition: left 0.3s ease-in-out;
+            transition-delay: 1.5s;
             position: absolute;
 
             @include media-breakpoint-down(xxl) {
@@ -90,6 +91,23 @@ section.stage {
                 font-size: 40px;
                 margin-left: 20px;
             }
+
+
+            &.h1-recipe {
+                span {
+                    background-color: rgba($darkorange, 1);
+                    padding: 10px 15px;
+                    line-height: 1.4;
+                    box-decoration-break: clone;
+                    -webkit-box-decoration-break: clone;
+
+                    @include media-breakpoint-down(md) {
+                        line-height: 1.5;
+                    }
+
+                }
+            }
+
         }
     }
 
@@ -218,25 +236,29 @@ section.stage {
 body.loaded {
     section.stage {
         h1 {
-            left: 00%;
+            left: 0%;
             transition: all 1.5s ease-in-out;
+            transition-delay: 0.5s;
             opacity: 1;
         }
     }
 }
-
+//*************************//
 // *** SLIDER ON STAGE *** //
+//*************************//
 body.loaded {
     section.stage.slide {
         h1,
         p {
-            left: 00%;
+            left: 0%;
             transition: all 1.5s ease-in-out;
+            transition-delay: 1.0s;
             opacity: 1;
         }
 
         p {
             transition: all 1.9s ease-in-out;
+            transition-delay: 1.0s;
         }
 
         .btn,
@@ -352,11 +374,13 @@ section.stage.slide {
             width: calc(100% - 50px);
             line-height: 45px;
             left: 20px;
+            margin-left: 20px;
         }
 
         @include media-breakpoint-down(xs) {
             margin-left: 20px;
             bottom: 25%;
+            line-height: 35px;
         }
 
         span {
