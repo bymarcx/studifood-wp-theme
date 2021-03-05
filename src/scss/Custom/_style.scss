@@ -45,34 +45,44 @@ button {
 }
 
 h2 {
-    text-align: center;
-    position: relative;
-    display: flex;
-    white-space: nowrap;
+    // text-align: center;
+    // position: relative;
+    // display: flex;
+    // white-space: nowrap;
     margin: 70px 0 50px 0 !important;
     font-size: 55px;
 
+    display: grid;
+    grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+    align-items: center;
+    text-align: center;
+    grid-gap: 20px;
+    width: 100%;
+
     &:after,
     &:before {
-        width: -moz-available;
-        width: -webkit-fill-available;
-        width: fill-available;
-        height: 4px;
-        background: #c4431c;
+        // width: -moz-available;
+        // width: -webkit-fill-available;
+        // width: fill-available;
+        // height: 4px;
+        // background: #c4431c;
+        // content: "";
+        // position: relative;
+        // display: inline-block;
+        // vertical-align: middle;
+        // align-self: center;
+
         content: "";
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        align-self: center;
+        border-top: 2px solid $secondary;
     }
 
-    &:after {
-        margin-left: 30px;
-    }
+    // &:after {
+    //     margin-left: 30px;
+    // }
 
-    &:before {
-        margin-right: 30px;
-    }
+    // &:before {
+    //     margin-right: 30px;
+    // }
 }
 
 h2 {
@@ -92,11 +102,18 @@ h2 {
 }
 
 h3 {
-    position: relative;
-    display: flex;
-    white-space: nowrap;
+    // position: relative;
+    // display: flex;
+    // white-space: nowrap;
     margin: 30px 0 40px 0 !important;
     font-size: 30px;
+
+    display: grid;
+    grid-template-columns: auto minmax(20px, 1fr);
+    align-items: center;
+    text-align: center;
+    grid-gap: 20px;
+    width: 100%;
 
     @include media-breakpoint-down(xl) {
         font-size: 30px;
@@ -111,22 +128,25 @@ h3 {
     }
 
     &:after {
-        width: -moz-available;
-        width: -webkit-fill-available;
-        width: fill-available;
-        height: 2px;
-        background: #c4431c;
         content: "";
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 30px;
-        align-self: center;
+        border-top: 2px solid $secondary;
+
+        // width: -moz-available;
+        // width: -webkit-fill-available;
+        // width: fill-available;
+        // height: 2px;
+        // background: #c4431c;
+        // content: "";
+        // position: relative;
+        // display: inline-block;
+        // vertical-align: middle;
+        // margin-left: 30px;
+        // align-self: center;
     }
 
-    &:before {
-        align-self: center;
-    }
+    // &:before {
+    //     align-self: center;
+    // }
 }
 
 p {
@@ -350,30 +370,40 @@ p {
 .container.head {
     h3 {
         text-align: center;
-        position: relative;
-        display: flex;
-        white-space: nowrap;
+        // position: relative;
+        // display: flex;
+        // white-space: nowrap;
         margin: 70px 0 00px 0;
+
+        display: grid;
+        grid-template-columns: minmax(20px, 50px) auto minmax(20px, 1fr);
+        align-items: center;
+        text-align: center;
+        grid-gap: 20px;
+        width: 100%;
 
         &:after,
         &:before {
-            width: fill-available;
-            height: 2px;
-            background: #c4431c;
+            // width: fill-available;
+            // height: 2px;
+            // background: #c4431c;
+            // content: "";
+            // position: relative;
+            // display: inline-block;
+            // vertical-align: middle;
+
             content: "";
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
+            border-top: 2px solid $secondary;
         }
 
-        &:after {
-            margin-left: 30px;
-        }
+        // &:after {
+        //     margin-left: 30px;
+        // }
 
-        &:before {
-            margin-right: 20px;
-            width: 50px;
-        }
+        // &:before {
+        //     margin-right: 20px;
+        //     width: 50px;
+        // }
     }
 }
 
@@ -393,7 +423,6 @@ p {
     height: 100%;
     transition: 0.1s all ease-out;
 }
-
 
 // PAGE TEMPLATE :: TEXT ONLY
 
