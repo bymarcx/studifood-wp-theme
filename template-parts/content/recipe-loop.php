@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="container all-recipe-card" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="800">
+<div class="container all-recipe-card" data-aos="fade-up">
     <div class="row">
 
         <?php  // Get the recipes inside the current post.

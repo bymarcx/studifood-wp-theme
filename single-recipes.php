@@ -19,7 +19,7 @@
 
 
 
-        <section class="stage">
+        <section class="stage single">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12">

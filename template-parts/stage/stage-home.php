@@ -36,27 +36,26 @@
                                 if (isset($recipes[0])) {
                                     $recipe_id = $recipes[0];
                                     $recipe = WPRM_Recipe_Manager::get_recipe($recipe_id);
-                                        // Output the recipe name.
-                                        ?><a class="btn btn-primary" href="<?php the_permalink(); ?>">Rezept ansehen</a><?php
+                                    // Output the recipe name.
+                                ?><a class="btn btn-primary" href="<?php the_permalink(); ?>">Rezept ansehen</a><?php
 
-                                        ?> 
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-
-                                                <?php
-                                        
-                                        ?><h1><?php bloginfo('description'); ?></h1><?php
-                                        echo ("<p ><span>" . $recipe->name() . "</span></p>");         
-                                                
-?>
-</div>
+                                                                                                                ?>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="headline">
+                                                    <h1><?php bloginfo('description'); ?></h1>
+                                                    <?php
+                                                    echo ("<p><span>" . $recipe->name() . "</span></p>");
+                                                    ?>
+                                                </div>
                                             </div>
                                         </div>
-                                        <?php
+                                    </div>
+                                <?php
 
-                                        echo ("<div class=\"img_overlay\"></div>");
-                                        echo $recipe->image(1920, 1080);
+                                    echo ("<div class=\"img_overlay\"></div>");
+                                    echo $recipe->image(1920, 1080);
                                 }
                                 ?>
 

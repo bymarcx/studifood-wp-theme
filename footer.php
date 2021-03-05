@@ -18,26 +18,26 @@
 
     <div class="container container--1">
         <div class="row">
-            <div class="col-12 col--0" data-aos="fade-right">
+            <div class="col-12 col--0">
                 <?php the_custom_logo(); ?>
             </div>
-            <div class="col--1 col-md-7 col-lg-8" data-aos="fade-right">
+            <div class="col--1 col-md-7 col-lg-8">
                 <div class="inner">
                     <?php dynamic_sidebar('footerLeft'); ?>
                 </div>
             </div>
-            <div class="col--2 col-md-5 col-lg-4" data-aos="fade-right" data-aos-delay="200">
+            <div class="col--2 col-md-5 col-lg-4">
                 <?php dynamic_sidebar('footerRight'); ?>
                 <!-- <div><a href="https://bymarc.media"><strong>BYMARC</strong>.media</a></div> -->
             </div>
-            <div class="col--3 col-12" data-aos="fade-right">
+            <div class="col--3 col-12">
                 <?php dynamic_sidebar('footerBottom'); ?>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 py-2 px-2 px-sm-5">
+            <div class="col-12 footer-copy">
                 <p><?php echo get_theme_mod('footer_copy_setting', ''); ?></p>
             </div>
         </div>
@@ -79,7 +79,7 @@
     });
 
     //get all internal links
-    var siteURL = "http://" + top.location.host.toString();
+    var siteURL = "https://" + top.location.host.toString();
     var $internalLinks = $("a[href^='" + siteURL + "'], a[href^='/'], a[href^='./'], a[href^='../']").addClass('animatelink');
 
 </script>

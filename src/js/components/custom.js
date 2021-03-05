@@ -59,10 +59,10 @@ jQuery(function ($) {
 
 // Init AnimateOnScroll
 AOS.init({
-  duration: 800, // values from 0 to 3000, with step 50ms
+  duration: 1800, // values from 0 to 3000, with step 50ms
   debounceDelay: 0, // the delay on debounce used while resizing window (advanced)
   throttleDelay: 0, // the delay on throttle used while scrolling the page (advanced)
-  mirror: true, // whether elements should animate out while scrolling past them
+  mirror: false, // whether elements should animate out while scrolling past them
 });
 
 //if website loaded show content
@@ -136,7 +136,13 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
 
   // run progressBar
-  progressBar();
+  if(window.innerWidth >= 768) {
+    progressBar();
+  }
+  else {
+    document.getElementById("scroll-bar").style.width = 0 + "%";
+  }
+  
 
   var currentScrollPos = window.pageYOffset;
   if (currentScrollPos <= (5)) {

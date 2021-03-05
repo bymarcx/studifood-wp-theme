@@ -3,6 +3,10 @@ section.stage {
         padding: 0;
     }
 
+    .container-fluid {
+        overflow: hidden;
+    }
+
     .container {
         position: absolute;
         z-index: 99;
@@ -40,17 +44,8 @@ section.stage {
         }
 
         .img_overlay {
-            background: linear-gradient(
-                    to bottom,
-                    rgba($background, 0) 60%,
-                    rgba($background, 1) 100%
-                ),
-                linear-gradient(
-                    to left,
-                    rgba(black, 0) 40%,
-                    rgba(black, 0.5) 70%,
-                    rgba(black, 0.9) 100%
-                );
+            background: linear-gradient(to bottom, rgba($background, 0) 60%, rgba($background, 1) 100%),
+                linear-gradient(to left, rgba(black, 0) 40%, rgba(black, 0.5) 70%, rgba(black, 0.9) 100%);
             position: absolute;
             top: 0;
             bottom: 0;
@@ -64,12 +59,11 @@ section.stage {
             z-index: 999;
             font-weight: 600;
             font-size: 80px;
-            bottom: 180px;
-            left: -20%;
+            margin-top: 17vh;
             opacity: 0;
-            transition: left 0.3s ease-in-out;
-            transition-delay: 1.5s;
-            position: absolute;
+            transition: transform 4s ease, opacity 4s ease;
+            transition-delay: 0.5s;
+            transform: translate(-50px, 0);
 
             @include media-breakpoint-down(xxl) {
                 font-size: 60px;
@@ -92,7 +86,6 @@ section.stage {
                 margin-left: 20px;
             }
 
-
             &.h1-recipe {
                 span {
                     background-color: rgba($darkorange, 1);
@@ -104,10 +97,8 @@ section.stage {
                     @include media-breakpoint-down(md) {
                         line-height: 1.5;
                     }
-
                 }
             }
-
         }
     }
 
@@ -119,6 +110,7 @@ section.stage {
         transition: 0.3s all ease-in-out;
         display: flex;
         justify-content: space-between;
+        top: 0px;
     }
 
     .headerbar.fixed {
@@ -233,39 +225,83 @@ section.stage {
     }
 }
 
-body.loaded {
-    section.stage {
-        h1 {
-            left: 0%;
-            transition: all 1.5s ease-in-out;
-            transition-delay: 0.5s;
-            opacity: 1;
-        }
-    }
-}
 //*************************//
 // *** SLIDER ON STAGE *** //
 //*************************//
+
+section.stage {
+    h1 {
+        transition: transform 3s ease, opacity 4s ease;
+        transition-delay: 0.5s;
+        transform: translate(-50px, 0);
+    }
+
+    p {
+        transform: translate(-50px, 00px);
+        transition: transform 4s ease, opacity 4s ease;
+        transition-delay: 0.5s !important;
+        opacity: 0;
+    }
+
+    img {
+        transform: scale(1.05);
+        transform-origin: left center;
+        transition: transform 3s ease;
+    }
+}
+
 body.loaded {
     section.stage.slide {
-        h1,
-        p {
-            left: 0%;
-            transition: all 1.5s ease-in-out;
-            transition-delay: 1.0s;
-            opacity: 1;
+        h1 {
+            transition: transform 4s ease, opacity 4s ease;
+            transform: translate(0, 0);
         }
 
         p {
-            transition: all 1.9s ease-in-out;
-            transition-delay: 1.0s;
+            transform: translate(-10px, 00px);
+            transition: transform 4s ease, opacity 4s ease;
+            opacity: 0;
+        }
+
+        img {
+            transform: scale(1.05);
+            transform-origin: left center;
+            transition: transform 3s ease;
+        }
+
+        .slick-current {
+            img {
+                transform: scale(1);
+            }
+
+            p {
+                transform: translate(0, 0) !important;
+                opacity: 1;
+            }
         }
 
         .btn,
         .slick-dots,
         .headerbar {
             opacity: 1;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in;
+        }
+    }
+}
+
+body.loaded {
+    section.stage {
+        h1 {
+            transform: translate(0, 0);
+            transition-delay: 0.5s;
+            opacity: 1;
+            transition: transform 3s ease, opacity 4s ease;
+        }
+
+        img {
+            transform: scale(1);
+            transform-origin: left center;
+            transition: transform 3s ease;
         }
     }
 }
@@ -290,14 +326,18 @@ section.stage.slide {
         height: 100vh;
     }
 
+    .headline {
+        display: flex;
+        height: 100%;
+        padding: 120px 0 200px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     h1 {
         width: 50%;
-        opacity: 0;
-        top: 18%;
-        left: -20%;
-        transition: all 0.3s ease-in-out;
-
-        position: absolute;
+        padding-bottom: 30px;
+        margin: 0 !important;
 
         @include media-breakpoint-down(xxl) {
             font-size: 60px;
@@ -322,50 +362,46 @@ section.stage.slide {
 
         @include media-breakpoint-down(sm) {
             font-size: 40px;
-            width: 100%;
+            width: 60%;
 
-            width: calc(100% - 70px);
-            left: 20px;
+            margin-left: 20px !important;
         }
 
         @include media-breakpoint-down(xs) {
+            width: 100%;
+            width: calc(100% - 70px);
+
             font-size: 30px;
-            margin-left: 20px;
+            margin-left: 20px !important;
         }
     }
 
     p {
-        position: absolute;
         z-index: 11;
-        bottom: 20%;
         font-weight: 400;
-        font-size: 53px;
-        line-height: 70px;
+        font-size: 36px;
+        line-height: 55px;
         margin-bottom: 0%;
         width: 40%;
 
-        opacity: 0;
-        left: -20%;
-        transition: all 0.5s ease-in-out;
-
         @include media-breakpoint-down(xxl) {
-            font-size: 40px;
+            font-size: 32px;
             width: 40%;
-            line-height: 60px;
+            line-height: 50px;
         }
 
         @include media-breakpoint-down(xl) {
-            font-size: 40px;
+            font-size: 32px;
             width: 50%;
         }
 
         @include media-breakpoint-down(lg) {
-            font-size: 40px;
+            font-size: 32px;
             width: 60%;
         }
 
         @include media-breakpoint-down(md) {
-            font-size: 35px;
+            font-size: 28px;
             width: 75%;
         }
 
@@ -391,11 +427,18 @@ section.stage.slide {
         }
     }
 
+    img {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+
     .slick-dots {
         bottom: 20px;
         left: 50px;
         display: flex;
         opacity: 0;
+        width: auto;
 
         li {
             margin: 10px;
@@ -472,5 +515,17 @@ section.stage.slide {
             left: 15px;
             bottom: 20px;
         }
+    }
+}
+
+.stage.single {
+    .container-fluid {
+        height: 100vh;
+    }
+    .col-12 {
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+        padding-bottom: 17vh;
     }
 }
