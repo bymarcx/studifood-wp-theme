@@ -157,6 +157,13 @@ function tu_filter_comment_fields( $fields ) {
     return $fields;
 }
 
+// Change submit button text in wordpress comment form
+function wcs_change_submit_button_text( $defaults ) {
+    $defaults['label_submit'] = 'Kommentieren';
+    return $defaults;
+}
+add_filter( 'comment_form_defaults', 'wcs_change_submit_button_text' );
+
 // *** FLUSH REWRITE RULES FOR CHANGING CPT SLUG ***//
 // flush_rewrite_rules();
 

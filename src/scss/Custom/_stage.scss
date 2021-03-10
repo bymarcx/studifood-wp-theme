@@ -86,16 +86,20 @@ section.stage {
                 margin-left: 20px;
             }
 
+            @include media-breakpoint-down(xs) {
+                font-size: 30px;
+            }
+
             &.h1-recipe {
                 span {
                     background-color: rgba($darkorange, 1);
                     padding: 10px 15px;
-                    line-height: 1.4;
+                    line-height: 1.2;
                     box-decoration-break: clone;
                     -webkit-box-decoration-break: clone;
 
                     @include media-breakpoint-down(md) {
-                        line-height: 1.5;
+                        line-height: 1.3;
                     }
                 }
             }
@@ -250,7 +254,7 @@ section.stage {
     }
 }
 
-body.loaded {
+body.animate {
     section.stage.slide {
         h1 {
             transition: transform 4s ease, opacity 4s ease;
@@ -289,7 +293,7 @@ body.loaded {
     }
 }
 
-body.loaded {
+body.animate {
     section.stage {
         h1 {
             transform: translate(0, 0);
@@ -527,5 +531,13 @@ section.stage.slide {
         height: 100%;
         align-items: flex-end;
         padding-bottom: 17vh;
+    }
+}
+
+#breadcrumbs {
+    margin-top: 10px;
+
+    a, .breadcrumb_last {
+        margin: 0 10px;
     }
 }

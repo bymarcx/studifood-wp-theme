@@ -1,12 +1,14 @@
-@font-face {
-    font-family: "Rockwell1";
-    src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot");
-    src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot?#iefix") format("embedded-opentype"),
-        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff2") format("woff2"),
-        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff") format("woff"),
-        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.ttf") format("truetype"),
-        url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.svg#Rockwell") format("svg");
-}
+// @font-face {
+//     font-family: "rockwell";
+//     src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot");
+//     src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot?#iefix") format("embedded-opentype"),
+//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff2") format("woff2"),
+//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff") format("woff"),
+//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.ttf") format("truetype"),
+//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.svg#Rockwell") format("svg");
+// }
+
+@import url("https://use.typekit.net/wvy7edt.css");  // rockwell
 
 @font-face {
     font-family: "Segoe Print1";
@@ -19,11 +21,18 @@
 }
 
 body {
-    font-family: Rockwell, "Rockwell1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
+    font-family: Rockwell, rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
     overflow-x: hidden;
 
     height: 100%;
     width: 100%;
+}
+
+#wpadminbar {
+    p, a {
+        font-weight: unset !important;
+        font-family: unset !important;
+    }
 }
 
 h2,
@@ -41,7 +50,7 @@ p,
 label,
 a,
 button {
-    font-family: Rockwell, "Rockwell1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif !important;
+    font-family: Rockwell, rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif !important;
 }
 
 h2 {
@@ -152,6 +161,7 @@ h3 {
 p {
     line-height: 1.6;
     font-size: 20px;
+    font-weight: 100;
 
     @include media-breakpoint-down(md) {
         font-size: 16px;
@@ -176,6 +186,9 @@ p {
     background: none;
     text-transform: uppercase;
     transition: 0.3s all ease-in-out;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
 
     &:after {
         content: "";

@@ -7,6 +7,7 @@
  *
  */
 ?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
 <head>
@@ -34,9 +35,9 @@
 
 <body id="top">
     
-    <div class="overlaymenu"></div>
+    <!-- <div class="overlaymenu"></div>
     <div class="overlayclick"></div>
-    <div class="overlay"></div>
+    <div class="overlay"></div> -->
 
     <div class="scroll-bar-outer" id="scroll-bar-outer-id">
         <div id="scroll-bar"></div>

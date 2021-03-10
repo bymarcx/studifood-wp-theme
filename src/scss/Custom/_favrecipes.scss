@@ -127,7 +127,7 @@ section.widget_featuredrecipeswidget {
         bottom: 10px;
         left: 45px;
         width: 60%;
-        font-weight: 700;
+        font-weight: 400 !important;
         font-size: 20px;
 
         @include media-breakpoint-down(sm) {

@@ -66,10 +66,20 @@ AOS.init({
 });
 
 //if website loaded show content
-window.onload = (event) => {
-  $("body").addClass("loaded");
-}
 
+$(document).ready(function () {
+  // window.onload = (event) => {
+  //   $("body").addClass("loaded");
+  //   // $("body").addClass("animate");
+  // }
+
+  // LOADING FADE ANIMATIONS
+  setTimeout(function () {
+       $("body").addClass("animate");
+    //$("body").addClass("loaded");
+  }, 10);
+
+});
 
 // ***
 $(document).ready(function () {
@@ -136,13 +146,13 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
 
   // run progressBar
-  if(window.innerWidth >= 768) {
+  if (window.innerWidth >= 768) {
     progressBar();
   }
   else {
     document.getElementById("scroll-bar").style.width = 0 + "%";
   }
-  
+
 
   var currentScrollPos = window.pageYOffset;
   if (currentScrollPos <= (5)) {
@@ -173,13 +183,13 @@ console.log('*** custom.js loaded ***')
 
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-  $('.page-scroll').bind('click', function(event) {
-      var $anchor = $(this);
-      $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top - 150
-      }, 1500, 'easeInOutExpo');
-      event.preventDefault();
+$(function () {
+  $('.page-scroll').bind('click', function (event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top - 150
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
   });
 });
 

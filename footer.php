@@ -57,30 +57,30 @@
         disable_search_threshold: 10
     });
 
-    $(document).ready(function() {
-        $(".animatelink").click(function(e) {
-            e.preventDefault();
-            $link = $(this).attr("href");
-            $(".overlayclick").animate({
-                height: '100%',
-                opacity: 1
-            }, 500, function() {
-                window.location = $link;
-            });
-        });
+    // $(document).ready(function() {
+    //     $(".animatelink").click(function(e) {
+    //         e.preventDefault();
+    //         $link = $(this).attr("href");
+    //         $(".overlayclick").animate({
+    //             height: '100%',
+    //             opacity: 1
+    //         }, 500, function() {
+    //             window.location = $link;
+    //         });
+    //     });
 
-        $(".animatemenu").click(function(e) {
-            e.preventDefault();
-            $link = $(this).attr('href');
-            $(".overlaymenu").hide().fadeIn(250, function() {
-                window.location = $link;
-            });
-        });
-    });
+    //     $(".animatemenu").click(function(e) {
+    //         e.preventDefault();
+    //         $link = $(this).attr('href');
+    //         $(".overlaymenu").hide().fadeIn(250, function() {
+    //             window.location = $link;
+    //         });
+    //     });
+    // });
 
-    //get all internal links
-    var siteURL = "https://" + top.location.host.toString();
-    var $internalLinks = $("a[href^='" + siteURL + "'], a[href^='/'], a[href^='./'], a[href^='../']").addClass('animatelink');
+    // //get all internal links
+    // var siteURL = "https://" + top.location.host.toString();
+    // var $internalLinks = $("a[href^='" + siteURL + "'], a[href^='/'], a[href^='./'], a[href^='../']").addClass('animatelink');
 
 </script>
 
