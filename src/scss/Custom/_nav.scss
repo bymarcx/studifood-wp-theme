@@ -8,7 +8,7 @@ nav.nav {
     right: 0;
     z-index: 15;
     opacity: 0;
-    overflow-y: scroll;
+    overflow-y: hidden;
     transition: 1.5s all ease;
     transition-delay: 0.0s;
     background: $secondary
@@ -112,26 +112,15 @@ nav.active {
             #141414 100%
         );
     z-index: 9999;
-
     opacity: 1;
-    height: 100%;
     transition: .8s all ease;
-
-    // ul {
-    //     li {
-    //         opacity: 1;
-    //         transition: 0.5s 1s all ease;
-    //         top: 10%;
-    //         position: relative;
-    //     }
-    // }
 
     @for $i from 1 through 10 {
         ul li:nth-child(#{$i}) {
             transition:  calc( 0.5s * #{$i} ) all ease;
             transition-delay: calc( 0.2s * #{$i} ) ;
             opacity: 1;
-            top: 100%;
+            // top: 100%;
             position: relative;
 
             @include media-breakpoint-down(md) {

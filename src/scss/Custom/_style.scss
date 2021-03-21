@@ -8,7 +8,7 @@
 //         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.svg#Rockwell") format("svg");
 // }
 
-@import url("https://use.typekit.net/wvy7edt.css");  // rockwell
+@import url("https://use.typekit.net/wvy7edt.css"); // rockwell
 
 @font-face {
     font-family: "Segoe Print1";
@@ -29,7 +29,8 @@ body {
 }
 
 #wpadminbar {
-    p, a {
+    p,
+    a {
         font-weight: unset !important;
         font-family: unset !important;
     }
@@ -120,7 +121,6 @@ h3 {
     display: grid;
     grid-template-columns: auto minmax(20px, 1fr);
     align-items: center;
-    text-align: center;
     grid-gap: 20px;
     width: 100%;
 
@@ -258,7 +258,11 @@ p {
 
         li.filterbarli {
             width: 100%;
-            margin-left: 10px;
+            width: -moz-available;          /* WebKit-based browsers will ignore this. */
+            width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            width: fill-available;
+           margin-left: 10px;
+            margin-top: 10px;
 
             @include media-breakpoint-down(md) {
                 display: block;
@@ -269,6 +273,7 @@ p {
 
         li.filterbarli:first-of-type {
             margin: 0;
+            margin-top: 10px;
         }
 
         select,
@@ -280,7 +285,7 @@ p {
 
             a,
             ul {
-                padding: 7 20px;
+                padding: 7px 20px;
                 background: none;
                 color: white;
                 border: 0px;
@@ -442,5 +447,11 @@ p {
 section.template-text {
     h4 {
         margin-top: 50px;
+    }
+}
+
+#page404 {
+    p {
+        text-align: center !important;
     }
 }
