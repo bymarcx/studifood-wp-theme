@@ -30,9 +30,19 @@ function _customtheme_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => __('FooterBottom', '_customtheme'),
+        'name' => __('FooterBottomRight', '_customtheme'),
         'id' => 'footerbottom-sidebar-area',
-        'description' => __('Footer Bottom :: Images', '_customtheme'),
+        'description' => __('Footer Bottom :: Logos :: Left ', '_customtheme'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('FooterBottomLeft', '_customtheme'),
+        'id' => 'footerbottom2-sidebar-area',
+        'description' => __('Footer Bottom :: Logos :: Right', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h3 class="widget-title">',

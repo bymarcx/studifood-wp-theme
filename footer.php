@@ -31,7 +31,15 @@
                 <!-- <div><a href="https://bymarc.media"><strong>BYMARC</strong>.media</a></div> -->
             </div>
             <div class="col--3 col-12">
-                <?php dynamic_sidebar('footerBottom'); ?>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <?php dynamic_sidebar('footerBottomRight'); ?>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <?php dynamic_sidebar('footerBottomLeft'); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -81,7 +89,6 @@
     // //get all internal links
     // var siteURL = "https://" + top.location.host.toString();
     // var $internalLinks = $("a[href^='" + siteURL + "'], a[href^='/'], a[href^='./'], a[href^='../']").addClass('animatelink');
-
 </script>
 
 <!-- SEE YOU LATER ALLIGATOR! -->
