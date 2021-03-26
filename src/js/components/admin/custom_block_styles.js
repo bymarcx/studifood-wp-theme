@@ -1,14 +1,11 @@
 wp.domReady( () => {
 
-    wp.blocks.registerBlockStyle( 'advanced-bootstrap-blocks/container', [
+    wp.blocks.registerBlockStyle( 'core/button', [
+
         {
-            name: 'default',
-            label: 'Default',
+            name: 'sf-btn-sec',
+            label: 'StudiFood :: Secondary',
             isDefault: true,
-        },
-        {
-            name: 'bymarc',
-            label: 'Bymarc',
         }
     ]);
 

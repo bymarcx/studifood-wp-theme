@@ -193,3 +193,6 @@ $(function () {
   });
 });
 
+var btn = document.querySelector(".is-style-sf-btn-sec a");
+console.log(btn);
+$(btn).addClass("btn btn-secondary");

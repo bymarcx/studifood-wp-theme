@@ -11,6 +11,8 @@ import zip from "gulp-zip";
 import info from "./package.json";
 import replace from "gulp-replace";
 import named from 'vinyl-named';
+import imagemin from 'gulp-imagemin';
+
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -48,8 +50,14 @@ export const BundleScripts = () => {
         .pipe(dest('dist/js'));
 }
 
+export const minifyImages = () => {
+    return src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
+      .pipe(gulpif(PRODUCTION, imagemin()))
+      .pipe(dest('dist/img'));
+}
+
 export const copySrcFiles = () => {
-    return src(['src/**/*','!src/{images,js,scss}','!src/{images,js,scss}/**/*'])
+    return src(['src/**/*','!src/{img,js,scss}','!src/{img,js,scss}/**/*'])
         .pipe(dest('dist'));
 }
 
@@ -58,7 +66,8 @@ export const cleanDist = () => del(['dist']);
 export const watchForChanges = () => {
     watch('src/scss/**/*.scss', CompressStyles);
     watch('src/js/**/*.js',BundleScripts);
-    watch(['src/**/*','!src/{images,js,scss}','!src/{images,js,scss}/**/*'], copySrcFiles);
+    watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', minifyImages);
+    watch(['src/**/*','!src/{img,js,scss}','!src/{img,js,scss}/**/*'], copySrcFiles);
 }
 
 export const compress = () => {
@@ -83,7 +92,7 @@ export const compress = () => {
         .pipe(dest('bundled'));
 };
 
-export const dev = series(cleanDist, parallel(CompressStyles, copySrcFiles, BundleScripts), watchForChanges)
-export const build = series(cleanDist, parallel(CompressStyles, copySrcFiles, BundleScripts), compress)
+export const dev = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), watchForChanges)
+export const build = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), compress)
 export default dev;
 
