@@ -49,14 +49,14 @@ function _customtheme_widgets_init()
         'after_title' => '</h3>',
     ));
 
-    register_sidebar(array(
-        'name' => __('Startseite', '_customtheme'),
-        'id' => 'home',
-        'description' => __('Starseite', '_customtheme'),
-        'before_widget' => '<section class="section %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ));
+    // register_sidebar(array(
+    //     'name' => __('Startseite', '_customtheme'),
+    //     'id' => 'home',
+    //     'description' => __('Starseite', '_customtheme'),
+    //     'before_widget' => '<section class="section %2$s">',
+    //     'after_widget' => '</section>',
+    //     'before_title' => '<h3 class="widget-title">',
+    //     'after_title' => '</h3>',
+    // ));
 }
 add_action('widgets_init', '_customtheme_widgets_init');

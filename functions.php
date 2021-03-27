@@ -103,7 +103,7 @@ function register_widgets()
     register_widget('AboutUsWidget');
     register_widget('FeaturedRecipesWidget');
 }
-add_action('widgets_init', 'register_widgets');
+// add_action('widgets_init', 'register_widgets');
 
 /** Include custom sidebars */
 require get_template_directory() . '/inc/register-sidebars.php';
