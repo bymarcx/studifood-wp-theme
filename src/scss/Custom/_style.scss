@@ -71,28 +71,13 @@ h2 {
 
     &:after,
     &:before {
-        // width: -moz-available;
-        // width: -webkit-fill-available;
-        // width: fill-available;
-        // height: 4px;
-        // background: #c4431c;
-        // content: "";
-        // position: relative;
-        // display: inline-block;
-        // vertical-align: middle;
-        // align-self: center;
-
         content: "";
         border-top: 2px solid $secondary;
     }
 
-    // &:after {
-    //     margin-left: 30px;
-    // }
-
-    // &:before {
-    //     margin-right: 30px;
-    // }
+    &.left {
+        grid-template-columns: minmax(20px, 50px) auto minmax(20px, 1fr);
+    }
 }
 
 h2 {
@@ -210,6 +195,10 @@ p {
         // transition: .3s all ease-in-out;
         color: $primary;
     }
+}
+
+.wp-block-buttons {
+    justify-content: center;
 }
 
 .searchbar {

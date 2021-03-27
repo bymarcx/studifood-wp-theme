@@ -92,7 +92,7 @@ export const compress = () => {
         .pipe(dest('bundled'));
 };
 
-export const dev = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), watchForChanges)
-export const build = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), compress)
+export const dev = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), watchForChanges);
+export const build = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), compress);
 export default dev;
 

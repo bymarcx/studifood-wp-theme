@@ -10,20 +10,24 @@
 
 <?php get_header(); ?>
 
-<!-- HTML content starts! -->
+    <!-- HTML content starts! -->
 
-<?php get_template_part('template-parts/stage/stage-home') ?>
+    <?php get_template_part('template-parts/stage/stage-home') ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-        <?php if ( is_active_sidebar( 'home' ) ): ?>
-            <?php dynamic_sidebar( 'home' ); ?>
-        <?php endif; ?>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <div class="entry">
+                            <?php the_content(); ?>
+                        </div>
+                    <?php endwhile; endif; ?>
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<!-- HTML content ends! -->
+    <!-- HTML content ends! -->
 
 <?php get_footer(); ?>
