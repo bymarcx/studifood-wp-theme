@@ -23,21 +23,21 @@
             </div>
             <div class="col--1 col-md-7 col-lg-8">
                 <div class="inner">
-                    <?php dynamic_sidebar('footerLeft'); ?>
+                    <?php dynamic_sidebar('footer Left'); ?>
                 </div>
             </div>
             <div class="col--2 col-md-5 col-lg-4">
-                <?php dynamic_sidebar('footerRight'); ?>
+                <?php dynamic_sidebar('footer Right'); ?>
                 <!-- <div><a href="https://bymarc.media"><strong>BYMARC</strong>.media</a></div> -->
             </div>
             <div class="col--3 col-12">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <?php dynamic_sidebar('footerBottomRight'); ?>
+                        <?php dynamic_sidebar('footer Bottom Right'); ?>
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <?php dynamic_sidebar('footerBottomLeft'); ?>
+                        <?php dynamic_sidebar('footer Bottom Left'); ?>
                     </div>
                 </div>
             </div>

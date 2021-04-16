@@ -22,10 +22,10 @@ section.widget_featuredrecipeswidget {
 
         .headline-box-bg-overlay {
             position: absolute;
-            width: 100%;
+            width: calc( 100% - 20px );
             height: 100%;
-            left:0;
-            right:0;
+            left: 10px;
+            right: 0px;
             top:0;
             bottom:0;            
             background: linear-gradient(to left, rgba(black, 1) 20%, rgba(black, 0.7) 70%, rgba(black, 0.3) 100%);
@@ -39,17 +39,16 @@ section.widget_featuredrecipeswidget {
                         rgba(black, 0.9) 20%,
                         rgba(black, 0.7) 70%,
                         rgba(black, 0.5) 100%
-                    ),
-                    url("../img/favrecip_bg.png");
+                    );
             }
         }
 
         .headline-box-bg {
             position: absolute;
-            width: 100%;
+            width: calc( 100% - 20px );
             height: 100%;
-            left:0;
-            right:0;
+            left: 10px;
+            right: 0px;
             top:0;
             bottom:0;
             object-fit: cover;
@@ -114,6 +113,10 @@ section.widget_featuredrecipeswidget {
     position: relative;
     height: 350px;
     transition: all 0.4s ease-in-out;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 20px;
+    }
 
     img {
         //position: absolute;

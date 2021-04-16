@@ -10,9 +10,9 @@
 function _customtheme_widgets_init()
 {
     register_sidebar(array(
-        'name' => __('FooterLeft', '_customtheme'),
+        'name' => __('Footer Left', '_customtheme'),
         'id' => 'footerleft-sidebar-area',
-        'description' => __('Footer Left', '_customtheme'),
+        'description' => __('Footer Left :: Menu', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h3 class="widget-title">',
@@ -20,9 +20,9 @@ function _customtheme_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => __('FooterRight', '_customtheme'),
+        'name' => __('Footer Right', '_customtheme'),
         'id' => 'footerright-sidebar-area',
-        'description' => __('Footer Right', '_customtheme'),
+        'description' => __('Footer Right :: Kontakt', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h3 class="widget-title">',
@@ -30,9 +30,9 @@ function _customtheme_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => __('FooterBottomRight', '_customtheme'),
+        'name' => __('Footer Bottom Left', '_customtheme'),
         'id' => 'footerbottom-sidebar-area',
-        'description' => __('Footer Bottom :: Logos :: Left ', '_customtheme'),
+        'description' => __('Footer Bottom Left :: Hochschule ', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h3 class="widget-title">',
@@ -40,9 +40,9 @@ function _customtheme_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => __('FooterBottomLeft', '_customtheme'),
+        'name' => __('Footer Bottom Right', '_customtheme'),
         'id' => 'footerbottom2-sidebar-area',
-        'description' => __('Footer Bottom :: Logos :: Right', '_customtheme'),
+        'description' => __('Footer Bottom Right :: Sponsors', '_customtheme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h3 class="widget-title">',
