@@ -105,126 +105,130 @@ section.stage {
             }
         }
     }
+}
 
-    .headerbar {
-        position: fixed;
-        z-index: 99999;
-        height: 70px;
-        width: 100%;
-        transition: 0.3s all ease-in-out;
-        display: flex;
-        justify-content: space-between;
-        top: 0px;
-    }
+/* *** HEADERBAR *** */
 
-    .headerbar.fixed {
-        //background: rgba(#c1b19a, 0.95);
-        transition: 0.3s all ease-in-out;
-    }
+.headerbar {
+    position: fixed;
+    z-index: 99999;
+    height: 70px;
+    width: 100%;
+    transition: 0.3s all ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    top: 0px;
+}
 
-    #logo {
-        top: 30px;
-        left: 60px;
-        width: 150px;
-        position: relative;
-        z-index: 999;
+.headerbar.fixed {
+    //background: rgba(#c1b19a, 0.95);
+    transition: 0.3s all ease-in-out;
+}
 
-        @include media-breakpoint-down(sm) {
-            width: 100px;
-            top: 20px;
-            left: 20px;
-        }
+#logo {
+    top: 30px;
+    left: 60px;
+    width: 150px;
+    position: relative;
+    z-index: 999;
 
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    .nav-btn {
-        color: white;
-        position: relative;
+    @include media-breakpoint-down(sm) {
+        width: 100px;
         top: 20px;
-        right: 50px;
-        width: 80px;
-        height: 80px;
-        background: url(../img/Circle1.svg);
-        background-size: 80px 80px;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: all ease-in-out 0.3s;
+        left: 20px;
+    }
 
-        @include media-breakpoint-down(sm) {
-            width: 55px;
-            height: 55px;
-            background-size: 55px 55px;
-            top: 10px;
-            font-size: 14px;
-            right: 20px;
-        }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 
+.nav-btn {
+    color: white;
+    position: relative;
+    top: 20px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    background: url(../img/Circle1.svg);
+    background-size: 80px 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+
+    @include media-breakpoint-down(sm) {
+        width: 55px;
+        height: 55px;
+        background-size: 55px 55px;
+        top: 10px;
+        font-size: 12px;
+        right: 20px;
+    }
+
+    @include media-breakpoint-up(sm) {
         &:hover {
             color: white;
             background-size: 30px 30px;
             transition: all ease-in-out 0.7s;
         }
+    }
 
-        .open {
-            position: absolute;
-            opacity: 1;
-            transition: 0.6s all ease-in-out;
-            visibility: visible;
+    .open {
+        position: absolute;
+        opacity: 1;
+        transition: 0.6s all ease-in-out;
+        visibility: visible;
 
-            &:hover,
-            &:active {
-                color: white;
-            }
+        &:hover,
+        &:active {
+            color: white;
         }
+    }
+
+    .close {
+        opacity: 0;
+        transition: 0.3s all ease-in-out;
+        color: white;
+        visibility: hidden;
+
+        &:hover,
+        &:active {
+            color: white;
+        }
+    }
+
+    &.active {
+        color: blue;
 
         .close {
+            opacity: 1;
+            visibility: visible;
+            transition: 0.6s all ease-in-out;
+        }
+
+        .open {
             opacity: 0;
-            transition: 0.3s all ease-in-out;
-            color: white;
+            transition: 0.6s all ease-in-out;
             visibility: hidden;
+        }
+    }
 
-            &:hover,
-            &:active {
-                color: white;
-            }
+    &:hover {
+        .close {
+            opacity: 0;
+            transition: 0.6s all ease-in-out;
+            display: block;
         }
 
-        &.active {
-            color: blue;
-
-            .close {
-                opacity: 1;
-                visibility: visible;
-                transition: 0.6s all ease-in-out;
-            }
-
-            .open {
-                opacity: 0;
-                transition: 0.6s all ease-in-out;
-                visibility: hidden;
-            }
-        }
-
-        &:hover {
-            .close {
-                opacity: 0;
-                transition: 0.6s all ease-in-out;
-                display: block;
-            }
-
-            .open {
-                opacity: 0;
-                transition: 0.6s all ease-in-out;
-                display: block;
-            }
+        .open {
+            opacity: 0;
+            transition: 0.6s all ease-in-out;
+            display: block;
         }
     }
 }
@@ -505,7 +509,7 @@ section.stage.slide {
         padding: 10px 30px;
         letter-spacing: 5;
         opacity: 0;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.15s ease-in-out;
 
         @include media-breakpoint-down(md) {
             font-size: 18px;
@@ -537,7 +541,8 @@ section.stage.slide {
 #breadcrumbs {
     margin-top: 10px;
 
-    a, .breadcrumb_last {
+    a,
+    .breadcrumb_last {
         margin: 0 10px;
     }
 }

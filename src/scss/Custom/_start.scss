@@ -2,7 +2,20 @@
 
 html, body {
     
+    background-color: $background;
     
 
+}
+
+body {
+    background-color: $background;
+    opacity: 0;
+    transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &.animate {
+        opacity: 1;
+        transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
 
 }

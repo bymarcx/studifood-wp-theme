@@ -24,8 +24,6 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
 
-                        <?php get_template_part('template-parts/stage/headerbar') ?>
-
                         <div class="image">
 
                             <?php if (is_home()) { ?>

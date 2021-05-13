@@ -22,7 +22,7 @@ if (!function_exists('_customtheme_setup')) :
         add_theme_support('yoast-seo-breadcrumbs');
 
         //**  Add support for theme  */
-        add_theme_support( 'widget-customizer' );
+        add_theme_support('widget-customizer');
 
         /** add images sizes  */
         set_post_thumbnail_size(250, 9999, false);
@@ -145,12 +145,28 @@ function unset_url_field($fields)
     return $fields;
 }
 
+function sf_move_fields($fields)
+{
+    $comment_field = $fields['comment'];
+    unset($fields['comment']);
+    $fields['comment'] = $comment_field;
+
+    $cookies_field = $fields['cookies'];
+    unset($fields['cookies']);
+    // $fields['cookies'] = $cookies_field;
+
+    return $fields;
+}
+
+add_filter('comment_form_fields', 'sf_move_fields');
+
 /** Chance Cookie consent text from comment-form **/
-add_filter( 'comment_form_default_fields', 'tu_filter_comment_fields', 20 );
-function tu_filter_comment_fields( $fields ) {
+add_filter('comment_form_default_fields', 'tu_filter_comment_fields', 20);
+function tu_filter_comment_fields($fields)
+{
     $commenter = wp_get_current_commenter();
 
-    $consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+    $consent   = empty($commenter['comment_author_email']) ? '' : ' checked="checked"';
 
     $fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' . '<label for="wp-comment-cookies-consent"> Meinen Namen und meine E-Mail-Adresse in diesem Browser speichern, bis ich wieder kommentiere.</label></p>';
 
@@ -158,38 +174,14 @@ function tu_filter_comment_fields( $fields ) {
 }
 
 // Change submit button text in wordpress comment form
-function wcs_change_submit_button_text( $defaults ) {
+function sf_change_submit_button_text($defaults)
+{
     $defaults['label_submit'] = 'Kommentieren';
     return $defaults;
 }
-add_filter( 'comment_form_defaults', 'wcs_change_submit_button_text' );
+add_filter('comment_form_defaults', 'sf_change_submit_button_text');
+
+
 
 // *** FLUSH REWRITE RULES FOR CHANGING CPT SLUG ***//
 // flush_rewrite_rules();
-
-
-/*** SHORTCODE :: For post taxes ***/
-// function tags_function($atts = array())
-// {
-//     $atts = array_change_key_case((array) $atts, CASE_LOWER);
-
-//     $termsSecteur = wp_get_object_terms(get_the_ID(), $atts['tax']);
-//     if ($termsSecteur != null) {
-//         foreach ($termsSecteur as $termsSecteur) {
-//             $termsSecteur_link = get_term_link($termsSecteur, $atts['tax']);
-//             $return .= sprintf('<a class="tag-secteur" href="%1$s">%2$s</a>', $termsSecteur_link, $termsSecteur->name);
-//             unset($termsSecteur);
-//         }
-//     }
-//     return $return;
-// }
-// add_shortcode('list_tags', 'tags_function');
-
-
-
-
-
-
-
-
-

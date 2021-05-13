@@ -3,8 +3,6 @@
         <div class="row justify-content-center">
             <div class="col-12">
 
-                <?php get_template_part('template-parts/stage/headerbar') ?>
-
                 <div class="image">
                     <div class="slider">
 
@@ -37,7 +35,7 @@
                                     $recipe_id = $recipes[0];
                                     $recipe = WPRM_Recipe_Manager::get_recipe($recipe_id);
                                     // Output the recipe name.
-                                ?><a class="btn btn-primary" href="<?php the_permalink(); ?>">Rezept ansehen</a><?php
+                                ?><a href="<?php the_permalink(); ?>" class="btn btn-primary" >Rezept ansehen</a><?php
 
                                                                                                                 ?>
                                     <div class="container">

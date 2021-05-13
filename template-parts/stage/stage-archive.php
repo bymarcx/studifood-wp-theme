@@ -14,8 +14,6 @@
             <div class="col-12">
                 <div class="image">
 
-                    <?php get_template_part('template-parts/stage/headerbar') ?>
-
                     <div class="img_overlay"></div>
                         <?php
                         $page_for_posts = get_option('page_for_posts');

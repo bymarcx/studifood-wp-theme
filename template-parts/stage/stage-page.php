@@ -14,8 +14,6 @@
             <div class="col-12">
                 <div class="image">
 
-                    <?php get_template_part('template-parts/stage/headerbar') ?>
-
                     <div class="img_overlay"></div>
                         <?php
                         echo the_post_thumbnail('large');

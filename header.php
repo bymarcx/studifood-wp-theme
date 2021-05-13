@@ -33,11 +33,11 @@
     <?php wp_head(); ?>
 </head>
 
-<body id="top">
-    
-    <!-- <div class="overlaymenu"></div>
-    <div class="overlayclick"></div>
-    <div class="overlay"></div> -->
+<body>
+<div id="scroll-container">
+
+    <?php get_template_part('template-parts/stage/headerbar') ?>
+
 
     <div class="scroll-bar-outer" id="scroll-bar-outer-id">
         <div id="scroll-bar"></div>
@@ -57,3 +57,5 @@
             </div>
         </div>
     </nav>
+
+    <main>

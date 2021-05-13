@@ -4,15 +4,30 @@
  * (C) BYMARC
  *
  */
+// import Highway from '@dogstudio/highway';
+// import { TimelineMax, TweenMax, Power4, Power3, Power2, Power1 } from 'gsap';
+
 
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
+jQuery = $;
+
+import validate from 'jquery-validation'
 
 import 'popper.js'
 import 'bootstrap';
 import 'slick-carousel';
 import AOS from 'aos';
+
+// import CustomRenderer from './customRenderer';
+// import Fade from './fade';
+
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// gsap.registerPlugin(ScrollTrigger);
+
 
 // AJAX call for filter
 jQuery(function ($) {
@@ -59,27 +74,33 @@ jQuery(function ($) {
 
 // Init AnimateOnScroll
 AOS.init({
-  duration: 1800, // values from 0 to 3000, with step 50ms
-  debounceDelay: 0, // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 0, // the delay on throttle used while scrolling the page (advanced)
-  mirror: false, // whether elements should animate out while scrolling past them
+  duration: 1800,
+  debounceDelay: 0,
+  throttleDelay: 0,
+  mirror: false,
 });
 
 //if website loaded show content
-
 $(document).ready(function () {
-  // window.onload = (event) => {
-  //   $("body").addClass("loaded");
-  //   // $("body").addClass("animate");
-  // }
 
   // LOADING FADE ANIMATIONS
   setTimeout(function () {
-       $("body").addClass("animate");
-    //$("body").addClass("loaded");
+    $("body").addClass("animate");
   }, 10);
 
 });
+
+$(document).ready(function () {
+  $("a:not(.page-scroll)").click(function (e) {
+    e.preventDefault();
+    var link = $(this).attr("href");
+    $("body").animate({ opacity: '0' }, 150, function () {
+      window.location = link;
+    });
+  });
+
+});
+
 
 // ***
 $(document).ready(function () {
@@ -130,17 +151,8 @@ $('.nav-btn').click(function () {
   $(this).toggleClass('active');
 });
 
-//Nav on scroll
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 50) {
-    $("#headerbar").addClass("fixed");
-  }
-  else {
-    $("#headerbar").removeClass("fixed");
-  }
-});
 
-// MOBILE NAVBAR
+// NAVBAR
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
@@ -152,7 +164,6 @@ window.onscroll = function () {
   else {
     document.getElementById("scroll-bar").style.width = 0 + "%";
   }
-
 
   var currentScrollPos = window.pageYOffset;
   if (currentScrollPos <= (5)) {
@@ -184,7 +195,7 @@ console.log('*** custom.js loaded ***')
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function () {
-  $('.page-scroll').bind('click', function (event) {
+  $('a.page-scroll').bind('click', function (event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
       scrollTop: $($anchor.attr('href')).offset().top - 150
@@ -194,5 +205,73 @@ $(function () {
 });
 
 var btn = document.querySelector(".is-style-sf-btn-sec a");
-console.log(btn);
 $(btn).addClass("btn btn-secondary");
+
+
+// WP COMMENTFORM VALIDATION
+
+(function ($) {
+  ('use strict');
+
+  function webshapedValidateCommentForm() {
+    $('#commentform').validate({
+      rules: {
+        author: {
+          required: true,
+          minlength: 2,
+        },
+        email: {
+          required: true,
+          email: true,
+        },
+        comment: {
+          required: true,
+          minlength: 20,
+        },
+        datenschutz: {
+          required: true,
+        },
+      },
+
+      messages: {
+        author: {
+          required: 'Bitte trage Deinen Namen ein.',
+          minlength: jQuery.validator.format(
+            'Es sind {0} Zeichen erforderlich!'
+          ),
+        },
+        email: {
+          required: 'Bitte trage Deine E-Mail-Adresse ein.',
+          email:
+            'Deine E-Mail-Adresse sollte folgendes Format haben: name@adresse.com',
+        },
+        comment: {
+          required: 'Bitte schreibe einen Kommentar.',
+          minlength: jQuery.validator.format(
+            'Es sind {0} Zeichen erforderlich!'
+          ),
+        },
+        datenschutz:
+          'Laut DSGVO benötige wir deine Einwilligung zur Erhebung deiner hier getätigten Daten.',
+      },
+
+      errorClass: 'invalid alert alert-error',
+      validClass: 'valid is-valid was-validated form-control:valid',
+
+      success: function (label) {
+        console.log("remove", label);
+        $(label).removeClass('invalid alert alert-warning');
+      },
+
+      highlight: function (element, errorClass) {
+        $(element).addClass('is-invalid was-validated form-control:invalid');
+      },
+
+      errorElement: 'div',
+      errorPlacement: function (error, element) {
+        element.after(error);
+      },
+    });
+  }
+  $(document).ready(webshapedValidateCommentForm);
+})(jQuery);

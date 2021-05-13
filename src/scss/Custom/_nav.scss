@@ -82,10 +82,15 @@ nav.nav {
                     transform: translate(-50%);
                     height: 8px;
                     content: "";
-                    background: white;
+                    background: $primary;
                     display: block;
                     transition: 1s all ease;
                     transform: scale(0);
+
+                    @include media-breakpoint-down(sm) {
+                        height: 4px;
+                    }
+
                 }
 
                 &:hover:after {
@@ -113,18 +118,18 @@ nav.active {
         );
     z-index: 9999;
     opacity: 1;
-    transition: .8s all ease;
+    transition: .8s opacity ease-in-out;
 
     @for $i from 1 through 10 {
         ul li:nth-child(#{$i}) {
-            transition:  calc( 0.5s * #{$i} ) all ease;
+            transition:  calc( 0.5s * #{$i} ) opacity ease;
             transition-delay: calc( 0.2s * #{$i} ) ;
             opacity: 1;
-            // top: 100%;
+            top:0px;
             position: relative;
 
             @include media-breakpoint-down(md) {
-                top: 0px;
+                padding: 20px 0;
             }
         }
     }

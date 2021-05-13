@@ -156,7 +156,7 @@ p {
 .btn.btn-primary {
     color: white;
     border-radius: 0;
-    padding: 5px 30px;
+    padding: 10px 30px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2.3px;
@@ -170,7 +170,7 @@ p {
     border: none;
     background: none;
     text-transform: uppercase;
-    transition: 0.3s all ease-in-out;
+    transition: .15s all ease-in-out;
     font-weight: 400;
     letter-spacing: 3px;
     text-align: center;
@@ -182,7 +182,7 @@ p {
         width: 150px;
         height: 2px;
         background: $primary;
-        transition: 0.3s all ease-in-out;
+        transition: .15s all ease-in-out;
     }
 
     &:hover:after {
@@ -199,6 +199,7 @@ p {
 
 .wp-block-buttons {
     justify-content: center;
+    margin-top: 30px;
 }
 
 .searchbar {
@@ -346,6 +347,7 @@ p {
             border: 2px solid $primary;
             color: white;
             width: 100%;
+            transition: .15s all ease-in-out;
 
             &:hover {
                 background: transparent;
@@ -443,4 +445,30 @@ section.template-text {
     p {
         text-align: center !important;
     }
+}
+
+
+
+
+
+.loading-screen {
+    position: absolute;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    background-color: #c1b19a;
+    width: 100%;
+    height: 0%;
+    z-index:99999;
+}
+
+.load-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
 }

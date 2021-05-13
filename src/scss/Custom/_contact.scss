@@ -32,7 +32,7 @@
     }
 
     button[type="submit"] {
-        padding: 10px 20px !important;
+        padding: 10px 30px !important;
         height: 44px !important;
         background: $primary !important;
         border: 2px solid $primary !important;
@@ -41,8 +41,15 @@
         outline: 0 !important;
         width: 100%;
 
+        text-transform: uppercase;
+        font-weight: 600 !important;
+        letter-spacing: 2.3px;
+        box-shadow: none !important;
+        transition: .15s all ease-in-out;
+
         &:hover {
-            background: transparent;
+            background: transparent !important;
+            color: white !important;
         }
 
         @include media-breakpoint-down(md) {
