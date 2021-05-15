@@ -90,8 +90,15 @@ $(document).ready(function () {
 
 });
 
+var $internalLinks = $("a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#'], a:not(.page.scroll)");
+
+$internalLinks = $internalLinks.not(function () {
+  return $(this).attr('href').match(/\.(pdf|mp3|jpg|jpeg|etc)$/i);
+});
+
 $(document).ready(function () {
-  $("a:not(.page-scroll)").click(function (e) {
+  $($internalLinks).click(function (e) {
+    console.log("its an internal link, my friend")
     e.preventDefault();
     var link = $(this).attr("href");
     $("body").animate({ opacity: '0' }, 150, function () {
@@ -197,6 +204,7 @@ console.log('*** custom.js loaded ***')
 $(function () {
   $('a.page-scroll').bind('click', function (event) {
     var $anchor = $(this);
+    console.log("scrolling", top);
     $('html, body').stop().animate({
       scrollTop: $($anchor.attr('href')).offset().top - 150
     }, 1500, 'easeInOutExpo');
@@ -204,6 +212,8 @@ $(function () {
   });
 });
 
+
+// Make wordpress btns to bootstrap btns
 var btn = document.querySelector(".is-style-sf-btn-sec a");
 $(btn).addClass("btn btn-secondary");
 

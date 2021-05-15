@@ -33,7 +33,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body id="top">
 <div id="scroll-container">
 
     <?php get_template_part('template-parts/stage/headerbar') ?>
