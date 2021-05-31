@@ -19,3 +19,15 @@ body {
     }
 
 }
+
+.entry section {
+    .container {
+        padding:0px;
+    }   
+}
+
+.entry {
+    .section.nomargintop {
+        margin-top: 0px !important;
+    }
+}

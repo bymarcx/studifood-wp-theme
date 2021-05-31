@@ -12,8 +12,8 @@ h1 {
 }
 
 
-p.descr {
-    text-align:center;
+p.descr, p.descr span {
+    text-align: center;
 }
 
 h2,h3 {
