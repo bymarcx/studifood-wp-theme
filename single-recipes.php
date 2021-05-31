@@ -100,7 +100,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
 
-                        <div class="content " data-aos="fade-up">
+                        <div class="content " data-aos="fade">
                             <?php the_content(); ?>
                             <?php
                             //get the taxonomy terms of custom post type
@@ -186,7 +186,7 @@
 
                         while ($related_query->have_posts()) : $related_query->the_post();
 
-                            echo ("<div class=\"col-lg-4  col-xxl-3 recipe-card\" data-aos=\"fade-up\">");
+                            echo ("<div class=\"col-lg-4  col-xxl-3 recipe-card\" data-aos=\"fade\">");
                             echo ("<a href=\" ");
                             the_permalink();
                             echo (" \">");
@@ -214,7 +214,7 @@
 
 
 
-                <div class=" col-md-12 col-lg-4 col-xxl-3 all-recipes" data-aos="fade-up">
+                <div class=" col-md-12 col-lg-12 col-xxl-3 all-recipes" data-aos="fade">
                     <div class="all-recipes-inner">
                         <a href="/rezepte" class="btn btn-secondary">Alle Rezepte</a>
                     </div>
@@ -222,6 +222,8 @@
                 </div>
             </div>
         </section>
+
+        <?php get_template_part('template-parts/content/ownrecipe') ?>
 
 
 <?php endwhile;

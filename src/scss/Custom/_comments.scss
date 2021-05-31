@@ -68,14 +68,6 @@
                 padding-right: 0px;
             }
         }
-
-        .alert {
-            padding: 0;
-            margin-bottom: 0;
-            border: 0;
-            font-size: 16px;
-            color: #b94a48;
-        }
     }
 
     #reply-title {
@@ -165,28 +157,6 @@
         padding-right: 20px;
     }
 
-    textarea,
-    input {
-        background: transparent;
-        border: 2px solid $primary;
-        border-radius: 0px;
-        padding: 8px 10px;
-        color: white;
-    }
-
-    input[type="submit"] {
-        color: white;
-        background-color: $primary;
-        border-radius: 0;
-        padding: 10px 30px;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 2.3px;
-
-        &:hover {
-            background: transparent;
-        }
-    }
 }
 
 .comment-list {

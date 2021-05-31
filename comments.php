@@ -24,7 +24,7 @@ if (post_password_required())
         Deine Meinung zählt
     </div>
 
-    <div data-aos="fade-up">
+    <div data-aos="fade">
         <?php comment_form(); ?>
     </div>
 
@@ -39,7 +39,7 @@ if (post_password_required())
             ?>
         </h3>
 
-        <ol class="comment-list" data-aos="fade-up">
+        <ol class="comment-list" data-aos="fade">
             <?php
             wp_list_comments(array(
                 'style'       => 'ol',

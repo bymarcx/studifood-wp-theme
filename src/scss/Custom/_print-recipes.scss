@@ -1,0 +1,40 @@
+.wprm-recipe.wprm-recipe-template-studifood-print-tmp {
+    max-width: 650px;
+    background: #e1e1e1;
+    border: 1px solid #eee;
+}
+
+@import url("https://use.typekit.net/wvy7edt.css"); // rockwell
+
+@font-face {
+    font-family: "Segoe Print1";
+    src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot");
+    src: url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.svg#Segoe Print") format("svg");
+}
+
+body {
+    font-family: Rockwell, rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
+    overflow-x: hidden;
+
+    height: 100%;
+    width: 100%;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Segoe Print", "Segoe Print1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
+
+}
+
+p,
+label,
+a,
+button {
+    font-family: Rockwell, rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif !important;
+}

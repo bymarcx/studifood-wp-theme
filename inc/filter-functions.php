@@ -13,7 +13,8 @@ function sf_filter_function()
     $args = array(
         'post_type' => 'wprm_recipe',
         'orderby' => 'date', // we will sort posts by date
-        'order'    => $_POST['date'] // ASC or DESC
+        'order'    => $_POST['date'], // ASC or DESC
+        'post_status' => 'publish'
 
     );
 
@@ -141,8 +142,8 @@ function sf_search_function()
     $args = array(
         'post_type' => 'wprm_recipe',
         'orderby' => 'date', // we will sort posts by date
-        's'    => $_POST['keyword'] // ASC or DESC
-
+        's'    => $_POST['keyword'], // ASC or DESC
+        'post_status' => 'publish'
     );
 
 

@@ -1,15 +1,13 @@
 <!-- StudiFood :: WPRM Template -->
 
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <!-- not using this anymore -->
-            <!-- [wprm-recipe-notes] -->
-            <h2 data-aos="fade-right">Was wird gebraucht?</h2>
-        </div>
-        <div class="col-12 col-md-6 col-xl-4  order-2 order-xl-1">
-            <h3 data-aos="fade-right">Zutaten</h3>
-            <div data-aos="fade-up">
+
+    <h2 data-aos="fade-right">Was wird gebraucht?</h2>
+
+    <div class="row" data-aos="fade">
+        <div class="col-12 col-md-6 col-xl-4 order-2 order-xl-1">
+            <h3>Zutaten</h3>
+            <div>
                 [wprm-recipe-servings label_container="1" label="Portionen" label_style="bold" style="inline"
                 label_separator=": " adjustable="text-buttons"]
                 [wprm-recipe-ingredients ingredients_order="names-first" ingredients_style="table-3"]
@@ -17,15 +15,15 @@
 
         </div>
         <div class="col-12 col-md-6 order-3 col-xl-4 order-xl-2">
-            <h3 data-aos="fade-right" data-aos-delay="200">Utensilien</h3>
-            <div data-aos="fade-up" data-aos-delay="200">
+            <h3>Utensilien</h3>
+            <div>
                 [wprm-recipe-equipment]
             </div>
 
         </div>
-        <div class="col-12 col-md-12 col-xl-4 order-1 order-xl-3" data-aos="fade-up">
+        <div class="col-12 col-md-12 col-xl-4 order-1 order-xl-3">
 
-            <div class="recipe-facts" data-aos="fade-up" data-aos-delay="400">
+            <div class="recipe-facts">
 
                 <div class="recipe-fact">
                     <div class="recipe-fact-circle">
@@ -74,24 +72,21 @@
 
                 </div>
             </div>
-
-
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h2 data-aos="fade-right">So wird es zubereitet!</h2>
-            <p class="headline-label" data-aos="fade">
-               <span> [wprm-recipe-servings adjustable="no"] </span><span>Portionen</span>
-            </p>
-            <div data-aos="fade-up">
-                [wprm-recipe-instructions text_margin="5px" image_size="medium"]
-            </div>
-            <div class="print-button">
-                [wprm-recipe-print icon="printer" text="PDF Exportieren"]
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 data-aos="fade-right">So wird es zubereitet!</h2>
+                <p class="headline-label" data-aos="fade">
+                    <span> [wprm-recipe-servings adjustable="no"] </span><span>Portionen</span>
+                </p>
+                <div data-aos="fade">
+                    [wprm-recipe-instructions text_margin="5px" image_size="medium"]
+                </div>
+                <div class="print-button">
+                    [wprm-recipe-print icon="printer" text="PDF Exportieren"]
+                </div>
             </div>
         </div>
     </div>
-</div>

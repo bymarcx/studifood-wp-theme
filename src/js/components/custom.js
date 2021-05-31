@@ -74,6 +74,7 @@ jQuery(function ($) {
 
 // Init AnimateOnScroll
 AOS.init({
+  once: true,
   duration: 1800,
   debounceDelay: 0,
   throttleDelay: 0,
@@ -223,7 +224,7 @@ $(btn).addClass("btn btn-secondary");
 (function ($) {
   ('use strict');
 
-  function webshapedValidateCommentForm() {
+  function SFValidateCommentForm() {
     $('#commentform').validate({
       rules: {
         author: {
@@ -283,5 +284,42 @@ $(btn).addClass("btn btn-secondary");
       },
     });
   }
-  $(document).ready(webshapedValidateCommentForm);
+  $(document).ready(SFValidateCommentForm);
 })(jQuery);
+
+
+
+
+
+
+
+
+
+(function ($) {
+  ('use strict');
+
+  function SFValidateCommentForm() {
+    $('.wprm-recipe-submission').validate({
+     
+      errorClass: 'invalid alert alert-error',
+      validClass: 'valid is-valid was-validated form-control:valid',
+
+      success: function (label) {
+        console.log("remove", label);
+        $(label).removeClass('invalid alert alert-warning');
+      },
+
+      highlight: function (element, errorClass) {
+        $(element).addClass('is-invalid was-validated form-control:invalid');
+      },
+
+      errorElement: 'div',
+      errorPlacement: function (error, element) {
+        element.after(error);
+      },
+    });
+  }
+  $(document).ready(SFValidateCommentForm);
+})(jQuery);
+
+

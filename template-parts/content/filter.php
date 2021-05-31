@@ -49,7 +49,7 @@
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_ingredient', 'orderby' => 'name'))) :
 
-                    echo '<select data-placeholder="Utensilien" class="filter-select" name="categoryfilteringredient[]" multiple><option></option>';
+                    echo '<select data-placeholder="Zutaten" class="filter-select" name="categoryfilteringredient[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
                     endforeach;
@@ -60,7 +60,7 @@
             <li class="filterbarli">
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_equipment', 'orderby' => 'name'))) :
-                    echo '<select data-placeholder="Zutaten" class="filter-select" name="categoryfilterequipment[]" multiple><option></option>';
+                    echo '<select data-placeholder="Utensilien" class="filter-select" name="categoryfilterequipment[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
                     endforeach;
@@ -100,8 +100,8 @@
     $args = array(
         'post_type' => 'wprm_recipe',
         'orderby' => 'date', // we will sort posts by date
-        'order'    => 'ASC' // ASC or DESC
-
+        'order'    => 'ASC', // ASC or DESC
+        'post_status' => 'publish'
     );
 
     $tax_query = new WP_Query($args);

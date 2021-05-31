@@ -1,0 +1,54 @@
+<!-- StudiFood :: WPRM Print Template -->
+[wprm-recipe-image default="300x200"]
+<h1>[wprm-recipe-name]</h1>
+
+<p class="descr">[wprm-recipe-summary]</p>
+
+<div class="recipe-facts">
+    <div class="recipe-fact">
+        <div class="recipe-fact-circle">
+            <p><span class="mahlzeit-ico"></span>
+                [wprm-recipe-tag key="course"]
+            </p>
+        </div>
+    </div>
+    <div class="recipe-fact">
+        <div class="recipe-fact-circle">
+            <p><span class="aufwand-ico"></span>
+
+                [wprm-recipe-tag key="difficulty"]
+            </p>
+        </div>
+    </div>
+    <div class="recipe-fact">
+        <div class="recipe-fact-circle">
+            <span class="timer-ico">[wprm-recipe-time type="total" shorthand="1" label_container="1" style="inline"]</span>
+        </div>
+    </div>
+    <div class="recipe-fact">
+        <div class="recipe-fact-circle">
+            [wprm-recipe-rating display="stars"]
+        </div>
+
+    </div>
+</div>
+
+<h2>Was wird gebraucht?</h2>
+<div>
+    <h3>Zutaten</h3>
+    <div>
+        [wprm-recipe-servings label_container="1" label="Portionen" label_style="bold" style="inline" label_separator=": " ]
+        [wprm-recipe-ingredients  ingredients_style="table-3"]
+    </div>
+</div>
+<div>
+    <h3>Utensilien</h3>
+    [wprm-recipe-equipment]
+</div>
+
+<div>
+    <h2 data-aos="fade-right">So wird es zubereitet!</h2>
+    [wprm-recipe-instructions text_margin="5px" image_size="medium"]
+</div>
+<div class="divider"></div>
+<p>&copy; 2021 - StudiFood.com</p>

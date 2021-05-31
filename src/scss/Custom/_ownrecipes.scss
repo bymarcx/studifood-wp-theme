@@ -1,0 +1,32 @@
+.wp-block-studifood-ownrecipe {
+    margin: 70px 0 40px 0;
+
+    &.list {
+        margin: 20px 0 120px 0 ;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    text-align:center;
+
+    .container {
+        .col--1 {
+            background: black;
+            padding: 30px 20px;
+        }
+    }
+
+    h2 {
+        display: block;
+        margin: 20px 0px 10px !important;
+        padding-bottom: 20px !important;
+
+        &:before, &:after {
+            content: unset;
+        }
+    }
+
+}

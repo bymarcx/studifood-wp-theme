@@ -20,10 +20,13 @@
         url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.svg#Segoe Print") format("svg");
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: Rockwell, rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif;
     overflow-x: hidden;
-
     height: 100%;
     width: 100%;
 }
@@ -156,13 +159,15 @@ p {
 .btn.btn-primary {
     color: white;
     border-radius: 0;
-    padding: 10px 30px;
+    padding: 10px 30px 5px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2.3px;
+    color: black;
 
     &:hover {
         background: transparent;
+        color: $primary;
     }
 }
 
@@ -170,7 +175,7 @@ p {
     border: none;
     background: none;
     text-transform: uppercase;
-    transition: .15s all ease-in-out;
+    transition: 0.15s all ease-in-out;
     font-weight: 400;
     letter-spacing: 3px;
     text-align: center;
@@ -179,10 +184,10 @@ p {
         content: "";
         margin-top: 15px;
         display: block;
-        width: 150px;
+        width: 100%;
         height: 2px;
         background: $primary;
-        transition: .15s all ease-in-out;
+        transition: 0.15s all ease-in-out;
     }
 
     &:hover:after {
@@ -248,10 +253,10 @@ p {
 
         li.filterbarli {
             width: 100%;
-            width: -moz-available;          /* WebKit-based browsers will ignore this. */
-            width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            width: -moz-available; /* WebKit-based browsers will ignore this. */
+            width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
             width: fill-available;
-           margin-left: 10px;
+            margin-left: 10px;
             margin-top: 10px;
 
             @include media-breakpoint-down(md) {
@@ -347,7 +352,7 @@ p {
             border: 2px solid $primary;
             color: white;
             width: 100%;
-            transition: .15s all ease-in-out;
+            transition: 0.15s all ease-in-out;
 
             &:hover {
                 background: transparent;
@@ -360,21 +365,12 @@ p {
     }
 }
 
-.wprm-rating-star,
-.wprm-rating-star-selecting-filled {
-    svg * {
-        fill: white !important;
-        stroke: white !important;
-    }
+.wprm-rating-star svg g polygon { stroke: #fff !important}
+.wprm-rating-star-full svg g polygon  { fill: #fff !important; stroke: #fff !important}
+.wprm-rating-star-empty svg g polygon { fill: transparent !important; stroke: #fff !important }
+.wprm-rating-star-selecting-filled svg g polygon { fill: #fff !important}
+.wprm-rating-star-selecting-empty svg g polygon { fill: transparent !important }
 
-    &.wprm-rating-star-empty,
-    &.wprm-rating-star-selecting-empty {
-        svg * {
-            stroke: white !important;
-            fill: none !important;
-        }
-    }
-}
 
 .container.head {
     h3 {
@@ -447,10 +443,6 @@ section.template-text {
     }
 }
 
-
-
-
-
 .loading-screen {
     position: absolute;
     padding-left: 0;
@@ -459,7 +451,7 @@ section.template-text {
     background-color: #c1b19a;
     width: 100%;
     height: 0%;
-    z-index:99999;
+    z-index: 99999;
 }
 
 .load-container {
@@ -471,4 +463,118 @@ section.template-text {
     overflow: hidden;
     z-index: 10;
     pointer-events: none;
+}
+
+input[type="text"],
+input[type="email"] {
+    height: 40px;
+    padding: 20px;
+    border: 2px solid $primary;
+    background: transparent;
+    color: white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: transparent !important;
+    }
+}
+
+textarea {
+    padding: 20px;
+    border: 2px solid $primary;
+    background: transparent;
+    color: white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: transparent !important;
+    }
+}
+
+input[type="submit"] {
+    color: black;
+    background-color: $primary;
+    border-radius: 0;
+    border: 2px solid $primary;
+    padding: 10px 30px 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2.3px;
+    font-size: 16px;
+    transition: 0.15s all ease;
+
+    &:hover {
+        background: transparent;
+        color: $primary;
+        border: 2px solid $primary;
+        transition: 0.15s all ease;
+    }
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+input[type="file"]::before {
+    content: "Dateien auswählen";
+    display: inline-block;
+    border: 2px solid $primary;
+    color: black;
+    background-color: $primary;
+    border-radius: 0;
+    padding: 10px 30px 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2.3px;
+    font-size: 16px;
+    transition: 0.15s all ease;
+}
+input[type="file"]:hover::before {
+    background: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+    transition: 0.15s all ease;
+}
+input[type="file"]:active::before {
+    background: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+    transition: 0.15s all ease;
+}
+
+select {
+    padding: 10px 20px;
+    border: 2px solid $primary;
+    background: transparent;
+    color: white !important;
+
+    &:hover {
+        background: transparent;
+        color: white;
+        border: 2px solid $primary;
+        transition: 0.15s all ease;
+    }
+}
+
+.alert {
+    padding: 0;
+    margin-bottom: 0;
+    border: 0;
+    font-size: 16px;
+    color: #b94a48;
+}
+
+.wprm-recipe-submission {
+    label {
+        margin-top: 20px !important;
+    }
+
+    h3 {
+        margin: 70px 0 40px !important;
+    }
+
+    input[type="submit"] {
+        margin-top: 30px;
+    }
 }

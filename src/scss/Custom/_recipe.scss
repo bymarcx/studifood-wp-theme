@@ -499,6 +499,16 @@ section.morerecipes {
             margin-bottom: 20px;
         }
     }
+
+    .all-recipes {
+        @include media-breakpoint-down(xl) {
+            margin: 20px 0 ;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin: 0px 0 ;
+        }
+    }
 }
 
 .comments-title {
