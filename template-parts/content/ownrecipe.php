@@ -1,4 +1,4 @@
-<section class="widget_ownRecipewidget wp-block-studifood-ownrecipe" data-aos="fade">
+<section class="widget_ownRecipewidget wp-block-studifood-ownrecipe content" data-aos="fade">
         <div class="container">
           <div class="row">
             <div class="col-md-10 offset-md-1 offset-0 col-12 col--1">

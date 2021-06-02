@@ -172,8 +172,8 @@
         display: block;
         background: $primary;
         padding: 6px 15px;
-        width: auto;
-        height: auto;
+        width: unset !important;
+        height: unset !important;
         margin-bottom: 20px;
     }
 

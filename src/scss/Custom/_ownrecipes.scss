@@ -1,6 +1,10 @@
 .wp-block-studifood-ownrecipe {
     margin: 70px 0 40px 0;
 
+    @include media-breakpoint-down(sm) {
+        margin: 50px 0 0 0;
+    }
+
     &.list {
         margin: 20px 0 120px 0 ;
     }
@@ -15,9 +19,10 @@
     .container {
         padding-right: 20px;
         padding-left: 20px;
+        background: #010101;
 
         .col--1 {
-            background: black;
+            
             padding: 30px 20px;
         }
     }
@@ -32,4 +37,15 @@
         }
     }
 
+}
+
+.wp-block-studifood-ownrecipe.content {
+
+    .container {
+        background: unset;
+
+        .col--1 {
+            background: #010101;
+        }
+    }
 }

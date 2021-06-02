@@ -9,8 +9,8 @@ section.widget_featuredrecipeswidget {
         margin: 70px 0 20px 0;
     }
 
-    @include media-breakpoint-down(sm) {
-        margin: 70px 0 20px 0;
+    @include media-breakpoint-down(xs) {
+        margin: 70px 0 0 0;
     }
 
     .col-md-0 {
@@ -83,9 +83,6 @@ section.widget_featuredrecipeswidget {
             left: 50%;
             transform: translate(-50%) !important;
 
-            @include media-breakpoint-down(md) {
-                font-size: 16px;
-            }
 
             @include media-breakpoint-down(sm) {
                 width: unset;
@@ -116,6 +113,10 @@ section.widget_featuredrecipeswidget {
 
     @include media-breakpoint-down(md) {
         margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        margin-bottom: 0px;
     }
 
     img {
