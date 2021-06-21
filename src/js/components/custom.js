@@ -4,9 +4,6 @@
  * (C) BYMARC
  *
  */
-// import Highway from '@dogstudio/highway';
-// import { TimelineMax, TweenMax, Power4, Power3, Power2, Power1 } from 'gsap';
-
 
 import $ from 'jquery';
 window.jQuery = $;
@@ -20,14 +17,11 @@ import 'bootstrap';
 import 'slick-carousel';
 import AOS from 'aos';
 
-// import CustomRenderer from './customRenderer';
-// import Fade from './fade';
+import select2 from 'select2';
 
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// gsap.registerPlugin(ScrollTrigger);
-
+$(document).ready(function() {
+  $('.filter-select').select2();
+});
 
 // AJAX call for filter
 jQuery(function ($) {
@@ -40,10 +34,10 @@ jQuery(function ($) {
       data: filter.serialize(), // form data
       type: filter.attr('method'), // POST
       beforeSend: function (xhr) {
-        filter.find('button').text('Suchen...'); // changing the button label
+        filter.find('.search').text('Suchen...'); // changing the button label
       },
       success: function (data) {
-        filter.find('button').text('Suchen'); // changing the button label back
+        filter.find('.search').text('Suchen'); // changing the button label back
         $('#response').html(data); // insert data
       }
     });
@@ -90,21 +84,24 @@ $(document).ready(function () {
   }, 10);
 
 });
-
-var $internalLinks = $("a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#'], a:not(.page.scroll)");
+var siteURL = "https://" + top.location.host.toString();
+var $internalLinks = $("a[href^='" + siteURL + "'], a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#']");
 
 $internalLinks = $internalLinks.not(function () {
   return $(this).attr('href').match(/\.(pdf|mp3|jpg|jpeg|etc)$/i);
 });
 
+
 $(document).ready(function () {
   $($internalLinks).click(function (e) {
     console.log("its an internal link, my friend")
-    e.preventDefault();
-    var link = $(this).attr("href");
-    $("body").animate({ opacity: '0' }, 150, function () {
-      window.location = link;
-    });
+    if ($(this).attr("target") != "_blank") {
+      e.preventDefault();
+      var link = $(this).attr("href");
+      $("body").animate({ opacity: '0' }, 150, function () {
+        window.location = link;
+      });
+    }
   });
 
 });
@@ -136,11 +133,11 @@ $(document).ready(function () {
     infinite: true,
     speed: 1500,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     slidesToShow: 3,
     variableWidth: true,
     infinite: true,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     centerMode: true,
     autoplaySpeed: 5000,
     responsive: [{
@@ -198,7 +195,7 @@ function progressBar() {
   document.getElementById("scroll-bar").style.width = scrolled + "%";
 }
 
-console.log('*** custom.js loaded ***')
+
 
 
 //jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -216,11 +213,11 @@ $(function () {
 
 // Make wordpress btns to bootstrap btns
 var btn = document.querySelector(".is-style-sf-btn-sec a");
+console.log(btn);
 $(btn).addClass("btn btn-secondary");
 
 
 // WP COMMENTFORM VALIDATION
-
 (function ($) {
   ('use strict');
 
@@ -282,6 +279,12 @@ $(btn).addClass("btn btn-secondary");
       errorPlacement: function (error, element) {
         element.after(error);
       },
+
+      submitHandler: function(form) {
+        // do other things for a valid form
+        form.submit();
+      }
+
     });
   }
   $(document).ready(SFValidateCommentForm);
@@ -289,18 +292,13 @@ $(btn).addClass("btn btn-secondary");
 
 
 
-
-
-
-
-
-
+// WPRM Submission Form Validation
 (function ($) {
   ('use strict');
 
-  function SFValidateCommentForm() {
+  function SFValidateCommentForm1() {
     $('.wprm-recipe-submission').validate({
-     
+
       errorClass: 'invalid alert alert-error',
       validClass: 'valid is-valid was-validated form-control:valid',
 
@@ -317,9 +315,17 @@ $(btn).addClass("btn btn-secondary");
       errorPlacement: function (error, element) {
         element.after(error);
       },
+
+      submitHandler: function(form) {
+        // do other things for a valid form
+        form.submit();
+      }
+
+
     });
   }
-  $(document).ready(SFValidateCommentForm);
+  $(document).ready(SFValidateCommentForm1);
 })(jQuery);
 
 
+console.log('*** custom.js loaded ***')

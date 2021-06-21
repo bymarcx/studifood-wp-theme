@@ -1,13 +1,3 @@
-// @font-face {
-//     font-family: "rockwell";
-//     src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot");
-//     src: url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.eot?#iefix") format("embedded-opentype"),
-//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff2") format("woff2"),
-//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.woff") format("woff"),
-//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.ttf") format("truetype"),
-//         url("//db.onlinewebfonts.com/t/420b45e534602de80ab2b2f868438b71.svg#Rockwell") format("svg");
-// }
-
 @import url("https://use.typekit.net/wvy7edt.css"); // rockwell
 
 @font-face {
@@ -18,6 +8,11 @@
         url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.woff") format("woff"),
         url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.ttf") format("truetype"),
         url("//db.onlinewebfonts.com/t/c455d94eee43dc4ceeb83c0c0fd0d4c8.svg#Segoe Print") format("svg");
+}
+
+.select2-dropdown {
+    background-color: $primary;
+    color: black;
 }
 
 html {
@@ -263,104 +258,71 @@ p {
                 display: block;
                 width: 100%;
                 margin: 0;
+                margin-bottom: 10px;
             }
         }
 
         li.filterbarli:first-of-type {
             margin: 0;
             margin-top: 10px;
-        }
-
-        a.search-choice-close {
-            color: white;
-            background: none !important;
-
-            &:before {
-                content: "X";
-                position: relative;
-                color: #333;
-                font-size: 15px;
-            }
-            &:hover:before {
-                color: #555;
-            }
-        }
-
-        select,
-        .chosen-container {
-            border: 2px solid $primary !important;
-            background: none !important;
-            color: bkack !important;
-            width: 100%;
-
-            a,
-            ul {
-                padding: 7px 20px;
-                background: none;
-                color: black;
-                border: 0px;
-                height: unset;
-            }
 
             @include media-breakpoint-down(md) {
                 margin-bottom: 10px;
+                margin-top: 30px;
             }
         }
 
-        li.search-field {
-            width: 100%;
-            color: white;
+        .select2, .select2-container--default, .select2-search__field {
+            font-family: Rockwell, rockwell, "Courier New", Courier, Georgia, Times, "Times New Roman", serif !important;
+
         }
-        li.search-choice {
+
+        .dropdown-wrapper  {
+            background: $primary !important;
+            color: black !important;
+        }
+
+        .select2.select2-container {
+            border: 2px solid $primary !important;
+            background: none !important;
+            color: black !important;
+            width: 100% !important;
+            min-height: 45px;
+        }
+
+        .select2-selection {
+            background: transparent;
+            border: 0px;
+            padding: 4px 19px 4px 15px;
+        }
+
+        .dropdown-wrapper {
+            color: black !important;
+            background: $primary !important;
+        }
+
+        .select2-selection__choice {
             background: $primary;
-            color: black;
-            border-color: $primary;
+            font-size: 12px;
+            border: 2px solid $primary;
             border-radius: 0px;
+            color: black;
+        }
 
-            a {
-                padding: 0;
+        .select2-selection__choice__remove {
+            color: black !important;
+            border-color: black;
+
+            &:hover {
+                color: #b94a48 !important;
             }
         }
 
-        .chosen-drop {
-            background-color: $primary;
-            border-color: $primary;
-
-            .active-result {
-                padding: 10px 2px;
-                border-bottom: 2px solid white;
-            }
-
-            .active-result,
-            .result-selected {
-                padding: 10px 2px;
-                border-bottom: 2px solid white;
-                position: relative;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    background: none;
-                    color: $secondary;
-                    font-weight: 700;
-                }
-            }
-
-            .result-selected {
-                color: $secondary;
-            }
+        .select2-selection__choice__remove:hover {
+            background: transparent;
         }
 
-        .chosen-search-input {
-            color: white;
-            border: 1px solid white;
-            background: url(../img/Lupe.svg) no-repeat calc(100% - 5px) 5px;
-            background-size: contain;
-            background-size: 15px;
-        }
-
-        input[type="submit"],
-        button {
+        button.search {
             padding: 10px 20px;
             height: 45px;
             background: $primary;
@@ -586,6 +548,17 @@ select {
     }
 }
 
+@include media-breakpoint-down(md) {
+    input[type="file"] {
+        display: flex !important;
+
+        &:before {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+    }
+}
+
 .alert {
     padding: 0;
     margin-bottom: 0;
@@ -596,7 +569,7 @@ select {
 
 .wprm-recipe-submission {
     label {
-        margin-top: 10px !important;
+        margin-top: 30px !important;
     }
 
     option {
@@ -607,7 +580,7 @@ select {
     input,
     select,
     textarea {
-        margin-bottom: 20px;
+        margin-bottom: 00px;
     }
 
     h3 {
@@ -618,7 +591,9 @@ select {
         margin-top: 30px;
     }
 
-    .wprmprs-layout-block-recipe_total_time, .wprmprs-layout-block-recipe_servings, .wprmprs-layout-block-recipe_custom_taxonomy {
+    .wprmprs-layout-block-recipe_total_time,
+    .wprmprs-layout-block-recipe_servings,
+    .wprmprs-layout-block-recipe_custom_taxonomy {
         width: 100%;
 
         input {
@@ -628,9 +603,13 @@ select {
         select {
             width: 100%;
         }
-
     }
 
+    .wprmprs-layout-block-submit {
+        input[type="submit"] {
+            white-space: pre-wrap;
+        }
+    }
 
     // .wprmprs-layout-block-recipe_servings, .wprmprs-layout-block-recipe_total_time, .wprmprs-layout-block-recipe_custom_taxonomy {
     //     float: left;
@@ -642,6 +621,4 @@ select {
     //         position: relative;
     //     }
     // }
-
-
 }

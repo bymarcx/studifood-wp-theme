@@ -87,6 +87,19 @@ section.recipes {
         }
     }
 
+    .slick-dots {
+        li {
+            width: 30px;
+            height: 5px;
+            opacity: 0.8;
+            background: rgba(255, 255, 255, 1);
+
+            &.slick-active {
+                background: $primary;
+            }
+        }
+    }
+
     p.has-text-align-center {
         width: 50%;
         font-size: 24px;
@@ -337,13 +350,12 @@ section.recipes {
                     serif;
                 height: 100px;
                 width: 100px;
-                
+
                 @include media-breakpoint-down(md) {
                     top: 5px;
-                    order:2;
+                    order: 2;
                     height: auto;
                 }
-
             }
         }
     }
@@ -380,7 +392,7 @@ section.recipes {
         @include media-breakpoint-down(md) {
             flex-direction: column;
             font-size: 16px;
-            padding:0;
+            padding: 0;
             margin: -25px 0 50px !important;
         }
 
@@ -421,8 +433,6 @@ section.recipes {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-
-          
             }
         }
     }
@@ -502,11 +512,11 @@ section.morerecipes {
 
     .all-recipes {
         @include media-breakpoint-down(xl) {
-            margin: 20px 0 ;
+            margin: 20px 0;
         }
 
         @include media-breakpoint-down(md) {
-            margin: 0px 0 ;
+            margin: 0px 0;
         }
     }
 }

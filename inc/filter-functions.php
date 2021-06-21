@@ -92,36 +92,13 @@ function sf_filter_function()
         $recipe = WPRM_Recipe_Manager::get_recipe($post_id);
         // Access the first recipe, if there is one.
         if (isset($recipe)) {
-            //echo 'result';
-            //var_dump ($recipe);
-            //echo $recipe->name();
-            //echo $recipe->image();
             include(locate_template('./template-parts/content/recipe-loop.php', false, false));
-            // get_template_part('template-parts/content/recipe-loop', $post_id); 
         }
         if (!isset($recipe)) {
             echo 'no result';
         }
         wp_reset_postdata();
     }
-
-
-    // if( $query->have_posts() ) :
-    // 	while( $query->have_posts() ) : 
-    // 		echo '<h2>' . $query->post_title . '</h2>';
-    //         $recipe = WPRM_Recipe_Manager::get_recipe( $query->post->post_id );
-    //         // $parent_post = get_post( $recipe->parent_post_id() );
-    //         // get_template_part('template-parts/content/recipe-loop'); 
-
-    //         // $recipe = WPRM_Recipe_Manager::get_recipe($recipe_id);
-
-    //         echo $recipe->image(600, 600);
-
-    // 	endwhile;
-    // 	wp_reset_postdata();
-    // else :
-    // 	echo 'No posts found';
-    // endif;
 
     die();
 }

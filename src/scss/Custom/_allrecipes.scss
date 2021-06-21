@@ -175,6 +175,10 @@
 
     .text {
         padding: 20px 0;
+
+        @include media-breakpoint-down(sm) {
+            padding: 20px 0 50px 0;
+        }
     }
 
     .timer-ico {

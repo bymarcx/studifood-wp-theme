@@ -3,7 +3,7 @@
 // ********************************************
 
 section.widget_featuredrecipeswidget {
-    margin: 120px 0 20px 0;
+    margin: 120px 0 5px 0;
 
     @include media-breakpoint-down(md) {
         margin: 70px 0 20px 0;
@@ -28,7 +28,7 @@ section.widget_featuredrecipeswidget {
             right: 0px;
             top:0;
             bottom:0;            
-            background: linear-gradient(to left, rgba(black, 1) 20%, rgba(black, 0.7) 70%, rgba(black, 0.3) 100%);
+            background: linear-gradient(to left,rgba(0,0,0,.9) 40%,rgba(0,0,0,.0) 100%);
             background-size: cover;
             background-position: left;
             z-index: 8;

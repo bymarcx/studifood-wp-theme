@@ -57,19 +57,7 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?= get_stylesheet_directory_uri() ?>/vendor/chosen.jquery.js"></script>
 <script src="<?= get_stylesheet_directory_uri() ?>/vendor/jquery-easing.min.js"></script>
-
-<script>
-    // jQuery and WebPack is just crap
-    $(".filter-select").chosen({
-        allow_single_deselect: true,
-        disable_search_threshold: 10
-    });
-
-</script>
-
-
 
 <!-- SEE YOU LATER ALLIGATOR! -->
 </body>

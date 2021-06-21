@@ -12,7 +12,7 @@ h1 {
 }
 
 
-p.descr, p.descr span {
+p.descr, p.descr span, .wprm-recipe-summary {
     text-align: center;
 }
 
@@ -42,7 +42,7 @@ img {
     height: 30px;
     margin-bottom: 5px;
     display: inline-block;
-    background: url(../../wp-content/themes/studifood-wp-theme/dist/img/Timer.svg);
+    background: url("../../wp-content/themes/studifood_wp_theme/dist/img/Timer.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,7 +56,7 @@ img {
     height: 30px;
     margin-bottom: 5px;
     display: inline-block;
-    background: url(../../wp-content/themes/studifood-wp-theme/dist/img/BesteckBlack.svg);
+    background: url("../../wp-content/themes/studifood_wp_theme/dist/img/BesteckBlack.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@ img {
     height: 30px;
     margin-bottom: 5px;
     display: inline-block;
-    background: url(../../wp-content/themes/studifood-wp-theme/dist/img/KochmuetzeBlack.svg);
+    background: url("../../wp-content/themes/studifood_wp_theme/dist/img/KochmuetzeBlack.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,7 +84,7 @@ img {
     height: 30px;
     margin-bottom: 5px;
     display: inline-block;
-    background: url(../../wp-content/themes/studifood-wp-theme/dist/img/TopfBlack.svg);
+    background: url("../../wp-content/themes/studifood_wp_theme/dist/img/TopfBlack.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

@@ -37,7 +37,7 @@
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_course', 'orderby' => 'name'))) :
 
-                    echo '<select data-placeholder="Mahlzeit" class="filter-select" name="categoryfiltercourse[]" multiple><option></option>';
+                    echo '<select label="Mahlzeito" placeholder="Mahlzeit" data-placeholder="Mahlzeit" class="filter-select" name="categoryfiltercourse[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
                     endforeach;
@@ -86,7 +86,7 @@
                 </label>
             </li> -->
             <li class="filterbarli">
-                <button>Suchen</button>
+                <button class="search">Suchen</button>
                 <input type="hidden" name="action" value="myfilter">
             </li>
         </ul>

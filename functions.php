@@ -21,7 +21,7 @@ if (!function_exists('_customtheme_setup')) :
         /** Add support for YOAST-SEO Breadcrumb nav */
         add_theme_support('yoast-seo-breadcrumbs');
 
-        //**  Add support for theme  */
+        /**  Add support for theme customzier */
         add_theme_support('widget-customizer');
 
         /** add images sizes  */
