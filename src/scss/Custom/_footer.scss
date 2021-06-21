@@ -96,12 +96,24 @@
         .col--1 h3:after {
             margin: 0 200px 0 30px;
 
-            @include media-breakpoint-down(md) {
-                margin: 0 50px 0 30px;
+            @include media-breakpoint-down(lg) {
+                margin: 0 50px 0 10px;
             }
 
             @include media-breakpoint-down(sm) {
-                margin: 0 0px 0 30px;
+                margin: 0 0 0 0;
+            }
+        }
+
+        .col--2 h3:after {
+            margin: 0 0 0 30px;
+
+            @include media-breakpoint-down(lg) {
+                margin: 0 0 0 10px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin: 0 0 0 0;
             }
         }
 
@@ -124,12 +136,21 @@
     }
 
     .col--3 {
-        border-top: 2px solid $secondary;
         margin-top: 50px;
         //display: flex;
         //justify-content: center;
         //flex-wrap: wrap;
-        padding: 60px 15px;
+        
+
+        &:before {
+            position: relative;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: $secondary;
+            margin: 60px 0px;
+        }
 
         p {
             font-family: "Segoe Print", "Segoe Print1", "Courier New", Courier, Georgia, Times, "Times New Roman", serif !important;

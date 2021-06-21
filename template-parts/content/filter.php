@@ -36,8 +36,8 @@
             <li class="filterbarli">
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_course', 'orderby' => 'name'))) :
-
-                    echo '<select label="Mahlzeito" placeholder="Mahlzeit" data-placeholder="Mahlzeit" class="filter-select" name="categoryfiltercourse[]" multiple><option></option>';
+                    echo '<label>Mahlzeit</label>';
+                    echo '<select placeholder="Mahlzeit" data-placeholder="Mahlzeit" class="filter-select" name="categoryfiltercourse[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
                     endforeach;
@@ -48,7 +48,7 @@
             <li class="filterbarli">
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_ingredient', 'orderby' => 'name'))) :
-
+                    echo '<label>Zutaten</label>';
                     echo '<select data-placeholder="Zutaten" class="filter-select" name="categoryfilteringredient[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
@@ -60,6 +60,7 @@
             <li class="filterbarli">
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_equipment', 'orderby' => 'name'))) :
+                    echo '<label>Utensilien</label>';
                     echo '<select data-placeholder="Utensilien" class="filter-select" name="categoryfilterequipment[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
@@ -71,7 +72,7 @@
             <li class="filterbarli">
                 <?php
                 if ($terms = get_terms(array('taxonomy' => 'wprm_difficulty', 'orderby' => 'name'))) :
-
+                    echo '<label>Schwierigkeit</label>';
                     echo '<select data-placeholder="Schwierigkeit" class="filter-select" name="categoryfilterdifficulty[]" multiple><option></option>';
                     foreach ($terms as $term) :
                         echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
@@ -86,6 +87,7 @@
                 </label>
             </li> -->
             <li class="filterbarli">
+                <label> </label>
                 <button class="search">Suchen</button>
                 <input type="hidden" name="action" value="myfilter">
             </li>
