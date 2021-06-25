@@ -10,9 +10,9 @@ window.jQuery = $;
 window.$ = $;
 jQuery = $;
 
-import validate from 'jquery-validation'
+import 'jquery-validation';
 
-import 'popper.js'
+import 'popper.js';
 import 'bootstrap';
 import 'slick-carousel';
 import AOS from 'aos';
@@ -94,7 +94,7 @@ $internalLinks = $internalLinks.not(function () {
 
 $(document).ready(function () {
   $($internalLinks).click(function (e) {
-    console.log("its an internal link, my friend")
+    // console.log("its an internal link, my friend")
     if ($(this).attr("target") != "_blank") {
       e.preventDefault();
       var link = $(this).attr("href");
@@ -134,9 +134,8 @@ $(document).ready(function () {
     speed: 1500,
     arrows: true,
     autoplay: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     variableWidth: true,
-    infinite: true,
     slidesToScroll: 1,
     centerMode: true,
     autoplaySpeed: 5000,
@@ -202,7 +201,7 @@ function progressBar() {
 $(function () {
   $('a.page-scroll').bind('click', function (event) {
     var $anchor = $(this);
-    console.log("scrolling", top);
+    // console.log("scrolling", top);
     $('html, body').stop().animate({
       scrollTop: $($anchor.attr('href')).offset().top - 150
     }, 1500, 'easeInOutExpo');
@@ -213,7 +212,7 @@ $(function () {
 
 // Make wordpress btns to bootstrap btns
 var btn = document.querySelector(".is-style-sf-btn-sec a");
-console.log(btn);
+// console.log(btn);
 $(btn).addClass("btn btn-secondary");
 
 
@@ -226,7 +225,7 @@ $(btn).addClass("btn btn-secondary");
       rules: {
         author: {
           required: true,
-          minlength: 2,
+          minlength: 3,
         },
         email: {
           required: true,
@@ -244,9 +243,7 @@ $(btn).addClass("btn btn-secondary");
       messages: {
         author: {
           required: 'Bitte trage Deinen Namen ein.',
-          minlength: jQuery.validator.format(
-            'Es sind {0} Zeichen erforderlich!'
-          ),
+          minlength: 'Es sind min. 3 Zeichen erforderlich!',
         },
         email: {
           required: 'Bitte trage Deine E-Mail-Adresse ein.',
@@ -255,9 +252,7 @@ $(btn).addClass("btn btn-secondary");
         },
         comment: {
           required: 'Bitte schreibe einen Kommentar.',
-          minlength: jQuery.validator.format(
-            'Es sind {0} Zeichen erforderlich!'
-          ),
+          minlength: 'Es sind min. 20 Zeichen erforderlich!',
         },
         datenschutz:
           'Laut DSGVO benötige wir deine Einwilligung zur Erhebung deiner hier getätigten Daten.',
@@ -267,7 +262,7 @@ $(btn).addClass("btn btn-secondary");
       validClass: 'valid is-valid was-validated form-control:valid',
 
       success: function (label) {
-        console.log("remove", label);
+        // console.log("remove", label);
         $(label).removeClass('invalid alert alert-warning');
       },
 
@@ -291,41 +286,40 @@ $(btn).addClass("btn btn-secondary");
 })(jQuery);
 
 
+// // WPRM Submission Form Validation
+// (function ($) {
+//   ('use strict');
 
-// WPRM Submission Form Validation
-(function ($) {
-  ('use strict');
+//   function SFValidateCommentForm1() {
+//     $('.wprm-recipe-submission').validate({
 
-  function SFValidateCommentForm1() {
-    $('.wprm-recipe-submission').validate({
+//       errorClass: 'invalid alert alert-error',
+//       validClass: 'valid is-valid was-validated form-control:valid',
 
-      errorClass: 'invalid alert alert-error',
-      validClass: 'valid is-valid was-validated form-control:valid',
+//       success: function (label) {
+//         // console.log("remove", label);
+//         $(label).removeClass('invalid alert alert-warning');
+//       },
 
-      success: function (label) {
-        console.log("remove", label);
-        $(label).removeClass('invalid alert alert-warning');
-      },
+//       highlight: function (element, errorClass) {
+//         $(element).addClass('is-invalid was-validated form-control:invalid');
+//       },
 
-      highlight: function (element, errorClass) {
-        $(element).addClass('is-invalid was-validated form-control:invalid');
-      },
+//       errorElement: 'div',
+//       errorPlacement: function (error, element) {
+//         element.after(error);
+//       },
 
-      errorElement: 'div',
-      errorPlacement: function (error, element) {
-        element.after(error);
-      },
-
-      submitHandler: function(form) {
-        // do other things for a valid form
-        form.submit();
-      }
-
-
-    });
-  }
-  $(document).ready(SFValidateCommentForm1);
-})(jQuery);
+//       submitHandler: function(form) {
+//         // do other things for a valid form
+//         form.submit();
+//       }
 
 
-console.log('*** custom.js loaded ***')
+//     });
+//   }
+//   $(document).ready(SFValidateCommentForm1);
+// })(jQuery);
+
+
+console.log('*** SF :: custom.js loaded ***')

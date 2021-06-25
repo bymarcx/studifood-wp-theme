@@ -12,8 +12,8 @@ function sf_filter_function()
 {
     $args = array(
         'post_type' => 'wprm_recipe',
-        'orderby' => 'date', // we will sort posts by date
-        'order'    => $_POST['date'], // ASC or DESC
+        'orderby' => 'name', // we will sort posts by date
+        'order'    => $_POST['name'], // ASC or DESC
         'post_status' => 'publish'
 
     );

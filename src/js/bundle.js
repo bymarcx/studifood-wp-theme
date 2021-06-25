@@ -1,2 +1,2 @@
 import './components/custom';
-console.log('bundle');
+console.log('*** SF :: all js loaded ***');

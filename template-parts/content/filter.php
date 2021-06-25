@@ -101,7 +101,7 @@
 
     $args = array(
         'post_type' => 'wprm_recipe',
-        'orderby' => 'date', // we will sort posts by date
+        'orderby' => 'name', // we will sort posts by date
         'order'    => 'ASC', // ASC or DESC
         'post_status' => 'publish'
     );
