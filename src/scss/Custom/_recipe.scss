@@ -350,11 +350,12 @@ section.recipes {
                 left: 10px;
                 font-size: 50px;
                 position: relative;
-                display: inline;
+                display: inline-block;
                 font-family: "Segoe Print", "Segoe Print1", "Courier New", Courier, Georgia, Times, "Times New Roman",
                     serif;
                 height: 100px;
                 width: 100px;
+                grid-area: num;
 
                 @include media-breakpoint-down(md) {
                     top: 5px;
@@ -374,6 +375,7 @@ section.recipes {
 
         &:before {
             content: "";
+            grid-area: num;
         }
     }
 
@@ -384,7 +386,16 @@ section.recipes {
     }
 
     .wprm-recipe-instruction {
-        display: flex;
+        // display: flex;
+
+        display: grid;
+        grid-template-columns: auto 2fr 1.3fr;
+        grid-template-rows: auto 1.3fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            ". ingridients image1"
+            "num text image1";
+
         padding: 30px 0;
 
         list-style-type: decimal;
@@ -395,18 +406,39 @@ section.recipes {
         }
 
         @include media-breakpoint-down(md) {
+            display: flex;
             flex-direction: column;
             font-size: 16px;
             padding: 0;
             margin: -25px 0 50px !important;
         }
 
+        .wprm-recipe-instruction-ingredients {
+            grid-area: ingridients;
+            background-color: $secondary;
+            color: white;
+            padding: 7px 5px 5px 5px;
+            margin-right: 30px;
+            margin-bottom: 20px;
+            font-size: 17px;
+
+            @include media-breakpoint-down(md) {
+                order: 2;
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            span {
+                margin: 0 10px;
+            }
+        }
+
         .wprm-recipe-instruction-text {
-            width: 60%;
             padding-right: 50px;
             padding-left: 00px;
             line-height: 1.8;
             font-weight: 100;
+            grid-area: text;
 
             @include media-breakpoint-down(md) {
                 width: 100%;
@@ -418,12 +450,14 @@ section.recipes {
         }
 
         .wprm-recipe-instruction-media {
-            width: 40%;
+            // width: 40%;
             height: 0;
             overflow: hidden;
-            padding-top: 25%;
+            padding-top: 65%;
             background: white;
             position: relative;
+            margin:0;
+            grid-area: image1;
 
             @include media-breakpoint-down(md) {
                 width: 100%;
