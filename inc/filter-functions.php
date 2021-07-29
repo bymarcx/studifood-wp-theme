@@ -12,8 +12,8 @@ function sf_filter_function()
 {
     $args = array(
         'post_type' => 'wprm_recipe',
-        'orderby' => 'name', // we will sort posts by date
-        'order'    => $_POST['name'], // ASC or DESC
+        'orderby' => 'name', 
+        'order'    => $_POST['name'], 
         'post_status' => 'publish'
 
     );
@@ -63,9 +63,6 @@ function sf_filter_function()
             )
         );
 
-    // echo("<pre>");
-    // echo print_r($args, true);
-    // echo("</pre>");
     $tax_query = new WP_Query($args);
 
 
@@ -105,12 +102,6 @@ function sf_filter_function()
 
 
 
-
-
-
-
-
-
 add_action('wp_ajax_mysearch', 'sf_search_function'); // wp_ajax_{ACTION HERE} 
 add_action('wp_ajax_nopriv_mysearch', 'sf_search_function');
 
@@ -119,7 +110,7 @@ function sf_search_function()
     $args = array(
         'post_type' => 'wprm_recipe',
         'orderby' => 'date', // we will sort posts by date
-        's'    => $_POST['keyword'], // ASC or DESC
+        's'    => $_POST['keyword'], 
         'post_status' => 'publish'
     );
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying the content.
+ * The template for displaying a single recipe.
  *
  * (C) BYMARC
  *

@@ -7,7 +7,6 @@
 function bymarc_customize_register( $wp_customize ) {
 
 // FOOTER OPTIONS
-
 $wp_customize->add_section( 'footer_options', array(
     'title'          => __( 'Footer', 'bymarc' ),
     'description' => __( 'Footer anpassen', 'bymarc' ),
@@ -35,7 +34,6 @@ $wp_customize->add_control( new WP_Customize_Control(
 
 
 // OWN RECIPE BLOCK OPTIONS
-
 $wp_customize->add_section( 'ownrecipeblock_options', array(
     'title'          => __( 'Own Recipe Block', 'bymarc' ),
     // 'description' => __( ' ', 'bymarc' ),

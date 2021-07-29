@@ -16,6 +16,7 @@ import imagemin from 'gulp-imagemin';
 
 const PRODUCTION = yargs.argv.prod;
 
+// *** COMPRESS OUR SCSS STYLES *** //
 export const CompressStyles = () => {
     return src(['src/scss/bundle.scss', 'src/scss/admin.scss'])
         .pipe(sass().on('error', sass.logError))
@@ -24,6 +25,7 @@ export const CompressStyles = () => {
         .pipe(dest('dist/css'));
 }
 
+// *** BUNDLE OUR SCRIPTS *** //
 export const BundleScripts = () => {
     return src(['src/js/bundle.js','src/js/admin.js'])
         .pipe(named())
@@ -56,13 +58,16 @@ export const minifyImages = () => {
       .pipe(dest('dist/img'));
 }
 
+// *** COPY OUR SOURCE FILES WHICH ARE NOT SCSS OR JS  *** //
 export const copySrcFiles = () => {
     return src(['src/**/*','!src/{img,js,scss}','!src/{img,js,scss}/**/*'])
         .pipe(dest('dist'));
 }
 
+// *** DELETE OUR DIST FOLDER *** //
 export const cleanDist = () => del(['dist']);
 
+// *** WATCH FOR CHANGES IN OUR SCSS OR JS FOLDER *** //
 export const watchForChanges = () => {
     watch('src/scss/**/*.scss', CompressStyles);
     watch('src/js/**/*.js',BundleScripts);
@@ -70,6 +75,7 @@ export const watchForChanges = () => {
     watch(['src/**/*','!src/{img,js,scss}','!src/{img,js,scss}/**/*'], copySrcFiles);
 }
 
+// *** COMPRESS ALL FILES FOR PRODUCTION *** //
 export const compress = () => {
     return src([
         "**/*",
@@ -92,6 +98,7 @@ export const compress = () => {
         .pipe(dest('bundled'));
 };
 
+// *** TIME TO RUN EVERYTHING *** //
 export const dev = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), watchForChanges);
 export const build = series(cleanDist, parallel(CompressStyles, minifyImages, copySrcFiles, BundleScripts), compress);
 export default dev;

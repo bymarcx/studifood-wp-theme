@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * The template part for the headerbar.
+ *
+ * (C) BYMARC
+ *
+ */
+?>
+
 <div class="headerbar" id="headerbar">
     <div id="logo">
         <?php the_custom_logo(); ?>

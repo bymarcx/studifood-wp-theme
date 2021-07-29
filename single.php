@@ -1,7 +1,8 @@
 <?php
 
 /**
- * The template for displaying the content.
+ * The template for displaying a single post. 
+ * THIS POST TYPE IS NOT USED IN THIS THEME!
  *
  * (C) BYMARC
  *
@@ -12,12 +13,7 @@
 
 <!-- HTML content starts! -->
 
-<!-- LOOP? single-->
-
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-
 
         <section class="stage">
             <div class="container-fluid">
@@ -33,7 +29,6 @@
                                 ?>
                             <?php }
 
-
                             // Get the recipes inside the current post.
                             $recipes = WPRM_Recipe_Manager::get_recipe_ids_from_post();
 
@@ -48,12 +43,10 @@
                                 echo $recipe->image(1920, 1080);
                             }
 
-
                             ?>
 
                             <!-- </a> -->
                         </div>
-
 
                     </div>
                 </div>
@@ -61,9 +54,7 @@
             </div>
         </section>
 
-
         <?php get_template_part('template-parts/content/breadcrumb') ?>
-
 
         <section>
             <div class="container">
@@ -75,7 +66,6 @@
                             ?>
                         </div>
 
-
                     </div>
                 </div>
             </div>
@@ -83,8 +73,6 @@
 
 <?php endwhile;
 endif; ?>
-
-
 
 <!-- HTML content ends! -->
 

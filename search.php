@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the content.
+ * The template for displaying the search page.
  *
  * (C) BYMARC
  *
@@ -11,13 +11,9 @@
 
 <!-- HTML content starts! -->
 
-<!-- LOOP? search-->
-
-
 <?php get_template_part( 'template-parts/stage/stage-archive')?>
 
 <?php get_template_part( 'template-parts/content/filter')?>
-
 
 <?php
 // the query

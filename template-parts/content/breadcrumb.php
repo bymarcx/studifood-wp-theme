@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * The template part for displaying the breadcrumbs
+ *
+ * (C) BYMARC
+ *
+ */
+?>
+
 <section>
     <div class="container">
         <div class="row">

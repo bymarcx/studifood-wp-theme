@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template part for displaying the stage
+ * Template part for displaying a single recipe card
  *
  * (C) BYMARC
  * 
@@ -10,16 +10,6 @@
 
 <div class="container all-recipe-card" data-aos="fade-up">
     <div class="row">
-
-        <?php  // Get the recipes inside the current post.
-        // $recipes = WPRM_Recipe_Manager::get_recipe_ids_from_post();
-
-        // // Access the first recipe, if there is one.
-        // if (isset($recipes[0])) {
-        //     $recipe_id = $recipes[0];
-        //$recipe = WPRM_Recipe_Manager::get_recipe($post_id);
-
-        ?>
         <div class="col-md-6 col--1">
 
             <a href="<?php get_post_permalink(the_permalink()) ?>">

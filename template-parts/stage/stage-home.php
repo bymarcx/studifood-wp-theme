@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * Template part for displaying the stage
+ *
+ * (C) BYMARC
+ * 
+ */
+?>
+
 <section class="stage slide">
     <div class="container-fluid">
         <div class="row justify-content-center">

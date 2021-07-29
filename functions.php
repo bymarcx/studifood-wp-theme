@@ -95,14 +95,14 @@ function _customtheme_gutenberg_scripts()
 add_action('enqueue_block_editor_assets', '_customtheme_gutenberg_scripts');
 
 /** register widgets */
-require get_template_directory() . '/inc/widgets/AboutUs.php';
-require get_template_directory() . '/inc/widgets/FeaturedRecipes.php';
+// require get_template_directory() . '/inc/widgets/AboutUs.php';
+// require get_template_directory() . '/inc/widgets/FeaturedRecipes.php';
 
-function register_widgets()
-{
-    register_widget('AboutUsWidget');
-    register_widget('FeaturedRecipesWidget');
-}
+// function register_widgets()
+// {
+//     register_widget('AboutUsWidget');
+//     register_widget('FeaturedRecipesWidget');
+// }
 // add_action('widgets_init', 'register_widgets');
 
 /** Include custom sidebars */

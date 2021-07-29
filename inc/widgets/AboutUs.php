@@ -1,4 +1,6 @@
 <?php
+// DEPRECATED :: THIS WIDGET IS NOT USED ANYMORE
+// USE THE WP-BLOCKS INSTEAD
 
 class AboutUsWidget extends WP_Widget
 {
